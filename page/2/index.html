@@ -324,16 +324,17 @@
       
         
           
-            <p>In JavaScript, a variable can be declared after it has been used.<br>In other words; a variable can be used before it has been declared.<br>Basically how javascript engine works</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myvar = <span class="string">'my value'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(myvar); <span class="comment">// undefine</span></div><div class="line">    <span class="keyword">var</span> myvar = <span class="string">'local value'</span>;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>The reason why myvar is undefine is because in js engine variable is first declared.<br>(variable declaration is hoisted to top)</p>
-<p>The following code is how to the engine interpreted:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myvar = <span class="string">'my value'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> myvar;</div><div class="line">    alert(myvar); <span class="comment">// undefine</span></div><div class="line">    <span class="keyword">var</span> myvar = <span class="string">'local value'</span>;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>That’s why in the book the javascript the good part, the author suggest that we always<br>place variable in the top of the function.</p>
-<p>Another thing to note is function is hoisted to the top but not function expression.<br>For example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    newFunction(); <span class="comment">// will alert hello world</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">newFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'hello world'</span>);</div><div class="line">    &#125;    </div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    newFunction(); <span class="comment">// will not alert hello world</span></div><div class="line">    <span class="keyword">var</span> newFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'hello world'</span>);</div><div class="line">    &#125;    </div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>The second code snippet doesn’t work because function expression get hoisted to the top but not the expression.</p>
-
-          
+          In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared.Basically how javascript engine works
+12345var myvar = 'my value';(function()&#123;    alert(myvar); // undefine    var myvar = 'local value';&#125;)();
+The reason why 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/16/JS-Hoisting/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -449,16 +450,17 @@
       
         
           
-            <p>There are three things (maybe more) that you need to know about scope, which is global/current scope<br>lexical scope, scope chain</p>
-<h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>Scope is variable access</p>
-<p>Scope is the set of rules that determines where and how a variable (identifier) can be looked-up. Basically Scope is variable access. Also every function has it’s inner scope and variables inside the function can only be accessed inside the function.</p>
-<p>Here’s an example</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//parent</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">2</span>;<span class="comment">//child</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">foo(); <span class="comment">//1</span></div><div class="line">b <span class="comment">//error</span></div></pre></td></tr></table></figure>
-<p>The child scope has access to a, but the parent scope does not have access to b.</p>
-<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png" target="_blank" rel="external">https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png</a></p>
-<p>lexical(static) scope is scope that is defined at lexing time. In other words, lexical scope is based on where variables and blocks of scope are authored, by you, at write time, and thus is (mostly) set in stone by the time the lexer processes your code.</p>
-
-          
+          There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain
+ScopeScope is variable access
+Scope is the set of rules that determines where and how a variable (identifier) can be looked-up. Basically Scope is variable access. Also ever
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/16/JS-Scope/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -574,18 +576,18 @@
       
         
           
-            <h2 id="Looping-a-triangle"><a href="#Looping-a-triangle" class="headerlink" title="Looping a triangle"></a>Looping a triangle</h2><p>Write a loop that makes seven calls to console.log to output the following triangle:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#</div><div class="line">##</div><div class="line">###</div><div class="line">####</div><div class="line">#####</div><div class="line">######</div><div class="line">#######</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">7</span>; i++)&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"#"</span>.repeat(i) + <span class="string">"\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Chess-board"><a href="#Chess-board" class="headerlink" title="Chess board"></a>Chess board</h2><p>Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a “#” character. The characters should form a chess board.</p>
-<p>Passing this string to console.log should show something like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> # # # #</div><div class="line"># # # #</div><div class="line"> # # # #</div><div class="line"># # # #</div><div class="line"> # # # #</div><div class="line"># # # #</div><div class="line"> # # # #</div><div class="line"># # # #</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>; j&lt;=<span class="number">8</span>; j++)&#123;</div><div class="line">	<span class="keyword">var</span> str = <span class="string">''</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;= <span class="number">8</span>; i++)&#123;</div><div class="line">		(i+j)%<span class="number">2</span> ? str+=<span class="string">" "</span> : str+=<span class="string">"#"</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(str + <span class="string">"\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="FizzBuzz"><a href="#FizzBuzz" class="headerlink" title="FizzBuzz"></a>FizzBuzz</h2><p>Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print “Fizz” instead of the number, and for numbers divisible by 5 (and not 3), print “Buzz” instead.</p>
-<p>When you have that working, modify your program to print “FizzBuzz”, for numbers that are divisible by both 3 and 5 (and still print “Fizz” or “Buzz” for numbers divisible by only one of those).</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">50</span>; i++)&#123;</div><div class="line">	<span class="keyword">if</span>(i % <span class="number">5</span> ==<span class="number">0</span> &amp;&amp; i % <span class="number">3</span> ==<span class="number">0</span>)&#123;</div><div class="line">    	<span class="built_in">console</span>.log(<span class="string">"FizzBUZZ"</span>);</div><div class="line">		<span class="keyword">continue</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i%<span class="number">5</span>==<span class="number">0</span>)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"Buzz"</span>);</div><div class="line">		<span class="keyword">continue</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( i % <span class="number">3</span> ==<span class="number">0</span>)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"FIZZ"</span>);</div><div class="line">		<span class="keyword">continue</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          Looping a triangleWrite a loop that makes seven calls to console.log to output the following triangle:
+1234567############################
+123for(var i=1; i&lt;=7; i++)&#123;	console.log("#".repeat(i) + "\n");&#125;
+Chess boardWrite a program that creates a string that represents an 8×8 grid, using 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/16/Eloquent-Javascript-Program-Structure-excercise/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -701,13 +703,18 @@
       
         
           
-            <p>This a series of javascript book, which contains 6 books. It turns out this is more<br>suitable book for intermediate/advance JS, but it’s okay. I’ll just read it and if some concept don’t click maybe i’ll get it in the future and come back and look at it again.</p>
-<p>UP &amp; GOING</p>
-<hr>
-<p>This is an intro book, with intro to programming and intro to javascript. It talks about JS’s background, history, and some basic programming concepts.</p>
-<p>It also touches on some major js concepts such as Scope &amp; Closures, this &amp; Object Prototypes,<br>Types &amp; Grammar, Async &amp; Performance, and ES6 &amp; Beyond. All these concepts will be discuss in further details in future books.</p>
+          This a series of javascript book, which contains 6 books. It turns out this is moresuitable book for intermediate/advance JS, but it’s okay. I’ll just read it and if some concept don’t click maybe i’ll get it in the future and come back and look at it again.
+UP &amp; GOING
 
-          
+This is an intro book, wi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/YDKJS-Up-Going-Review/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -823,23 +830,22 @@
       
         
           
-            <h4 id="Here’s-my-main-goals"><a href="#Here’s-my-main-goals" class="headerlink" title="Here’s my main goals:"></a>Here’s my main goals:</h4><ul>
-<li>Familar with Ruby on Rails</li>
-<li>Finish Free Code Camp Front Certificate</li>
-<li>Start learning REACT<h4 id="Here’s-my-log-for-my-challenge"><a href="#Here’s-my-log-for-my-challenge" class="headerlink" title="Here’s my log for my challenge."></a>Here’s my log for my challenge.</h4></li>
-</ul>
-<p><strong> Day 1-2/4 </strong><br>Ruby Koans 150tasks<br>Codewar 2 Katas<br>LRTHW - 5 tasks</p>
-<p><strong> Day 2-2/5 </strong><br>LRTHW -18 tasks<br>Codewar 2 Katas<br>Ruby Koans 190 tasks</p>
-<p><strong> Day 3-2.6 </strong><br>Read Market genius 90pages<br>Ruby Koans 253 tasks<br>LRTHW-25 tasks<br>Codewar-1 Katas<br>Rails tutorials books- Finish ch 8<br>New house furnitures removed</p>
-<p><strong> Day 4-2.7 </strong><br>Read Market genius 130pages<br>Ruby Koans - Completed<br>FCC Bootstrap- Completed<br>Codewar - 1 katas</p>
-<p><strong> Day 5-2.8 </strong><br>Read Market genius 160pages- completed<br>LRTHW - 5 tasks - task 31- completed<br>Chris Pine Learn Program- Finish last ch.3 - completed<br>Codewar - 1 katas - completed<br>Agile Rails 5 - 1 chapters - completed<br>FCC Profile page - Complete<br>FCC Basic Javascript - <a href="https://www.freecodecamp.com/challenges/create-decimal-numbers-with-javascript" target="_blank" rel="external">https://www.freecodecamp.com/challenges/create-decimal-numbers-with-javascript</a></p>
-<p><strong> Day 6-2.9 </strong><br>YDKJS-p40 - completed<br>Read Market genius 190pages- completed<br>LRTHW - 5 tasks - task 35- completed</p>
-<p><strong> Day 7-2.10 </strong><br>YDKJS - Finish Up &amp; Going  - completed<br>YDKJS - Play with example in Up&amp; Going - completed<br>LRTHW - 5 tasks - completed 40/52 - completed<br>Codewar - 2 katas - completed<br>Agile Rails 5 - 1 chapters</p>
-<p><strong> Day 8-2.11 </strong><br>[x] YDKJS - Scope &amp; Closure Ch.1<br>[x] Codewar - 1 katas - completed<br>[x] FCC Basic Javascript - <a href="https://www.freecodecamp.com/challenges/accessing-nested-objects" target="_blank" rel="external">https://www.freecodecamp.com/challenges/accessing-nested-objects</a><br>[x] Review Rails 5 Ch.10</p>
-<p><strong> Day 9-2.12 </strong><br>[x] YDKJS - Scope &amp; Closure Ch.2<br>[x] FCC Basic Javascript<br>[x] Codewar - 1 katas - completed</p>
-<p><strong> Day 10-2.13 </strong><br>[x] YDKJS - Scope &amp; Closure Ch.3<br>[x] RailsBridge JS snake Game<br>[x] FCC Jquery, Object Oriented javascript<br>[x] Code school devtools <a href="http://discover-devtools.codeschool.com/chapters/4/challenges/5?locale=en" target="_blank" rel="external">http://discover-devtools.codeschool.com/chapters/4/challenges/5?locale=en</a></p>
+          Here’s my main goals:
+Familar with Ruby on Rails
+Finish Free Code Camp Front Certificate
+Start learning REACTHere’s my log for my challenge.
 
-          
+ Day 1-2/4 Ruby Koans 150tasksCodewar 2 KatasLRTHW - 5 tasks
+ Day 2-2/5 LRTHW -18 tasksCodewar 2 KatasRuby Koans 190 tasks
+ Day 3-2.6 Read Market genius 90pag
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/100-Days-Code-Challenge/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -930,10 +936,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
-              
+              </a>
             </div>
           
 
@@ -942,6 +948,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kuanhsuh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/dannyhuang24" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
           
         </div>
 
