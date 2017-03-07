@@ -1,134 +1,330 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title> Hexo </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/07/hello-world/" class="article-date">
-  <time datetime="2017-03-07T05:24:47.000Z" itemprop="datePublished">2017-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/hello-world/">Hello World</a>
-    </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/100-Days-Code-Challege-Day-20-30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/07/100-Days-Code-Challege-Day-20-30/" itemprop="url">
+                  100 Days Code Challege Day 20-30
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-07T12:05:06+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/07/hello-world/" data-id="cizz3l2nz000kmkuc4pbxzohp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-100-Days-Code-Challege-Day-20-30" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/07/100-Days-Code-Challege-Day-20-30/" class="article-date">
-  <time datetime="2017-03-07T04:05:06.000Z" itemprop="datePublished">2017-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/100-Days-Code-Challege-Day-20-30/">100 Days Code Challege Day 20-30</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Day 21-2.24<br>[x]  YDKJS- this&amp;object Ch.4<br>[x]  Javascript Bootcamp Finished<br>[x]  Code school Road Trip part 3/level 1<br>[x]  Codewar-129 (JavaScript:7 kyu / 55% Ruby:6 kyu / 12%)<br>[x]  Derek Banas OOP JS video @29:42 (Object, classes)<br>[x]  Practical JS - V2 Finished<br>[x]  Eloquent JS</p>
+          
+            <p>Day 21-2.24<br>[x]  YDKJS- this&amp;object Ch.4<br>[x]  Javascript Bootcamp Finished<br>[x]  Code school Road Trip part 3/level 1<br>[x]  Codewar-129 (JavaScript:7 kyu / 55% Ruby:6 kyu / 12%)<br>[x]  Derek Banas OOP JS video @29:42 (Object, classes)<br>[x]  Practical JS - V2 Finished<br>[x]  Eloquent JS</p>
 <p>Day 22-2.25<br>[x] FCC Portfolio Page Specs<br>[x] YDKJS- this&amp;object Ch.3 finish reread<br>[x] Derek Banas OOP JS video @42 (Prototype, inheritance)<br>[x] Practical JS -V4 Finished<br>[x] Codewar-133 (JavaScript:7 kyu / 66% Ruby:6 kyu / 12%)<br>[x] JS30 18/31</p>
 <p>Day 23-2.26<br>[x] YDKJS- this&amp;object Ch.4 finish reread<br>[x] Derek Banas OOP JS video @52<br>[x] Codewar-133 (JavaScript:7 kyu / 71% Ruby:6 kyu / 14%)<br>[x] Practical JS-V6 Finished<br>[x] Mozilla JS guide Object-Bouncing ball project</p>
 <p>Day 24-2.27<br>[x] YDKJS- this&amp;object Ch.5<br>[x] Practical JS V7<br>[x] Codewar-137 (JavaScript:7 kyu / 77% Ruby:6 kyu / 14%)</p>
@@ -139,44 +335,123 @@
 <p>Day 29-3.4<br>[x] FCC Comodoro Clock-converting functions to objects<br>[x] Codewar-155 (JavaScript:6 kou / 5% Ruby:6 kyu / 20%)</p>
 <p>Day 30-3.5<br>[x] Modular JS part3<br>[x] Codewar-171 (JavaScript:6 kou / 15% Ruby:6 kyu / 20%)<br>[x] FCC Comodoro Clock-Finished, Upload Github, Codpen<br>[x] Hero Theme update, edit blog posts</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/07/100-Days-Code-Challege-Day-20-30/" data-id="cizz3l2n50001mkuc14fixvmx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-FCF-Pomodoro-Timer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/FCF-Pomodoro-Timer/" class="article-date">
-  <time datetime="2017-03-06T07:17:11.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/FCF-Pomodoro-Timer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/FCF-Pomodoro-Timer/">FCF Pomodoro Timer</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/06/FCF-Pomodoro-Timer/" itemprop="url">
+                  FCF Pomodoro Timer
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-06T15:17:11+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Github: <a href="https://github.com/kuanhsuh/jspomodoro" target="_blank" rel="external">https://github.com/kuanhsuh/jspomodoro</a><br>Codepen: <a href="http://codepen.io/dannyhuang/pen/GWjRYW" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/GWjRYW</a></p>
+      
+
+      
+        
+          
+            <p>Github: <a href="https://github.com/kuanhsuh/jspomodoro" target="_blank" rel="external">https://github.com/kuanhsuh/jspomodoro</a><br>Codepen: <a href="http://codepen.io/dannyhuang/pen/GWjRYW" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/GWjRYW</a></p>
 <h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>I follow the same procedure as calculator Challenge. The hardest part for the excercise is SetInterval messed up the ‘this’ reference. Also switching between session time and break time. Luckily someone saved me from StackOverflow.<a href="http://stackoverflow.com/questions/42614293/switching-between-two-setinterval-functions" target="_blank" rel="external">The link</a> </p>
 <h2 id="User-Story"><a href="#User-Story" class="headerlink" title="User Story"></a>User Story</h2><ul>
 <li>[ ] I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.</li>
@@ -189,44 +464,123 @@
 </ul>
 <h2 id="Video-Walkthrough"><a href="#Video-Walkthrough" class="headerlink" title="Video Walkthrough"></a>Video Walkthrough</h2><p><img src="https://github.com/kuanhsuh/jspomodoro/blob/master/pomo.gif" alt=""></p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/06/FCF-Pomodoro-Timer/" data-id="cizz3l2nr000dmkuc98xu2224" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freecodecamp/">freecodecamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/projects/">projects</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-Practical-Javascript-Class-Review" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/Practical-Javascript-Class-Review/" class="article-date">
-  <time datetime="2017-03-06T06:52:44.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/Practical-Javascript-Class-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/Practical-Javascript-Class-Review/">Practical Javascript Class Review</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/06/Practical-Javascript-Class-Review/" itemprop="url">
+                  Practical Javascript Class Review
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-06T14:52:44+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Practical Javascript is a course by Gordan Zhu. Here’s the link to the course.<br><a href="https://watchandcode.com/p/practical-javascript" target="_blank" rel="external">https://watchandcode.com/p/practical-javascript</a><br>The course teaches the process of how to bulid an app. In this course we’ll be building a todo list.<br><a href="https://watchandcode.com/p/practical-javascript" target="_blank" rel="external">http://todomvc.com/</a></p>
+      
+
+      
+        
+          
+            <p>Practical Javascript is a course by Gordan Zhu. Here’s the link to the course.<br><a href="https://watchandcode.com/p/practical-javascript" target="_blank" rel="external">https://watchandcode.com/p/practical-javascript</a><br>The course teaches the process of how to bulid an app. In this course we’ll be building a todo list.<br><a href="https://watchandcode.com/p/practical-javascript" target="_blank" rel="external">http://todomvc.com/</a></p>
 <h2 id="Personal-Thoughts"><a href="#Personal-Thoughts" class="headerlink" title="Personal Thoughts"></a>Personal Thoughts</h2><p>This course is different from many other online resources is that Gordan teaches us the process of building an app. We start with listing out variables and basic functions. For example:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">todos = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodos</span>(<span class="params">things</span>)</span>&#123;</div><div class="line">  todos.push(things)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Then we move all our functions and variables into one model object. Then Gordan shows us how to link the event controllers to our model functions. Lastly, generate the html elements(views) for the html.</p>
@@ -237,44 +591,123 @@
 <li><a href="https://www.facebook.com/groups/514043678767094/?fref=nf" target="_blank" rel="external">Facebook Group</a></li>
 </ul>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/06/Practical-Javascript-Class-Review/" data-id="cizz3l2o2000mmkucylyiohoz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reviews/">reviews</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-FCF-Calculator-Challenge" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/FCF-Calculator-Challenge/" class="article-date">
-  <time datetime="2017-03-06T06:51:37.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/FCF-Calculator-Challenge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/FCF-Calculator-Challenge/">FCF Calculator Challenge</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/06/FCF-Calculator-Challenge/" itemprop="url">
+                  FCF Calculator Challenge
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-06T14:51:37+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Codepen link: (<a href="http://codepen.io/dannyhuang/pen/LWNdzG" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/LWNdzG</a>)<br>Github link: (<a href="https://github.com/kuanhsuh/jscalculator" target="_blank" rel="external">https://github.com/kuanhsuh/jscalculator</a>)</p>
+      
+
+      
+        
+          
+            <p>Codepen link: (<a href="http://codepen.io/dannyhuang/pen/LWNdzG" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/LWNdzG</a>)<br>Github link: (<a href="https://github.com/kuanhsuh/jscalculator" target="_blank" rel="external">https://github.com/kuanhsuh/jscalculator</a>)</p>
 <h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>After watching practical JS, I understand how to organize an app into smaller components. In my Model(calculator object), I have all the variables and functions. After making sure everything works fine in console, I start linking the functions to the event handlers. Finally replacing the console.log with a view components that displays the result to HTML.</p>
 <h2 id="User-Stories"><a href="#User-Stories" class="headerlink" title="User Stories"></a>User Stories</h2><ul>
 <li><p>[x] User Story: I can add, subtract, multiply and divide two numbers.</p>
@@ -292,44 +725,123 @@
 </ul>
 <h3 id="Video-Walk-Through"><a href="#Video-Walk-Through" class="headerlink" title="Video Walk Through"></a>Video Walk Through</h3><p><img src="https://github.com/kuanhsuh/jscalculator/blob/master/demo.gif" alt=""></p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/06/FCF-Calculator-Challenge/" data-id="cizz3l2np000cmkuczfhjd3fd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freecodecamp/">freecodecamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/projects/">projects</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-100-Days-Code-Challenge-Day-10-20" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/27/100-Days-Code-Challenge-Day-10-20/" class="article-date">
-  <time datetime="2017-02-27T08:22:44.000Z" itemprop="datePublished">2017-02-27</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/100-Days-Code-Challenge-Day-10-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/100-Days-Code-Challenge-Day-10-20/">100 Days Code Challenge Day 10-20</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/27/100-Days-Code-Challenge-Day-10-20/" itemprop="url">
+                  100 Days Code Challenge Day 10-20
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-27T16:22:44+08:00">
+                2017-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="Short-Term-Goals"><a href="#Short-Term-Goals" class="headerlink" title="Short Term Goals"></a>Short Term Goals</h3><ul>
+      
+
+      
+        
+          
+            <h3 id="Short-Term-Goals"><a href="#Short-Term-Goals" class="headerlink" title="Short Term Goals"></a>Short Term Goals</h3><ul>
 <li>Read YDKJS &amp; Eloquent JS</li>
 <li>Javascript 30</li>
 <li>Practical JS</li>
@@ -346,44 +858,123 @@
 <p>Day 19-2.22<br>[x]  2 katas Codewar (JavaScript:7 kyu / 45% Ruby:6 kyu / 5%)<br>[x]  JS30- 3 projects<br>[x]  Javascript Bootcamp #100<br>[x]   Eloquent JS - Secret Life of Object</p>
 <p>Day 20-2.23<br>[x]  YDKJS- this&amp;object Reread ch1-ch2<br>[x]   Eloquent JS - ReRead<br>[x]  Javascript Bootcamp #110<br>[x]  JS30 12/31<br>[x]  Review JS bootcamp cheatsheet<br>[x]  2 katas Codewar (JavaScript:7 kyu / 45% Ruby:6 kyu / 5%)</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/27/100-Days-Code-Challenge-Day-10-20/" data-id="cizz3l2n10000mkuccn1m573x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-JS-this-call-bind-apply" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/JS-this-call-bind-apply/" class="article-date">
-  <time datetime="2017-02-22T01:57:29.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/JS-this-call-bind-apply/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/JS-this-call-bind-apply/">JS this - call, bind, apply</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/22/JS-this-call-bind-apply/" itemprop="url">
+                  JS this - call, bind, apply
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T09:57:29+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Call, bind and apply explicitly attach this into the object or function.</p>
+      
+
+      
+        
+          
+            <p>Call, bind and apply explicitly attach this into the object or function.</p>
 <p><strong>call</strong> attaches this into function and executes the function immediately:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"Danny"</span></div><div class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">person.speaking.call(person, <span class="string">"Irene"</span>) <span class="comment">// "Danny says Hi! Irene"</span></div></pre></td></tr></table></figure></p>
 <p><strong>bind</strong> attaches this into function and it needs to be invoked separately<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"Danny"</span></div><div class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hello = person.speaking.bind(person)</div><div class="line">hello(<span class="string">"Irene"</span>); <span class="comment">// "Danny says Hi! Irene"</span></div></pre></td></tr></table></figure></p>
 <p><strong>apply</strong> is similar to call except that it takes an array-like object instead of listing the arguments<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">num</span>:<span class="number">2</span>&#125;;</div><div class="line"><span class="keyword">var</span> addToThis = <span class="function"><span class="keyword">function</span>(<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.num + a + b + c;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(addToThis.call(obj, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 8</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line"><span class="built_in">console</span>.log(addToThis.apply(obj, arr)); <span class="comment">// 8</span></div></pre></td></tr></table></figure></p>
@@ -393,83 +984,241 @@
 <li><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/" target="_blank" rel="external">http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/</a></li>
 </ul>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/22/JS-this-call-bind-apply/" data-id="cizz3l2nt000gmkuc1uoc0b7b" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS-this-WTF-is-this" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/JS-this-WTF-is-this/" class="article-date">
-  <time datetime="2017-02-22T01:57:17.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/JS-this-WTF-is-this/">JS this - WTF is this</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is a test</p>
-
+    <div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/22/JS-this-WTF-is-this/" data-id="cizz3l2nx000jmkucvx3ohlll" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-Eloquent-JS-Higher-Order-Functions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/20/Eloquent-JS-Higher-Order-Functions/" class="article-date">
-  <time datetime="2017-02-20T03:48:10.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/JS-this-WTF-is-this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Eloquent-JS-Higher-Order-Functions/">Eloquent JS - Higher Order Functions</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/22/JS-this-WTF-is-this/" itemprop="url">
+                  JS this - WTF is this
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T09:57:17+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="Flattening"><a href="#Flattening" class="headerlink" title="Flattening"></a>Flattening</h3><p>Use the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.</p>
+      
+
+      
+        
+          
+            <p>This is a test</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/Eloquent-JS-Higher-Order-Functions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/20/Eloquent-JS-Higher-Order-Functions/" itemprop="url">
+                  Eloquent JS - Higher Order Functions
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T11:48:10+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Flattening"><a href="#Flattening" class="headerlink" title="Flattening"></a>Flattening</h3><p>Use the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">total, val</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> total.concat(val);</div><div class="line">&#125;,[])</div></pre></td></tr></table></figure>
 <h3 id="Mother-child-age-difference"><a href="#Mother-child-age-difference" class="headerlink" title="Mother-child age difference"></a>Mother-child age difference</h3><p>Using the example data set from this chapter, compute the average age difference between mothers and children (the age of the mother when the child is born). You can use the average function defined earlier in this chapter.</p>
 <p>Note that not all the mothers mentioned in the data are themselves present in the array. The byName object, which makes it easy to find a person’s object from their name, might be useful here.</p>
@@ -480,42 +1229,123 @@
 <h3 id="Every-and-then-some"><a href="#Every-and-then-some" class="headerlink" title="Every and then some"></a>Every and then some</h3><p>Arrays also come with the standard methods every and some. Both take a predicate function that, when called with an array element as argument, returns true or false. Just like &amp;&amp; returns a true value only when the expressions on both sides are true, every returns true only when the predicate returns true for all elements of the array. Similarly, some returns true as soon as the predicate returns true for any of the elements. They do not process more elements than necessary—for example, if some finds that the predicate holds for the first element of the array, it will not look at the values after that.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Your code here.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">some</span>(<span class="params">arr, predicate</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> temp = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">return</span> predicate(a)&#125;);</div><div class="line">	<span class="keyword">return</span> temp.length&gt;<span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">every = <span class="function"><span class="keyword">function</span>(<span class="params">arr, b</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; arr.length; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!b(arr[i]))&#123;</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(every([<span class="literal">NaN</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(every([<span class="literal">NaN</span>, <span class="literal">NaN</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → false</span></div><div class="line"><span class="built_in">console</span>.log(some([<span class="literal">NaN</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(some([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → false</span></div></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/20/Eloquent-JS-Higher-Order-Functions/" data-id="cizz3l2ne0005mkucekh7mc3k" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-EloquentJS-Data-Structures" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/18/EloquentJS-Data-Structures/" class="article-date">
-  <time datetime="2017-02-18T06:57:53.000Z" itemprop="datePublished">2017-02-18</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/18/EloquentJS-Data-Structures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/18/EloquentJS-Data-Structures/">EloquentJS - Data Structures</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/18/EloquentJS-Data-Structures/" itemprop="url">
+                  EloquentJS - Data Structures
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-18T14:57:53+08:00">
+                2017-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="The-sum-of-a-range"><a href="#The-sum-of-a-range" class="headerlink" title="The sum of a range"></a>The sum of a range</h3><p>Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.</p>
+      
+
+      
+        
+          
+            <h3 id="The-sum-of-a-range"><a href="#The-sum-of-a-range" class="headerlink" title="The sum of a range"></a>The sum of a range</h3><p>Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.</p>
 <p>Next, write a sum function that takes an array of numbers and returns the sum of these numbers. Run the previous program and see whether it does indeed return 55.</p>
 <p>As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used to build up the array.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">start, end</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	<span class="keyword">while</span>(start &lt;= end)&#123;</div><div class="line">		arr.push(start);</div><div class="line">		start++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">		sum +=arr[i]</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">start, end, step=<span class="number">1</span></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	<span class="keyword">if</span>(end &gt; start)&#123;</div><div class="line">		<span class="keyword">while</span>(start &lt;= end)&#123;</div><div class="line">			arr.push(start);</div><div class="line">			start += step;</div><div class="line">		&#125;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( end &lt; start )&#123;</div><div class="line">		<span class="keyword">while</span>(start &gt;= end)&#123;</div><div class="line">			arr.push(start);</div><div class="line">			start += step;</div><div class="line">		&#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">		arr = [start]</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -526,122 +1356,411 @@
 <h3 id="Deep-comparison"><a href="#Deep-comparison" class="headerlink" title="Deep comparison"></a>Deep comparison</h3><p>Write a function, deepEqual, that takes two values and returns true only if they are the same value or are objects with the same properties whose values are also equal when compared with a recursive call to deepEqual.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> deepEqual = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>((<span class="keyword">typeof</span> x == <span class="string">"object"</span> &amp;&amp; x != <span class="literal">null</span>) &amp;&amp; (<span class="keyword">typeof</span> y == <span class="string">"object"</span> &amp;&amp; y != <span class="literal">null</span>))&#123;</div><div class="line">	<span class="keyword">var</span> allPropertiesEqual = <span class="literal">true</span>;</div><div class="line">	<span class="keyword">for</span>( <span class="keyword">var</span> prop <span class="keyword">in</span> x )&#123;</div><div class="line">		<span class="keyword">if</span>(y.hasOwnProperty(prop))&#123;</div><div class="line">			allPropertiesEqual = deepEqual(x[prop], y[prop]) &amp;&amp; allPropertiesEqual;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			allPropertiesEqual = <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> allPropertiesEqual;</div><div class="line">	&#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> x ===y;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">here</span>: &#123;<span class="attr">is</span>: <span class="string">"an"</span>&#125;, <span class="attr">object</span>: <span class="number">2</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, obj));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, &#123;<span class="attr">here</span>: <span class="number">1</span>, <span class="attr">object</span>: <span class="number">2</span>&#125;));</div><div class="line"><span class="comment">// → false</span></div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, &#123;<span class="attr">here</span>: &#123;<span class="attr">is</span>: <span class="string">"an"</span>&#125;, <span class="attr">object</span>: <span class="number">2</span>&#125;));</div><div class="line"><span class="comment">// → true</span></div></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/18/EloquentJS-Data-Structures/" data-id="cizz3l2nl000amkucre4ewwhe" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
+  </article>
+
+
+    
+      
+
   
-</article>
-
 
   
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/Eloquent-JS-Functions-Excercise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/17/Eloquent-JS-Functions-Excercise/" itemprop="url">
+                  EloquentJS - Functions Excercise
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T10:07:44+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
 
 
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Minimum"><a href="#Minimum" class="headerlink" title="Minimum"></a>Minimum</h3><p>Write a function min that takes two arguments and returns their minimum.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> a &lt; b ? a :b</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><p>Define a recursive function isEven corresponding to this description. The function should accept a number parameter and return a Boolean.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(num == <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (num ==<span class="number">1</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( num &lt; <span class="number">0</span> )&#123;</div><div class="line">		num = <span class="built_in">Math</span>.abs(num)</div><div class="line">	&#125;</div><div class="line">		<span class="keyword">return</span> isEven(num<span class="number">-2</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Bean-Counting"><a href="#Bean-Counting" class="headerlink" title="Bean Counting"></a>Bean Counting</h3><p>Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters are in the string.</p>
+<p>Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase “B” characters). Rewrite countBs to make use of this new function.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countBs</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> counter = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;str.length; i++)&#123;</div><div class="line">    	<span class="keyword">if</span>(str.charAt(i) == <span class="string">"B"</span>)&#123;</div><div class="line">        	counter ++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> counter;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countChar</span>(<span class="params">str, letter</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> counter = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;str.length; i++)&#123;</div><div class="line">    	<span class="keyword">if</span>(str.charAt(i) == letter)&#123;</div><div class="line">        	counter ++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> counter;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Rewrite function countBs</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countBs</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> countChar(str, <span class="string">"B"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book-Review/">Book Review"</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/projects/">projects</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reviews/">reviews</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/100DaysCodeChallenge/" style="font-size: 16.67px;">100DaysCodeChallenge</a> <a href="/tags/Book-Review/" style="font-size: 10px;">Book Review"</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/freecodecamp/" style="font-size: 13.33px;">freecodecamp</a> <a href="/tags/projects/" style="font-size: 13.33px;">projects</a> <a href="/tags/reviews/" style="font-size: 10px;">reviews</a>
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Danny Huang" />
+          <p class="site-author-name" itemprop="name">Danny Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/03/07/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/07/100-Days-Code-Challege-Day-20-30/">100 Days Code Challege Day 20-30</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/06/FCF-Pomodoro-Timer/">FCF Pomodoro Timer</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/06/Practical-Javascript-Class-Review/">Practical Javascript Class Review</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/06/FCF-Calculator-Challenge/">FCF Calculator Challenge</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Danny Huang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Danny Huang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
 </body>
 </html>
