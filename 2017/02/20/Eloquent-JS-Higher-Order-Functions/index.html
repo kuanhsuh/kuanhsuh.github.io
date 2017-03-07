@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Eloquent JS - Higher Order Functions | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FlatteningUse the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.
+123arr.reduce(function(total, v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eloquent JS - Higher Order Functions">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/Eloquent-JS-Higher-Order-Functions/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FlatteningUse the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.
+123arr.reduce(function(total, v">
+<meta property="og:updated_time" content="2017-02-20T03:53:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eloquent JS - Higher Order Functions">
+<meta name="twitter:description" content="FlatteningUse the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.
+123arr.reduce(function(total, v">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Eloquent-JS-Higher-Order-Functions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/20/Eloquent-JS-Higher-Order-Functions/" class="article-date">
+  <time datetime="2017-02-20T03:48:10.000Z" itemprop="datePublished">2017-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Eloquent JS - Higher Order Functions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Flattening"><a href="#Flattening" class="headerlink" title="Flattening"></a>Flattening</h3><p>Use the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the input arrays.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">total, val</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> total.concat(val);</div><div class="line">&#125;,[])</div></pre></td></tr></table></figure>
+<h3 id="Mother-child-age-difference"><a href="#Mother-child-age-difference" class="headerlink" title="Mother-child age difference"></a>Mother-child age difference</h3><p>Using the example data set from this chapter, compute the average age difference between mothers and children (the age of the mother when the child is born). You can use the average function defined earlier in this chapter.</p>
+<p>Note that not all the mothers mentioned in the data are themselves present in the array. The byName object, which makes it easy to find a person’s object from their name, might be useful here.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">average</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a + b; &#125;</div><div class="line">  <span class="keyword">return</span> array.reduce(plus) / array.length;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> byName = &#123;&#125;;</div><div class="line">ancestry.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">person</span>) </span>&#123;</div><div class="line">  byName[person.name] = person;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAgeDiff</span>(<span class="params">person</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> person.born - byName[person.mother].born;</div><div class="line">&#125;</div><div class="line"></div><div class="line">hasKnownMother = <span class="function"><span class="keyword">function</span>(<span class="params">person</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> person.mother <span class="keyword">in</span> byName;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(average(ancestry.filter(hasKnownMother).map(age)));</div></pre></td></tr></table></figure>
+<h3 id="Historical-life-expectancy"><a href="#Historical-life-expectancy" class="headerlink" title="Historical life expectancy"></a>Historical life expectancy</h3><p>When we looked up all the people in our data set that lived more than 90 years, only the latest generation in the data came out. Let’s take a closer look at that phenomenon.</p>
+<p>Compute and output the average age of the people in the ancestry data set per century. A person is assigned to a century by taking their year of death, dividing it by 100, and rounding it up, as in Math.ceil(person.died / 100).</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">average</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a + b; &#125;</div><div class="line">  <span class="keyword">return</span> array.reduce(plus) / array.length;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> perCentry =&#123;&#125;</div><div class="line">ancestry.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">p</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> cent = <span class="built_in">String</span>(<span class="built_in">Math</span>.ceil(p.died/<span class="number">100</span>));</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(!(cent <span class="keyword">in</span> perCentry))&#123;</div><div class="line">		perCentry[cent] = []</div><div class="line">	&#125;</div><div class="line">	perCentry_t[cent].push(p.died - p.born);</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">for</span>(cent <span class="keyword">in</span> perCentry)&#123;</div><div class="line">	<span class="built_in">console</span>.log(cent +<span class="string">":"</span>+ average(perCentry_t[cent]))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Every-and-then-some"><a href="#Every-and-then-some" class="headerlink" title="Every and then some"></a>Every and then some</h3><p>Arrays also come with the standard methods every and some. Both take a predicate function that, when called with an array element as argument, returns true or false. Just like &amp;&amp; returns a true value only when the expressions on both sides are true, every returns true only when the predicate returns true for all elements of the array. Similarly, some returns true as soon as the predicate returns true for any of the elements. They do not process more elements than necessary—for example, if some finds that the predicate holds for the first element of the array, it will not look at the values after that.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Your code here.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">some</span>(<span class="params">arr, predicate</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> temp = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">return</span> predicate(a)&#125;);</div><div class="line">	<span class="keyword">return</span> temp.length&gt;<span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">every = <span class="function"><span class="keyword">function</span>(<span class="params">arr, b</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; arr.length; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!b(arr[i]))&#123;</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(every([<span class="literal">NaN</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(every([<span class="literal">NaN</span>, <span class="literal">NaN</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → false</span></div><div class="line"><span class="built_in">console</span>.log(some([<span class="literal">NaN</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(some([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="built_in">isNaN</span>));</div><div class="line"><span class="comment">// → false</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/20/Eloquent-JS-Higher-Order-Functions/" data-id="cizz3l2ne0005mkucekh7mc3k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/22/JS-this-WTF-is-this/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS this - WTF is this
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/18/EloquentJS-Data-Structures/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">EloquentJS - Data Structures</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book-Review/">Book Review"</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/projects/">projects</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reviews/">reviews</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/100DaysCodeChallenge/" style="font-size: 16.67px;">100DaysCodeChallenge</a> <a href="/tags/Book-Review/" style="font-size: 10px;">Book Review"</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/freecodecamp/" style="font-size: 13.33px;">freecodecamp</a> <a href="/tags/projects/" style="font-size: 13.33px;">projects</a> <a href="/tags/reviews/" style="font-size: 10px;">reviews</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/07/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/07/100-Days-Code-Challege-Day-20-30/">100 Days Code Challege Day 20-30</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/FCF-Pomodoro-Timer/">FCF Pomodoro Timer</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/Practical-Javascript-Class-Review/">Practical Javascript Class Review</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/FCF-Calculator-Challenge/">FCF Calculator Challenge</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danny Huang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

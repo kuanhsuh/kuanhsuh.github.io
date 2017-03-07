@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>EloquentJS - Data Structures | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The sum of a rangeWrite a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+Next, write a sum function that">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EloquentJS - Data Structures">
+<meta property="og:url" content="http://yoursite.com/2017/02/18/EloquentJS-Data-Structures/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="The sum of a rangeWrite a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+Next, write a sum function that">
+<meta property="og:updated_time" content="2017-02-18T14:43:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EloquentJS - Data Structures">
+<meta name="twitter:description" content="The sum of a rangeWrite a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+Next, write a sum function that">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-EloquentJS-Data-Structures" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/18/EloquentJS-Data-Structures/" class="article-date">
+  <time datetime="2017-02-18T06:57:53.000Z" itemprop="datePublished">2017-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EloquentJS - Data Structures
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="The-sum-of-a-range"><a href="#The-sum-of-a-range" class="headerlink" title="The sum of a range"></a>The sum of a range</h3><p>Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.</p>
+<p>Next, write a sum function that takes an array of numbers and returns the sum of these numbers. Run the previous program and see whether it does indeed return 55.</p>
+<p>As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used to build up the array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">start, end</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	<span class="keyword">while</span>(start &lt;= end)&#123;</div><div class="line">		arr.push(start);</div><div class="line">		start++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">		sum +=arr[i]</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">start, end, step=<span class="number">1</span></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	<span class="keyword">if</span>(end &gt; start)&#123;</div><div class="line">		<span class="keyword">while</span>(start &lt;= end)&#123;</div><div class="line">			arr.push(start);</div><div class="line">			start += step;</div><div class="line">		&#125;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( end &lt; start )&#123;</div><div class="line">		<span class="keyword">while</span>(start &gt;= end)&#123;</div><div class="line">			arr.push(start);</div><div class="line">			start += step;</div><div class="line">		&#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">		arr = [start]</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Reversing-an-Array"><a href="#Reversing-an-Array" class="headerlink" title="Reversing an Array"></a>Reversing an Array</h3><p>Arrays have a method reverse, which changes the array by inverting the order in which its elements appear. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument in order to reverse its elements. Neither may use the standard reverse method.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseArray</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> tempArr =[];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = arr.length<span class="number">-1</span>; i &gt;= <span class="number">0</span>;i--)&#123;</div><div class="line">		tempArr.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> tempArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseArrayInPlace</span>(<span class="params">someArray</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> middleValue = <span class="built_in">Math</span>.floor(someArray.length/<span class="number">2</span>);</div><div class="line">	<span class="keyword">var</span> currentValue;</div><div class="line">	<span class="keyword">var</span> lastValue;</div><div class="line">	<span class="keyword">var</span> mirrorValue;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= middleValue; i++)&#123;</div><div class="line">		currentValue = someArray[i];</div><div class="line">		lastValue = someArray[someArray.length - <span class="number">1</span> - i];</div><div class="line">		mirrorValue = currentValue;</div><div class="line">		someArray[i] = lastValue;</div><div class="line">		someArray[someArray.length - <span class="number">1</span> - i] = mirrorValue;</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> someArray</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="A-List"><a href="#A-List" class="headerlink" title="A List"></a>A List</h3><p>A common data structure is the list (not to be confused with the array). A list is a nested set of objects, with the first object holding a reference to the second, the second to the third, and so on.</p>
+<p>Write a function arrayToList that builds up a data structure like the previous one when given [1, 2, 3] as argument, and write a listToArray function that produces an array from a list<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayToList</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> list = &#123;&#125;;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">		list.value = arr.splice(<span class="number">0</span>,<span class="number">1</span>)[<span class="number">0</span>];</div><div class="line">		list.rest = (arr.length &gt; <span class="number">0</span> ) ? arrayToList(arr) :<span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Deep-comparison"><a href="#Deep-comparison" class="headerlink" title="Deep comparison"></a>Deep comparison</h3><p>Write a function, deepEqual, that takes two values and returns true only if they are the same value or are objects with the same properties whose values are also equal when compared with a recursive call to deepEqual.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> deepEqual = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>((<span class="keyword">typeof</span> x == <span class="string">"object"</span> &amp;&amp; x != <span class="literal">null</span>) &amp;&amp; (<span class="keyword">typeof</span> y == <span class="string">"object"</span> &amp;&amp; y != <span class="literal">null</span>))&#123;</div><div class="line">	<span class="keyword">var</span> allPropertiesEqual = <span class="literal">true</span>;</div><div class="line">	<span class="keyword">for</span>( <span class="keyword">var</span> prop <span class="keyword">in</span> x )&#123;</div><div class="line">		<span class="keyword">if</span>(y.hasOwnProperty(prop))&#123;</div><div class="line">			allPropertiesEqual = deepEqual(x[prop], y[prop]) &amp;&amp; allPropertiesEqual;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			allPropertiesEqual = <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> allPropertiesEqual;</div><div class="line">	&#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> x ===y;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">here</span>: &#123;<span class="attr">is</span>: <span class="string">"an"</span>&#125;, <span class="attr">object</span>: <span class="number">2</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, obj));</div><div class="line"><span class="comment">// → true</span></div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, &#123;<span class="attr">here</span>: <span class="number">1</span>, <span class="attr">object</span>: <span class="number">2</span>&#125;));</div><div class="line"><span class="comment">// → false</span></div><div class="line"><span class="built_in">console</span>.log(deepEqual(obj, &#123;<span class="attr">here</span>: &#123;<span class="attr">is</span>: <span class="string">"an"</span>&#125;, <span class="attr">object</span>: <span class="number">2</span>&#125;));</div><div class="line"><span class="comment">// → true</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/18/EloquentJS-Data-Structures/" data-id="cizz3l2nl000amkucre4ewwhe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/20/Eloquent-JS-Higher-Order-Functions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Eloquent JS - Higher Order Functions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/17/Eloquent-JS-Functions-Excercise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">EloquentJS - Functions Excercise</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/100DaysCodeChallenge/">100DaysCodeChallenge</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book-Review/">Book Review"</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/projects/">projects</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reviews/">reviews</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/100DaysCodeChallenge/" style="font-size: 16.67px;">100DaysCodeChallenge</a> <a href="/tags/Book-Review/" style="font-size: 10px;">Book Review"</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/freecodecamp/" style="font-size: 13.33px;">freecodecamp</a> <a href="/tags/projects/" style="font-size: 13.33px;">projects</a> <a href="/tags/reviews/" style="font-size: 10px;">reviews</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/07/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/07/100-Days-Code-Challege-Day-20-30/">100 Days Code Challege Day 20-30</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/FCF-Pomodoro-Timer/">FCF Pomodoro Timer</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/Practical-Javascript-Class-Review/">Practical Javascript Class Review</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/FCF-Calculator-Challenge/">FCF Calculator Challenge</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Danny Huang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
