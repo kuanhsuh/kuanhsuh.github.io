@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>My Coding Journey</title>
+  <subtitle>Journey to a Full Stack Developer</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-06-23T09:01:54.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Danny Huang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Express-Intro to Passport.js part II</title>
+    <link href="http://yoursite.com/2017/06/23/Express-Intro-to-Passport-js-part-II/"/>
+    <id>http://yoursite.com/2017/06/23/Express-Intro-to-Passport-js-part-II/</id>
+    <published>2017-06-23T08:44:19.000Z</published>
+    <updated>2017-06-23T09:01:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is the second part on my Passport tutorial. Please read first part if you haven’t.</p>
+<ol>
+<li><p>Import session, express-validator, connect flash into app.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>);</div><div class="line"><span class="keyword">var</span> flash = <span class="built_in">require</span>(<span class="string">'connect-flash'</span>);</div><div class="line"><span class="keyword">var</span> expressValidator = <span class="built_in">require</span>(<span class="string">'express-validator'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Express Session</span></div><div class="line">app.use(session(&#123;</div><div class="line">    <span class="attr">secret</span>: <span class="string">'secret'</span>,</div><div class="line">    <span class="attr">saveUninitialized</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">resave</span>: <span class="literal">true</span></div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="comment">// Express Validator</span></div><div class="line">app.use(expressValidator(&#123;</div><div class="line">  <span class="attr">errorFormatter</span>: <span class="function"><span class="keyword">function</span>(<span class="params">param, msg, value</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> namespace = param.split(<span class="string">'.'</span>)</div><div class="line">      , root    = namespace.shift()</div><div class="line">      , formParam = root;</div><div class="line"></div><div class="line">    <span class="keyword">while</span>(namespace.length) &#123;</div><div class="line">      formParam += <span class="string">'['</span> + namespace.shift() + <span class="string">']'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">param</span> : formParam,</div><div class="line">      <span class="attr">msg</span>   : msg,</div><div class="line">      <span class="attr">value</span> : value</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="comment">// Connect Flash</span></div><div class="line">app.use(flash());</div><div class="line"></div><div class="line"><span class="comment">// setup local variables so we can use it anywhere in our app</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.locals.success_msg = req.flash(<span class="string">'success_msg'</span>);</div><div class="line">  res.locals.error_msg = req.flash(<span class="string">'error_msg'</span>);</div><div class="line">  res.locals.error = req.flash(<span class="string">'error'</span>);</div><div class="line">  res.locals.user = req.user || <span class="literal">null</span>;</div><div class="line">  next();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Add flash and validation into routes/users.js</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// REVISED with validation feature. Post Sign Up</span></div><div class="line">router.post(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// Parse Info</span></div><div class="line">  <span class="keyword">var</span> username = req.body.username</div><div class="line">  <span class="keyword">var</span> password = req.body.password</div><div class="line"></div><div class="line">  <span class="comment">// Validation</span></div><div class="line">  req.checkBody(<span class="string">'username'</span>, <span class="string">'Username is required'</span>).notEmpty()</div><div class="line">  req.checkBody(<span class="string">'password'</span>, <span class="string">'Password is required'</span>).notEmpty()</div><div class="line"></div><div class="line">  <span class="keyword">var</span> errors = req.validationErrors();</div><div class="line">  <span class="keyword">if</span>(errors) &#123;</div><div class="line">    res.render(<span class="string">'signup'</span>, &#123;<span class="attr">errors</span>: errors&#125;)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">//Create User</span></div><div class="line">  ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  router.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  req.flash(<span class="string">'success_msg'</span>, <span class="string">'You are logged out'</span>)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>Implement the flash message to sign in &amp; sign up views.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//signin.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(success_msg) &#123; %&gt;</div><div class="line">&lt;div class="success"&gt;</div><div class="line">  &lt;%= success_msg %&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div><div class="line"></div><div class="line"><span class="comment">//signup.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(errors)&#123; %&gt;</div><div class="line">  &lt;% errors.forEach(function(error)&#123; %&gt;</div><div class="line">  &lt;div class="error"&gt;&lt;%= error.msg %&gt;&lt;/div&gt;</div><div class="line">  &lt;% &#125;) %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>This is it on how to implement passportJS to your express app. A lot of code is the same from the library’s document. I recommend you going to each individual library and read their docs. This post is to show you on how to implement them together.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/jaredhanson/connect-flash" target="_blank" rel="external">connect-flash</a></li>
+<li><a href="https://github.com/ctavan/express-validator" target="_blank" rel="external">express-validator</a></li>
+<li><a href="https://github.com/expressjs/session" target="_blank" rel="external">express-session</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This is the second part on my Passport tutorial. Please read first part if you haven’t.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Import session, express-validator
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Express-Intro to Passport.js part I</title>
+    <link href="http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/"/>
+    <id>http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/</id>
+    <published>2017-06-21T06:07:14.000Z</published>
+    <updated>2017-06-23T08:44:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Passport is a user authentication library for node. It provides tons of strategies (facebook, google, etc). I’ll be going over the basic passport-local strategy which you sign up with username and passpord. User login with valid name and password.</p>
+<p>I’ll also show to how to use session and flash to display error or success message. Also, use express validator to validate user input. Finally encrypt user password with the mighty bcryptjs.</p>
+<h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ol>
+<li><p>Install Packages. (bcryptJS, express-validator, passport, psasport-local, etc) You can refer to package.json</p>
+</li>
+<li><p>Setup User Model with some functions</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// routes/users.js</span></div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"><span class="keyword">var</span> bcrypt = <span class="built_in">require</span>(<span class="string">'bcryptjs'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> UserSchema = mongoose.Schema(&#123;</div><div class="line">  <span class="attr">username</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">index</span>: <span class="literal">true</span>&#125;,</div><div class="line">  <span class="attr">password</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">var</span> User = <span class="built_in">module</span>.exports = mongoose.model(<span class="string">'User'</span>, UserSchema)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.createUser = <span class="function"><span class="keyword">function</span>(<span class="params">newUser, callback</span>) </span>&#123;</div><div class="line">  bcrypt.genSalt(<span class="number">10</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>) </span>&#123;</div><div class="line">    bcrypt.hash(newUser.password, salt, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>)</span>&#123;</div><div class="line">      newUser.password = hash</div><div class="line">      newUser.save(callback)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.getUserByUsername = <span class="function"><span class="keyword">function</span>(<span class="params">username, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> query = &#123; <span class="attr">username</span>: username &#125;</div><div class="line">  User.findOne(query, callback)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.getUserById = <span class="function"><span class="keyword">function</span>(<span class="params">id, callback</span>) </span>&#123;</div><div class="line">  User.findById(id, callback)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.comparePassword = <span class="function"><span class="keyword">function</span>(<span class="params">candidatePassword, hash,callback</span>) </span>&#123;</div><div class="line">  bcrypt.compare(candidatePassword, hash, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err</div><div class="line">    callback(<span class="literal">null</span>, isMatch)</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup mongoDB and passportJS in app.js ( I’m only going over the main imports the basic imports such as express please refer to my github, link below)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> passport = <span class="built_in">require</span>(<span class="string">'passport'</span>)</div><div class="line"><span class="keyword">var</span> LocalStrategy = <span class="built_in">require</span>(<span class="string">'passport-local'</span>)</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"><span class="keyword">var</span> flash = <span class="built_in">require</span>(<span class="string">'connect-flash'</span>);</div><div class="line"><span class="keyword">var</span> users = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</div><div class="line"></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">mongoose.connect(<span class="string">'mongodb://localhost/loginappv2'</span>);</div><div class="line"><span class="keyword">var</span> db = mongoose.connection;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">app.use(passport.initialize());</div><div class="line">app.use(passport.session());</div></pre></td></tr></table></figure>
+</li>
+<li><p>set up routes in routes/user.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* GET users listing. */</span></div><div class="line">router.get(<span class="string">'/signin'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(res.locals)</div><div class="line">  res.render(<span class="string">'signin'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.post(<span class="string">'/signin'</span>,</div><div class="line">  passport.authenticate(<span class="string">'local'</span>, &#123;</div><div class="line">    <span class="attr">successRedirect</span>: <span class="string">'/users/profile'</span>,</div><div class="line">    <span class="attr">failureRedirect</span>: <span class="string">'/users/signin'</span>,</div><div class="line">    <span class="attr">failureFlash</span>: <span class="literal">true</span></div><div class="line">  &#125;),</div><div class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.redirect(<span class="string">'/users/profile'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/* GET users listing. */</span></div><div class="line">router.get(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">'signup'</span>, &#123;<span class="attr">errors</span>: <span class="string">''</span>&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Post Sign Up</span></div><div class="line">router.post(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// Parse Info</span></div><div class="line">  <span class="keyword">var</span> username = req.body.username</div><div class="line">  <span class="keyword">var</span> password = req.body.password</div><div class="line"></div><div class="line">  <span class="comment">//Create User</span></div><div class="line">  <span class="keyword">var</span> newUser = <span class="keyword">new</span> User(&#123;</div><div class="line">    <span class="attr">username</span>: username,</div><div class="line">    <span class="attr">password</span>: password</div><div class="line">  &#125;)</div><div class="line">  User.createUser(newUser, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">  &#125;)</div><div class="line">  res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">'/profile'</span>, ensureAuthenticated, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(req.user)</div><div class="line">  res.render(<span class="string">'profile'</span>, &#123;</div><div class="line">    <span class="attr">user</span>: req.user.username</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  req.logout()</div><div class="line">  req.flash(<span class="string">'success_msg'</span>, <span class="string">'You are logged out'</span>)</div><div class="line">  res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div></pre></td></tr></table></figure>
+</li>
+<li><p>setup passport and local in routes/user.js</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// routes/users.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ensureAuthenticated</span>(<span class="params">req, res, next</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(req.isAuthenticated())&#123;</div><div class="line">    <span class="keyword">return</span> next();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    req.flash(<span class="string">'error_msg'</span>, <span class="string">'you are not logged in'</span>)</div><div class="line">    res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">passport.use(<span class="keyword">new</span> LocalStrategy(</div><div class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">username, password, done</span>) </span>&#123;</div><div class="line">    User.findOne(&#123; <span class="attr">username</span>: username &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">      <span class="keyword">if</span> (!user) &#123;</div><div class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123; <span class="attr">message</span>: <span class="string">'Incorrect username.'</span> &#125;);</div><div class="line">      &#125;</div><div class="line">      User.comparePassword(password, user.password, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err</div><div class="line">        <span class="keyword">if</span>(isMatch) &#123;</div><div class="line">          <span class="keyword">return</span> done(<span class="literal">null</span>, user)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123;<span class="attr">message</span>: <span class="string">'Invalid password'</span>&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">));</div><div class="line"></div><div class="line">passport.serializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">user, done</span>) </span>&#123;</div><div class="line">  done(<span class="literal">null</span>, user.id);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">passport.deserializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">id, done</span>) </span>&#123;</div><div class="line">  User.getUserById(id, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">    done(err, user);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>This is part one. I’ll implement flash, session and express validator in next part.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><p><a href="https://github.com/kuanhsuh/express-passportJS/blob/master/routes/users.js" target="_blank" rel="external">My Github Demo</a></p>
+</li>
+<li><p><a href="http://passportjs.org/" target="_blank" rel="external">PassportJS</a></p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;Passport is a user authentication libr
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Book Review - The Little Book of Common Sense Investing</title>
+    <link href="http://yoursite.com/2017/06/21/Book%20Review-The-little-book-of-common-sense-investing/"/>
+    <id>http://yoursite.com/2017/06/21/Book Review-The-little-book-of-common-sense-investing/</id>
+    <published>2017-06-21T06:03:57.000Z</published>
+    <updated>2017-06-23T02:52:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://images.gr-assets.com/books/1347673616l/171127.jpg" alt="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns" title="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns"></p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>John Bogle, the founder of The Vanguard Group, preaches the idea of index investing. His company Vanguard Group also is one of the leaders in index funds. In his book he talks about why index fund is the best and safest strategy for average investors.</p>
+<h2 id="Index-Fund-vs-Mutal-Fund"><a href="#Index-Fund-vs-Mutal-Fund" class="headerlink" title="Index Fund vs Mutal Fund"></a>Index Fund vs Mutal Fund</h2><p>John compares stock market to fable story, the Gotrocks family (link below). He explains how fund managers and wall street turn investing from a winning game to a losing game.</p>
+<p>Mutual fund is a loser’s game because of 3 reasons: transation cost, tax and management fees. Mutual fund has turnover ratio, which means the amount of stocks they buy and sell over a year. The turnover rate will generate higher transaction cost which eventually lowers your returns.</p>
+<p>Also most mutual fund charges a management fee from 1-3%. This may look small but actually eats up majority of your profit. For example, S&amp;P500 returns about 10% annually, which means the management fee takes 10-30% of your profit. If you do this annually, this fee will cost you a lot.</p>
+<p>Lastly, there’s the tax, US government tax when a transaction is finish. This hurts the most for short term investors.</p>
+<h2 id="Asset-Allocation"><a href="#Asset-Allocation" class="headerlink" title="Asset Allocation"></a>Asset Allocation</h2><p>There’s no definate answer on this, but basically the book suggest buying a well diverse index fund(S&amp;P500, Total Market Fund) and a bond fund(total bond fund). The suggest the portion should base on your age. For example if you are 30, then you should have 30% in bonds and 70% in stocks.</p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>In summary this book can be summarize in that longterm investing in equities market is a winner’s game and don’t get other people take your profit from you. There’s two times where there’s a race between index fund and mutual fund, one in 1993 hosted by NY Times and 2007 when Warren Buffet challenged Wall Street hedge fund for 10 year challenge. You can check both the story below. Basically in both index fund destroyed active managed fund by a large margin. In fact the 1993 race was stopped in 1999 because the spread was just too humiliating for active mutual funds.</p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="http://johncbogle.com/wordpress/wp-content/uploads/2007/03/chapter%20one.pdf" target="_blank" rel="external">John Bogle Parable story</a></li>
+<li><a href="https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397" target="_blank" rel="external">Warren Buffet Hedge Fund Bet</a></li>
+<li><a href="http://www.nytimes.com/1999/07/04/business/mutual-funds-report-in-this-race-3-of-the-5-runners-left-a-benchmark-in-the-dust.html" target="_blank" rel="external">1993 NY Times Index Fund Race</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://images.gr-assets.com/books/1347673616l/171127.jpg&quot; alt=&quot;The Little Book of Common Sense Investing: The Only Way to Guara
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Book Review - Millionaire Teacher</title>
+    <link href="http://yoursite.com/2017/06/21/Book-Review-Millionaire-Teacher/"/>
+    <id>http://yoursite.com/2017/06/21/Book-Review-Millionaire-Teacher/</id>
+    <published>2017-06-21T06:02:56.000Z</published>
+    <updated>2017-06-23T02:53:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg" alt="https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg" title="Millionaire Teacher"></p>
+<h2 id="Background-on-author"><a href="#Background-on-author" class="headerlink" title="Background on author"></a>Background on author</h2><p>Andrew is an English teacher from Cananda currently teaching in Singapore. Andrew is also a middle class person. He started learning investing when he was 19. He learned from a mechanic who was also a millionaire. His investing strategy is very simple and buys stocks only when stock market drops. In his book he explains a lot of misconceptions on investing and how average investors can beat wall street.</p>
+<h2 id="Investing-strategies"><a href="#Investing-strategies" class="headerlink" title="Investing strategies"></a>Investing strategies</h2><ol>
+<li><p>Savings is important.</p>
+<p>Before investing you need to be financially responsible. For example, if you have credit card debt (which charge 17% interest) you should pay down your debt before you go into investing.</p>
+</li>
+<li><p>Responsible Spending.</p>
+<p>Determine what’s need and what’s want. 87% of first generation millionaire only spend 31K on buy a car, which means majority of rich people don’t buy luxury cars. Another example is Warren Buffet, he drove his 30 years old Lincoln Town Car until 2006. The Millionaire Next Door(another book)also documents the fact that most millionaires drive older or used automobiles.</p>
+</li>
+<li><p>Stop timing the market.</p>
+<p>We often hear people say the key to be successfull in stock market is to buy low and sell high. However, this book argues otherwise. For example let’s say Dow Jones was trading about 400 and drop below 100, which is about 70%. However Dow is trading at 800 in 1980, 2400 in 1990, 10220 in 2000 and 20000 in 2017(this doesn’t include dividends).</p>
+<p>Over the long run and if you use dollar cost average you will your share of return.</p>
+</li>
+<li><p>Index Fund vs Mutual Fund</p>
+<p>The book argues to buy index fund over mutual fund that are managed by people. The reason is because lower cost, transaction fee, and tax. (I’ll explain more in the other blog post). Basically market return is the maximum return for all investor. It’s simple math.</p>
+</li>
+</ol>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>This book opens my mind on investing. Currently, I only invest S&amp;P500 index fund, but I plan on moving a bond index into my portfolio soon. I started investing in S&amp;P500 when it was around 1900 back in 2015. I remember it was the highest at the time. Now S&amp;P is trading at 2400 (2017). So what Andrew says make sense, long term investing in equties market is a winner’s game.</p>
+<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
+<li><a href="https://www.amazon.com/Millionaire-Teacher-Wealth-Should-Learned/dp/1119356296/ref=sr_1_1?ie=UTF8&amp;qid=1498170264&amp;sr=8-1&amp;keywords=millionaire+teacher" target="_blank" rel="external">Amazon Link</a></li>
+<li><a href="https://andrewhallam.com/about/" target="_blank" rel="external">Andrew’s blog</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg&quot; alt=&quot;https://andrewhallam.com/wp-
+    
+    </summary>
+    
+    
+      <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stripejs on express part I</title>
+    <link href="http://yoursite.com/2017/06/19/Express-Stripejs-on-express-part-I/"/>
+    <id>http://yoursite.com/2017/06/19/Express-Stripejs-on-express-part-I/</id>
+    <published>2017-06-19T02:32:46.000Z</published>
+    <updated>2017-06-19T03:03:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Integrating Stripe to your app can be separated into two parts, frontend validation and submitting orders through backend server</p>
+<p>I”ll be going over frontend validation in this post. This process is to validate to see if your credit card is valid. This is a complex alogoritm luckily stripe has provided this for us.</p>
+<ol>
+<li><p>First We need to create Stripe Client and create instance of elements</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> stripe = Stripe(<span class="string">'pk_test_KOdpJMtqiqwsnwz6D0XXXXX'</span>); <span class="comment">// You test api keys</span></div><div class="line"><span class="keyword">var</span> elements = stripe.elements();</div></pre></td></tr></table></figure>
+</li>
+<li><p>Your payment form must have an id of ‘payment-form’</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/charge"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">id</span>=<span class="string">"payment-form"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"card-element"</span>&gt;</span></div><div class="line">      Credit or debit card</div><div class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"card-element"</span>&gt;</span></div><div class="line">      <span class="comment">&lt;!-- a Stripe Element will be inserted here. --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Used to display Element errors --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"card-errors"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>Submit Payment<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Custom styling can be passed to options when creating an Element.</p>
+</li>
+<li><p>Create an instance of the card Element</p>
+</li>
+<li><p>Add an instance of the card Element into the <code>card-element</code> div</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Custom styling can be passed to options when creating an Element.</span></div><div class="line"><span class="keyword">var</span> style = &#123;</div><div class="line">  <span class="attr">base</span>: &#123;</div><div class="line">    <span class="comment">// Add your base input styles here. For example:</span></div><div class="line">    fontSize: <span class="string">'16px'</span>,</div><div class="line">    <span class="attr">lineHeight</span>: <span class="string">'24px'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// Create an instance of the card Element</span></div><div class="line"><span class="keyword">var</span> card = elements.create(<span class="string">'card'</span>, &#123;<span class="attr">style</span>: style&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Add an instance of the card Element into the `card-element` &lt;div&gt;</span></div><div class="line">card.mount(<span class="string">'#card-element'</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Handle real-time validation errors from the card Element</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">card.addEventListener(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> displayError = <span class="built_in">document</span>.getElementById(<span class="string">'card-errors'</span>);</div><div class="line">  <span class="keyword">if</span> (event.error) &#123;</div><div class="line">    displayError.textContent = event.error.message;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    displayError.textContent = <span class="string">''</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Handle form submission - When form is submitted, stripe will create token.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Handle form submission</span></div><div class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">'payment-form'</span>);</div><div class="line">form.addEventListener(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">  event.preventDefault();</div><div class="line"></div><div class="line">  stripe.createToken(card).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (result.error) &#123;</div><div class="line">      <span class="comment">// Inform the user if there was an error</span></div><div class="line">      <span class="keyword">var</span> errorElement = <span class="built_in">document</span>.getElementById(<span class="string">'card-errors'</span>);</div><div class="line">      errorElement.textContent = result.error.message;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// Send the token to your server</span></div><div class="line">      stripeTokenHandler(result.token);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Create token - this will create an hidden input field with the stripe token, which will be used in the server backend</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stripeTokenHandler</span>(<span class="params">token</span>) </span>&#123;</div><div class="line">  <span class="comment">// Insert the token ID into the form so it gets submitted to the server</span></div><div class="line">  <span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">'payment-form'</span>);</div><div class="line">  <span class="keyword">var</span> hiddenInput = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</div><div class="line">  hiddenInput.setAttribute(<span class="string">'type'</span>, <span class="string">'hidden'</span>);</div><div class="line">  hiddenInput.setAttribute(<span class="string">'name'</span>, <span class="string">'stripeToken'</span>);</div><div class="line">  hiddenInput.setAttribute(<span class="string">'value'</span>, token.id);</div><div class="line">  form.appendChild(hiddenInput);</div><div class="line"></div><div class="line">  <span class="comment">// Submit the form</span></div><div class="line">  form.submit();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><p>[StripeJS Doc] (<a href="https://stripe.com/docs/stripe.js" target="_blank" rel="external">https://stripe.com/docs/stripe.js</a>)</p>
+</li>
+<li><p>[StripeJS Element] (<a href="https://stripe.com/docs/elements" target="_blank" rel="external">https://stripe.com/docs/elements</a>)</p>
+</li>
+<li><p>[My Express Github Shopping Cart] (<a href="https://github.com/kuanhsuh/express-shoppingCart" target="_blank" rel="external">https://github.com/kuanhsuh/express-shoppingCart</a>)</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Integrating Stripe to your app can be separated into two parts, frontend validation and submitting orders through backend server&lt;/p&gt;
+&lt;p&gt;I
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="Stripe" scheme="http://yoursite.com/tags/Stripe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Book Review: Soft Skills</title>
+    <link href="http://yoursite.com/2017/06/16/Book-Review-Soft-Skills/"/>
+    <id>http://yoursite.com/2017/06/16/Book-Review-Soft-Skills/</id>
+    <published>2017-06-16T00:09:59.000Z</published>
+    <updated>2017-06-16T01:53:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://images-na.ssl-images-amazon.com/images/I/51xaN5j2ykL.jpg" alt="Soft Skills Book" title="Soft Skills"></p>
+<h1 id="Book-Review"><a href="#Book-Review" class="headerlink" title="Book Review"></a>Book Review</h1><p>I read this book after I got a job offer, but I have been following John’s youtube channel since I started learning code. John is not a typical developer. He’s buff and besides his prolific coding skiills, he is also good at investing, fitness, and business. He’s main focus is in self development now. I been getting a lot of his advice from his channel then I decided to buy this book and give it a read.</p>
+<p>Once I went through the table of contents, I was like WTF? He literally covers everything, and I mean EVERYTHING you need to know for developer. The book mainly focus on the soft skills to become successful in developer career. The book cover huge range of topics ranging from relationship, stocks, fitness, real estate. Through out the books he was able to back up his views with his personal stories.</p>
+<p>After reading the book, I don’t agree on some of the things John suggest but it’s cool. The biggest thing I learn from this book is marketing is very important for developers and we must be able to learn things quicky. The key is breaking big things into many small parts and keep practicing. This applies to learning or building a business.</p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://www.youtube.com/user/jsonmez" target="_blank" rel="external">Simple Programmer Youtube Channel</a></li>
+<li><a href="https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397" target="_blank" rel="external">Soft Skills Amazon Link</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images-na.ssl-images-amazon.com/images/I/51xaN5j2ykL.jpg&quot; alt=&quot;Soft Skills Book&quot; title=&quot;Soft Skills&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Book-
+    
+    </summary>
+    
+    
+      <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Time to Learn Node/ExpressJS</title>
+    <link href="http://yoursite.com/2017/06/16/Express-Time-to-Learn-Node-ExpressJS/"/>
+    <id>http://yoursite.com/2017/06/16/Express-Time-to-Learn-Node-ExpressJS/</id>
+    <published>2017-06-15T23:37:20.000Z</published>
+    <updated>2017-06-16T02:13:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>After receiving a frontend job, I decided I want to learn some backend development before work started. I realize there’s only so far you can go with just frontend development. Eventually you still need to store the data in the database. Therefore, I decided to go with nodejs because nodeJS is eventually javascript. Hence I can just focus on the backend concepts without need to worry about a new language syntax.</p>
+<p>Having some prior Rails Knowledge, I have some idea what a backend language and framework need to do. Here are some concepts I listed that I need to master. (Obviously there are more, but here are some of important ones)</p>
+<h3 id="Concepts-to-master"><a href="#Concepts-to-master" class="headerlink" title="Concepts to master"></a>Concepts to master</h3><ul>
+<li>basic CRUD</li>
+<li>Authenticate</li>
+<li>session</li>
+<li>Create Apis</li>
+<li>relationships with databases</li>
+</ul>
+<h3 id="Plan-amp-Projects"><a href="#Plan-amp-Projects" class="headerlink" title="Plan &amp; Projects"></a>Plan &amp; Projects</h3><p>My plan is to watch some youtube tutorials and conference talks. Then I’m going to start building projects. The three projects that are currently in my mind are simple blog with comment feature, shopping cart, and a chatbot. Also I going to write 15 blog posts on node.</p>
+<p>I’m sure after these three prjects, I’ll have a pretty good understanding on Node. SO Let’s do EEET!!</p>
+<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
+<li><a href="https://medium.com/@amit_tushar/part-uh-what-does-it-take-to-be-a-full-stack-developer-a82c449ec969" target="_blank" rel="external">What does it take to be a full stack developer?</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;After receiving a frontend job, I decided I want to learn some backend development before work started. I realize there’s only so far you
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Basic express CRUD with MongoDB</title>
+    <link href="http://yoursite.com/2017/06/16/Express-Basic-express-CRUD-with-MongoDB/"/>
+    <id>http://yoursite.com/2017/06/16/Express-Basic-express-CRUD-with-MongoDB/</id>
+    <published>2017-06-15T23:36:53.000Z</published>
+    <updated>2017-06-19T03:06:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>This is a basic overview of how to do a CRUD process in expressJS with MongoDB.</p>
+<h2 id="Database"><a href="#Database" class="headerlink" title="Database."></a>Database.</h2><p>SQL database stores related data tables. NOSQL database stores json like field-value pairs. You can still have primary keys, index, and relationships. I wont talk too much about them here. I’ll do another post when I’m more familar with NOSQL and MYSQL. I’ll be using mongodb for our database. MongoDB is one of the popular NOSQL databases. MongoDB is a document database in which one collection holds different documents. Number of fields, content and size of the document can differ from one document to another.</p>
+<p>I’ll be using mongoose which is a ORM for mongodb. Mongoose provides easier API for dealing with Mongodb.</p>
+<h2 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h2><p>ExpressJS is the most popular nodeJS framework. Many other frameworks are bult upon express. Hence, expressJS is the backbone a lot of backend frameworks. Express is very very light and minimalistic, so there’s a lot of work that the developer need to do. That’s also good because I have more control and I can really learn from it.</p>
+<p>**Sidenote: I was playing around with Rails before the thing about rails is that it does a lot of things for you. A lot of things just happens and it’s hard to know why. It’s like magic. Express doesn’t do that much so I can really understand how things work.</p>
+<h3 id="Instructions"><a href="#Instructions" class="headerlink" title="Instructions"></a>Instructions</h3><p>I’ll be referring to my express blog project. You can download it or just refer it on my github.</p>
+<ol>
+<li><p>Install mongoose in package json</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongoose</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup connection in app.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.js</span></div><div class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"></div><div class="line">...</div><div class="line">mongoose.Promise = global.Promise;</div><div class="line">mongoose.connect(<span class="string">'mongodb://localhost/blogv2'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Creat model/post.js with schema</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// models/post.js</span></div><div class="line"><span class="keyword">let</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"></div><div class="line"><span class="comment">// Post Schema</span></div><div class="line"><span class="keyword">let</span> postSchema = mongoose.Schema(&#123;</div><div class="line">  <span class="attr">title</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span> &#125;,</div><div class="line">  <span class="attr">body</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span> &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">let</span> Post = <span class="built_in">module</span>.exports = mongoose.model(<span class="string">'Post'</span>, postSchema)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Go into to mongo shell and enter some sample data</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.articles.insert(&#123;title: <span class="string">"Article one"</span>, body: <span class="string">"this is article one"</span>&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>routes/posts.js create CRUD routes</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> router = express.Router();</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Bring in Models</span></div><div class="line"><span class="keyword">let</span> Post = <span class="built_in">require</span>(<span class="string">'../models/post'</span>)</div><div class="line"></div><div class="line"><span class="comment">/* GET Posts . */</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  Post.find(&#123;&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, posts</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      <span class="built_in">console</span>.log(err)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      res.render(<span class="string">'posts/index'</span>, &#123; <span class="attr">posts</span>: [...posts] &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// GET Add Post Route</span></div><div class="line">router.get(<span class="string">'/add'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  res.render(<span class="string">'posts/addPost'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// POST Add Post Route</span></div><div class="line">router.post(<span class="string">'/add'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> post = <span class="keyword">new</span> Post(&#123;</div><div class="line">    <span class="attr">title</span>: req.body.title,</div><div class="line">    <span class="attr">body</span>: req.body.body</div><div class="line">  &#125;);</div><div class="line">  post.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, resp</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      <span class="built_in">console</span>.log(err);</div><div class="line">      res.send(&#123;</div><div class="line">        <span class="attr">message</span>: <span class="string">'something went wrong'</span></div><div class="line">      &#125;);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      res.redirect(<span class="string">'/posts'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// Get Show Post"/posts/&lt;%= post._id%&gt;"</span></div><div class="line">router.get(<span class="string">'/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  Post.findById(req.params.id, <span class="function"><span class="keyword">function</span>(<span class="params">err, post</span>)</span>&#123;</div><div class="line">    res.render(<span class="string">'posts/showPost'</span>,&#123;</div><div class="line">      <span class="attr">post</span>: post,</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// Get Edit Form</span></div><div class="line">router.get(<span class="string">'/edit/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  Post.findById(req.params.id, <span class="function"><span class="keyword">function</span>(<span class="params">err, post</span>)</span>&#123;</div><div class="line">    res.render(<span class="string">'posts/editPost'</span>,&#123;</div><div class="line">      <span class="attr">post</span>: post</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//Post Edit Route</span></div><div class="line">router.post(<span class="string">'/edit/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> post = &#123;&#125;</div><div class="line">  post.title = req.body.title</div><div class="line">  post.body = req.body.body</div><div class="line"></div><div class="line">  <span class="keyword">let</span> query = &#123; <span class="attr">_id</span>: req.params.id &#125;</div><div class="line">  Post.update(query, post, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)&#123;</div><div class="line">      <span class="built_in">console</span>.log(err)</div><div class="line">      <span class="keyword">return</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      res.redirect(<span class="string">'/posts'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// DELETE Route</span></div><div class="line">router.delete(<span class="string">'/delete/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> query = &#123; <span class="attr">_id</span>: req.params.id&#125;</div><div class="line">  Post.remove(query, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)&#123;</div><div class="line">      <span class="built_in">console</span>.log()</div><div class="line">    &#125;</div><div class="line">    res.send(<span class="string">'Success'</span>)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Generate the index views to see if all posts shows up</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;%- include ../partials/header %&gt;</div><div class="line"></div><div class="line">  &lt;a href="/posts/add" class="btn btn-md btn-primary"&gt;Add post&lt;/a&gt;</div><div class="line">  &lt;h1&gt;Posts Index Pages&lt;/h1&gt;</div><div class="line">  &lt;h3&gt;Here are the Following posts&lt;/h3&gt;</div><div class="line">  &lt;% posts.forEach(function(post)&#123; %&gt;</div><div class="line">      &lt;h2&gt;&lt;%= post.title %&gt;&lt;/h2&gt;</div><div class="line">      &lt;p&gt;&lt;%= post.body %&gt;&lt;/p&gt;</div><div class="line">      &lt;a href="/posts/&lt;%= post._id%&gt;"&gt;Show&lt;/a&gt;</div><div class="line">      &lt;a href="/posts/edit/&lt;%= post._id%&gt;"&gt;Edit&lt;/a&gt;</div><div class="line">      &lt;a href="#" class="deletePost" data-id="&lt;%= post._id%&gt;"&gt;Delete&lt;/a&gt;</div><div class="line">  &lt;% &#125;) %&gt;</div><div class="line"></div><div class="line">&lt;%- include ../partials/footer %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Generate ADD/Update views</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  &lt;%- include ../partials/header %&gt;</div><div class="line"></div><div class="line">&lt;a href="/posts" class="btn btn-lg btn-default"&gt;Back To Index&lt;/a&gt;</div><div class="line">&lt;h1&gt;Add Post&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;form method='POST', action='/posts/add'&gt;</div><div class="line">&lt;div id="form-group"&gt;</div><div class="line">  &lt;label&gt;Title&lt;/label&gt;</div><div class="line">  &lt;input name='title' type="text" class="form-control"&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div id="form-group"&gt;</div><div class="line">  &lt;label&gt;Body&lt;/label&gt;</div><div class="line">  &lt;input name='body' type="text" class="form-control"&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;input value='Submit' type="Submit" class="btn btn-primary"&gt;</div><div class="line"></div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line"></div><div class="line">  &lt;%- include ../partials/footer %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup the DELETE link. In out public/js folder, create a main.js file.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">'.deletePost'</span>).on(<span class="string">'click'</span>, deletePost);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deletePost</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> confirmation = confirm(<span class="string">'Are you sure?'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">if</span>(confirmation)&#123;</div><div class="line">    $.ajax(&#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'DELETE'</span>,</div><div class="line">      <span class="attr">url</span>: <span class="string">'/posts/delete/'</span> + $(<span class="keyword">this</span>).data(<span class="string">'id'</span>)</div><div class="line">    &#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">      <span class="built_in">window</span>.location.replace(<span class="string">'/posts'</span>)</div><div class="line">    &#125;)</div><div class="line">    <span class="built_in">window</span>.location.replace(<span class="string">'/posts'</span>)</div><div class="line"></div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Here’s the overview of how to create CRUD. You may need to refer to my <a href="https://github.com/kuanhsuh/express-blog" target="_blank" rel="external">github project</a> for more details.</p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://github.com/kuanhsuh/express-blog" target="_blank" rel="external">My Express Project</a></li>
+<li><a href="http://expressjs.com/" target="_blank" rel="external">expressJS Homepage</a></li>
+<li><a href="https://www.mongodb.com/" target="_blank" rel="external">mongoDB</a></li>
+<li><a href="http://mongoosejs.com/" target="_blank" rel="external">Mongoose</a></li>
+<li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/" target="_blank" rel="external">SQL vs NoSQL: The Differences</a></li>
+<li><a href="https://www.tutorialspoint.com/mongodb/mongodb_advantages.htm" target="_blank" rel="external">Mongodb Advantages</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;This is a basic overview of how to do 
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stripejs on express part II</title>
+    <link href="http://yoursite.com/2017/06/16/Express-Stripejs-on-express-part-II/"/>
+    <id>http://yoursite.com/2017/06/16/Express-Stripejs-on-express-part-II/</id>
+    <published>2017-06-15T23:36:23.000Z</published>
+    <updated>2017-06-19T03:29:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.</p>
+<ol>
+<li><p>Install stripe through npm</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install stripe</div></pre></td></tr></table></figure>
+</li>
+<li><p>Implement request - here’s example request from <a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe API</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> stripe = <span class="built_in">require</span>(<span class="string">"stripe"</span>)(</div><div class="line">  <span class="string">"sk_test_UawoxUENSN7VkeeMIXXXXX"</span></div><div class="line">);</div><div class="line"></div><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: <span class="number">2000</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: <span class="string">"tok_187waCF6w9JvbRHHBeCqMoBg"</span>, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Charge for liam.johnson@example.com"</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">  <span class="comment">// asynchronously called</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>We need to modify a couple things</p>
+<ul>
+<li>amount is measured in cents therefore we need to multiple our amounts by 100.</li>
+<li>source is the token generated from our frontend validation</li>
+<li>I’m getting these info from my session cart</li>
+<li>images from stripe</li>
+</ul>
+<p>Here’s what my code look like.</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: cart.totalPrice * <span class="number">100</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: req.body.stripeToken, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Test Charge"</span></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      req.flash(<span class="string">'error'</span>, err.messages)</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/checkout'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// This is where we save our orders</span></div><div class="line">    <span class="keyword">var</span> order = <span class="keyword">new</span> Order(&#123;</div><div class="line">      <span class="attr">name</span>: req.body.name,</div><div class="line">      <span class="attr">address</span>: req.body.address,</div><div class="line">      <span class="attr">cart</span>: cart,</div><div class="line">      <span class="attr">paymentId</span>: charge.id</div><div class="line">    &#125;)</div><div class="line">    order.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</div><div class="line">      req.flash(<span class="string">'success'</span>, <span class="string">'Successfully bought product'</span>)</div><div class="line">      req.session.cart = <span class="literal">null</span></div><div class="line">      res.redirect(<span class="string">'/'</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>That should be it man. Your stripe should be charged. Now we need to save our orders.</p>
+<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
+<li><a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe Charge API</a></li>
+<li><a href="https://github.com/kuanhsuh/express-shoppingCart/blob/master/routes/index.js" target="_blank" rel="external">My github Shopping cart</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.&lt;/p
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="Stripe" scheme="http://yoursite.com/tags/Stripe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Feedback</title>
+    <link href="http://yoursite.com/2017/06/02/100-Days-Code-Challenge-Feedback/"/>
+    <id>http://yoursite.com/2017/06/02/100-Days-Code-Challenge-Feedback/</id>
+    <published>2017-06-02T05:47:59.000Z</published>
+    <updated>2017-06-05T02:06:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I decided to share a summary and thoughts on my 100dayscodechallenge on facebook.</p>
+<p><img src="/images/feedback1.png" alt="Feedback1"><br><img src="/images/feedback2.png" alt="Feedback2"><br><img src="/images/feedback3.png" alt="Feedback3"><br><img src="/images/email.png" alt="Feedback4"></p>
+<p>I received close to 1000 likes and over 50 shares. I have to say I’m pretty shocked by the amount of likes that I’m getting from the community.</p>
+<p>I even receieved an email from Quicy Larson to share my forum post, which is a great honor.</p>
+<p>I received a lot of questions and people asking for suggestiong. Maybe I”ll write in more details in provide more specific answers.</p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><p><a href="https://www.facebook.com/groups/1594816820775537/permalink/1914006175523265/" target="_blank" rel="external">https://www.facebook.com/groups/1594816820775537/permalink/1914006175523265/</a></p>
+</li>
+<li><p><a href="https://www.facebook.com/groups/358503154261390/permalink/1190322591079438/" target="_blank" rel="external">https://www.facebook.com/groups/358503154261390/permalink/1190322591079438/</a></p>
+</li>
+<li><p><a href="https://www.facebook.com/groups/f2e.tw/permalink/1304738922896803/" target="_blank" rel="external">https://www.facebook.com/groups/f2e.tw/permalink/1304738922896803/</a></p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I decided to share a summary and thoughts on my 100dayscodechallenge on facebook.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/feedback1.png&quot; alt=&quot;Feedback1&quot;
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Thoughts on 100_Days_Code_Challege</title>
+    <link href="http://yoursite.com/2017/05/25/Thoughts-on-100-Days-Code-Challege/"/>
+    <id>http://yoursite.com/2017/05/25/Thoughts-on-100-Days-Code-Challege/</id>
+    <published>2017-05-25T02:44:04.000Z</published>
+    <updated>2017-05-25T03:17:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today I Finished my 100 Days Coding Challenge. Here’s my thoughts and accomplishments.</p>
+<p>Here’s my github: (<a href="https://github.com/kuanhsuh" target="_blank" rel="external">https://github.com/kuanhsuh</a>)<br>Here’s my FCC certificate: (<a href="https://www.freecodecamp.com/kuanhsuh/front-end-certification" target="_blank" rel="external">https://www.freecodecamp.com/kuanhsuh/front-end-certification</a>)<br>Here’s my blog: (<a href="https://kuanhsuh.github.io/" target="_blank" rel="external">https://kuanhsuh.github.io/</a>)</p>
+<p>To View my 100 day coding log:(<a href="https://kuanhsuh.github.io/tags/100DaysCodeChallenge/" target="_blank" rel="external">https://kuanhsuh.github.io/tags/100DaysCodeChallenge/</a>)</p>
+<h3 id="Shit-I-accomplished"><a href="#Shit-I-accomplished" class="headerlink" title="Shit I accomplished:"></a>Shit I accomplished:</h3><p>FCC Frontend Certificate, 34 blog posts, 15 Github Stars, Codewar Ranking 5. 1 Job Offer</p>
+<h3 id="Technology-I-encounter"><a href="#Technology-I-encounter" class="headerlink" title="Technology I encounter"></a>Technology I encounter</h3><ul>
+<li>html, css, es5</li>
+<li>scss, gulp, react, vue, d3</li>
+</ul>
+<h3 id="Main-Coding-Timeline"><a href="#Main-Coding-Timeline" class="headerlink" title="Main Coding Timeline"></a>Main Coding Timeline</h3><ul>
+<li>Day 1-30 Working through tutorials, read books</li>
+<li>Day 36 Finish FCC Frontend Certicate</li>
+<li>Day 45 Finish React Markdown App</li>
+<li>Day 48 Finish React+Redux Recipe+Box App</li>
+<li>Day 50-60 Play with D3</li>
+<li>Day 60-75 html/css template conversions, gulp, web optimization</li>
+<li>Day 83 Finish Netflix Clone</li>
+<li>Day 85-95 Preparing Coding Interview, Company Interview</li>
+<li>Day 97 Got 1st Offer</li>
+</ul>
+<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><ul>
+<li>Coding everyday is !important because it builds momentum.</li>
+<li>My initial plan was just to atleast try for 100 days. The end result was much better than I image. Now I’m comfident that I can learn any technology + language.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Today I Finished my 100 Days Coding Challenge. Here’s my thoughts and accomplishments.&lt;/p&gt;
+&lt;p&gt;Here’s my github: (&lt;a href=&quot;https://github.
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 90-100</title>
+    <link href="http://yoursite.com/2017/05/25/100-Days-Code-Challenge-Day-90-100/"/>
+    <id>http://yoursite.com/2017/05/25/100-Days-Code-Challenge-Day-90-100/</id>
+    <published>2017-05-25T02:42:18.000Z</published>
+    <updated>2017-06-02T05:48:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Day 91 5.15<br>[ ] Work on interview technical questions<br>[ ] Review my Code<br>[ ] 104 job search site</p>
+<p>Day 92 5.16<br>[ ] Interview with BXB</p>
+<p>Day 92 5.17<br>[ ] Interview with Global<br>[ ] Work on gulp-construction</p>
+<p>Day 93 5.18<br>[ ] Install Wordpress<br>[ ] Work on gulp-construction</p>
+<p>Day 94 5.19<br>[ ] Finish Gulp Construction Project</p>
+<p>Day 95 5.20<br>[ ] Setup PHP files<br>[ ] Play with npm build system<br>[ ] Work on Designer website Project</p>
+<p>Day 96 5.21<br>[ ] Work on Designer website Project</p>
+<p>Day 97 5.22<br>[ ] Work on Designer website Project<br>[ ] Got 1st Job Offer</p>
+<p>Day 98 5.23<br>[ ] Work on Designer website Project<br>[ ] Tried NPM Build Tool</p>
+<p>Day 99 5.24<br>[ ]  Learn Nodejs + express</p>
+<p>Day 100 5.25<br>[ ] Learn Nodejs + express</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Day 91 5.15&lt;br&gt;[ ] Work on interview technical questions&lt;br&gt;[ ] Review my Code&lt;br&gt;[ ] 104 job search site&lt;/p&gt;
+&lt;p&gt;Day 92 5.16&lt;br&gt;[ ] Inter
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 80-90</title>
+    <link href="http://yoursite.com/2017/05/15/100-Days-Code-Challenge-Day-80-90/"/>
+    <id>http://yoursite.com/2017/05/15/100-Days-Code-Challenge-Day-80-90/</id>
+    <published>2017-05-15T03:38:47.000Z</published>
+    <updated>2017-06-02T05:48:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Day 81 5.3<br>[ ] Netflix Clone Project -setup project, fetch upcoming</p>
+<p>Day 82 5.4<br>[ ] Netflix Clone Project -autosuggest, movieshow, react router</p>
+<p>Day 83 5.5<br>[ ] Netflix Clone Project Finish CSS</p>
+<p>Day 83 5.6<br>[ ] Went to FrontEnd conference<br>[ ] Finish Netflix Clone Project(fix bug)</p>
+<p>Day 84 5.7<br>[ ] Read HTML&amp;CSS Book</p>
+<p>Day 84 5.8<br>[ ] started Vue &amp; david Katz tutorial</p>
+<p>Day 85 5.9<br>[ ] 2 Vue tutorials</p>
+<p>Day 86 5.10<br>[ ] Work on Coding resume</p>
+<p>5.10<br>DIDN”t program</p>
+<p>Day 87 5.10<br>[ ] Work on Coding resume</p>
+<p>Day 88 5.12<br>[ ] Work on Coding resume v2<br>[ ] start working on interview questions<br>[ ] Submit 3 resumes</p>
+<p>Day 89 5.13<br>[ ] Work on interview questions<br>[ ] questions to ask employers</p>
+<p>Day 90 5.14<br>[ ] Work on interview technical questions</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Day 81 5.3&lt;br&gt;[ ] Netflix Clone Project -setup project, fetch upcoming&lt;/p&gt;
+&lt;p&gt;Day 82 5.4&lt;br&gt;[ ] Netflix Clone Project -autosuggest, movie
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My Awesome CSS Components</title>
+    <link href="http://yoursite.com/2017/05/15/My-Awesome-CSS-Components/"/>
+    <id>http://yoursite.com/2017/05/15/My-Awesome-CSS-Components/</id>
+    <published>2017-05-15T03:20:13.000Z</published>
+    <updated>2017-05-15T03:35:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here’s my collection of CSS Components made by me.</p>
+<h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><p>Header(KenBurn Effect): <a href="http://codepen.io/dannyhuang/pen/pPypEw" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/pPypEw</a><br>Gallery/Portfolio: <a href="http://codepen.io/dannyhuang/pen/oWbrrJ" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/oWbrrJ</a><br>Footer: <a href="http://codepen.io/dannyhuang/pen/VbeJVq" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/VbeJVq</a><br>Table: <a href="http://codepen.io/dannyhuang/pen/aWZGBY" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/aWZGBY</a><br>Form: <a href="http://codepen.io/dannyhuang/pen/KmavpY" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/KmavpY</a><br>Sign Up Form: <a href="http://codepen.io/dannyhuang/pen/NjxZLG" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/NjxZLG</a><br>Testimonials: <a href="http://codepen.io/dannyhuang/pen/vmLqbM" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/vmLqbM</a><br>Price Box-1: <a href="http://codepen.io/dannyhuang/pen/jmWjYW" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/jmWjYW</a><br>Price Table: <a href="http://codepen.io/dannyhuang/pen/aWdWGm" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/aWdWGm</a></p>
+<h3 id="Nav"><a href="#Nav" class="headerlink" title="Nav"></a>Nav</h3><p>Sidebar: <a href="http://codepen.io/dannyhuang/pen/OmgrXW" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/OmgrXW</a><br>Responsive Navbar: <a href="http://codepen.io/dannyhuang/pen/gWRQqa" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/gWRQqa</a></p>
+<h3 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h3><p>Tooltip: <a href="http://codepen.io/dannyhuang/pen/EmXORR" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/EmXORR</a><br>Tooltip2: <a href="http://codepen.io/dannyhuang/pen/WjOaWN" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/WjOaWN</a><br>Animated Search Bar: <a href="http://codepen.io/dannyhuang/pen/JNJmEE" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/JNJmEE</a><br>Tabs Header: <a href="http://codepen.io/dannyhuang/pen/NjgLyy" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/NjgLyy</a><br>Overlay With Text: <a href="http://codepen.io/dannyhuang/pen/PmpxWz" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/PmpxWz</a><br>Sill bar: <a href="http://codepen.io/dannyhuang/pen/mmWQOJ" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/mmWQOJ</a><br>Progress bar: <a href="http://codepen.io/dannyhuang/pen/MmpzyQ" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/MmpzyQ</a><br>Tabs: <a href="http://codepen.io/dannyhuang/pen/mmWyNQ" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/mmWyNQ</a><br>Accordian: <a href="http://codepen.io/dannyhuang/pen/Njbwme" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/Njbwme</a><br>Slideshow: <a href="http://codepen.io/dannyhuang/pen/RVojxg" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/RVojxg</a><br>Buttons: <a href="http://codepen.io/dannyhuang/pen/jmMvKr" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/jmMvKr</a><br>TextOverlay: <a href="http://codepen.io/dannyhuang/pen/JNRaxa" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/JNRaxa</a><br>Profile Card: <a href="http://codepen.io/dannyhuang/pen/ybOPdM" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/ybOPdM</a></p>
+<h3 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h3><p>Menu Icon-<a href="http://codepen.io/dannyhuang/pen/oWwaee" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/oWwaee</a><br>Hover Dropdown-<a href="http://codepen.io/dannyhuang/pen/EmXdWy" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/EmXdWy</a><br>Clickable Dropdown-<a href="http://codepen.io/dannyhuang/pen/JNJmEE" target="_blank" rel="external">http://codepen.io/dannyhuang/pen/JNJmEE</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here’s my collection of CSS Components made by me.&lt;/p&gt;
+&lt;h3 id=&quot;Layout&quot;&gt;&lt;a href=&quot;#Layout&quot; class=&quot;headerlink&quot; title=&quot;Layout&quot;&gt;&lt;/a&gt;Layout&lt;/h3
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 70-80</title>
+    <link href="http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-70-80/"/>
+    <id>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-70-80/</id>
+    <published>2017-05-02T08:51:28.000Z</published>
+    <updated>2017-05-02T08:52:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Code-Logs"><a href="#Code-Logs" class="headerlink" title="Code Logs"></a>Code Logs</h2><p>Day 71 4.23<br>[ ] ES6 Videos-extension in objects<br>[ ] 2 start bootstrap theme conversion</p>
+<p>Day 72 4.24<br>[ ]  ES6 Videos - Map Sets<br>[ ] 1 More Theme Conversion</p>
+<p>Day 73 4.25<br>[ ]  ES6 Videos - Map Sets<br>[ ] Looked at some react js animations<br>[ ] Finish 1 Theme Conversion<br>[ ] Work on 1 ReactJS conversion</p>
+<p>Day 74 4.26<br>[ ] Derek Banas CSS3<br>[ ] Finish 1 React Theme Conversion Freelancer</p>
+<p>Day 75 4.27<br>[ ] Derek Banas HTML5 + RWD<br>[ ] Finish 1 React Theme Conversion Freelancer - added animation</p>
+<p>Day 76 4.28<br>[ ] 1 Component Design<br>[ ] Finish React Love to eat Tutorial<br>[ ] start Frodev portfolio tutorial</p>
+<p>Day 77 4.29<br>[ ] start Frodev portfolio tutorial<br>[ ] Redo React Blog JS tutorial</p>
+<p>Day 78 4.30<br>[ ] Frodev portfolio tutorial</p>
+<p>Day 79 5.1<br>[ ] Frodev portfolio tutorial</p>
+<p>Day 80 5.2<br>[ ] Tesla Tutorial<br>[ ] React-Waypoint Animation Demo (react-animation-demo.surge.sh)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Code-Logs&quot;&gt;&lt;a href=&quot;#Code-Logs&quot; class=&quot;headerlink&quot; title=&quot;Code Logs&quot;&gt;&lt;/a&gt;Code Logs&lt;/h2&gt;&lt;p&gt;Day 71 4.23&lt;br&gt;[ ] ES6 Videos-extension in
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 60-70</title>
+    <link href="http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-60-70/"/>
+    <id>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-60-70/</id>
+    <published>2017-05-02T08:47:17.000Z</published>
+    <updated>2017-05-02T08:51:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Code-Log"><a href="#Code-Log" class="headerlink" title="Code Log"></a>Code Log</h2><p>Day 61-4.15<br>[ ] Morning RWD with css<br>[ ] Finish React Blog app</p>
+<p>Day 62-4.16<br>[ ] RWD with css</p>
+<p>Day 63-4.17<br>[ ] Redux/React CRUD app<br>[ ] RWD with css 06-03<br>[ ] Bootstrap Theme text scroll tutorial<br>[ ] Work on Bootstrap HTML CSS<br>[ ] Learn to Code HTML&amp;CSS Lesson 1 &amp; 2</p>
+<p>Day 64 4.18<br>[ ] RWD with CSS Finished<br>[ ] Learn to Code HTML&amp;CSS Lesson 3 &amp; 4 &amp; 5<br>[ ] Bootstrap SASS Theme tutorial</p>
+<p>Day 65 4.19<br>[ ] Learn to Code HTML&amp;CSS Lesson 6 &amp; 7 &amp; 8 &amp; 9<br>[ ] ES6 Videos<br>[ ] Learn Gulp Built first project with gulp</p>
+<p>Day 66 4.20<br>[ ] Component based design - 5 components<br>[ ] Bootstrapify OmniFood<br>[ ] Learn to Code HTML&amp;CSS Finish<br>[ ] ES6 Videos- Symbols</p>
+<p>Day 70 4.21<br>[ ] ES6 Videos-promises<br>[ ] 2 bootstrap tutorials<br>[ ] Finish 2 Component based Design</p>
+<p>4.22 - No Programming family vocation</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Code-Log&quot;&gt;&lt;a href=&quot;#Code-Log&quot; class=&quot;headerlink&quot; title=&quot;Code Log&quot;&gt;&lt;/a&gt;Code Log&lt;/h2&gt;&lt;p&gt;Day 61-4.15&lt;br&gt;[ ] Morning RWD with css&lt;br&gt;[ ]
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 50-60</title>
+    <link href="http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-50-60/"/>
+    <id>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-50-60/</id>
+    <published>2017-05-02T08:47:05.000Z</published>
+    <updated>2017-05-02T08:49:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Code-Log"><a href="#Code-Log" class="headerlink" title="Code Log"></a>Code Log</h2><p>Day 50-3.31-React Day 19<br>[ ] Rebuild Random Text Generator App<br>[ ] Finish FCC D3 challenges</p>
+<p>Day 51-4.1-D3 Day 1<br>[ ] D3 Practice</p>
+<p>Day 52-4.2-D3 Day 2<br>[ ] D3 Practice</p>
+<p>Day 53-4.3-D3 Day 3<br>[ ] D3 Practice</p>
+<p>Day 53-4.4-D3 Day 4<br>[ ] D3 Practice</p>
+<p>Day 53-4.5-D3 Day 5<br>[ ] Finish D3 USA GDP project<br>[ ] Work on React&amp;Redux Project</p>
+<p>Day 54-4.6-React Day 20<br>[ ] Finish on React&amp;Redux Project<br>[ ] Start Udemy React tutorial part 3 </p>
+<p>Day 55-4.7-React Day 21<br>[ ] Morning: Understand JS - 2 videos<br>[ ] Morning: Play with underscore.js-max<br>[ ] Start Udemy React tutorial - rewatch lecture 87<br>[ ] Write Blog &amp; readme files</p>
+<p>Day 56-4.8-D3 Day 6<br>[ ] Finish D3 Scatterplot</p>
+<p>Day 57-4.9-D3 Day 7<br>[ ] Working D3 Treemap<br>[ ] Understand JS weird parts </p>
+<p>Day 58-4.10-React Day 22<br>[ ] Daily React-UI #1<br>[ ] Daily React-UI #2 Part 1</p>
+<p>Day 58-4.11-React Day 22, Web Design Day 1<br>[ ] Daily React-UI #2<br>[ ] play with React Router V4 - <a href="http://quixotic-beginner.surge.sh/" target="_blank" rel="external">http://quixotic-beginner.surge.sh/</a><br>[ ] Finish JS weird parts<br>[ ] Accelerated ES6</p>
+<p>Day 58-4.12-<br>[ ] Morning Accelerated ES6 11/113<br>[ ] Morning RWD with css 05-07</p>
+<p>Day 59-4.13-React Day 22<br>[ ] Morning RWD with css 05-15<br>[ ] Redo React Blog app</p>
+<p>Day 60-4.14-React Day 22<br>[ ] Morning RWD with css 05-15<br>[ ] Redo React Blog app Almost Finish</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Code-Log&quot;&gt;&lt;a href=&quot;#Code-Log&quot; class=&quot;headerlink&quot; title=&quot;Code Log&quot;&gt;&lt;/a&gt;Code Log&lt;/h2&gt;&lt;p&gt;Day 50-3.31-React Day 19&lt;br&gt;[ ] Rebuild Random
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Create React App Review</title>
+    <link href="http://yoursite.com/2017/04/07/Create-React-App-Review/"/>
+    <id>http://yoursite.com/2017/04/07/Create-React-App-Review/</id>
+    <published>2017-04-07T06:35:20.000Z</published>
+    <updated>2017-04-07T06:45:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React code.</p>
+<p>Then I find out that in 2016/7 came out with this react cli create-react-app. The reason is because many React programmer has similar configuration problem, which lead to the term ‘javascript fatigue’ back in 2016. Facebook realize this problem and came up with a solution.</p>
+<p>create-react-app came is preconfigured. It has webpack configured so I can just focus on writing react code. For further customization I can use the eject command and customize from there.</p>
+<p>It also has a build tool so I can change my react site to static site and host it with surge.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line"></div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure>
+<p>Reference:</p>
+<ul>
+<li><a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="external">https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md</a></li>
+<li><a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html" target="_blank" rel="external">https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their 
+    
+    </summary>
+    
+    
+      <category term="Reactjs" scheme="http://yoursite.com/tags/Reactjs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Best Deployment Website-Surge</title>
+    <link href="http://yoursite.com/2017/04/07/Best-Deployment-Website-Surge/"/>
+    <id>http://yoursite.com/2017/04/07/Best-Deployment-Website-Surge/</id>
+    <published>2017-04-07T06:28:26.000Z</published>
+    <updated>2017-06-16T00:10:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Surge is a place where frontend developers can easily deploy static websites.<br>I first came across surge when it was mentioned in freecodecamp forum. Then I quickly try it out for my small projects.</p>
+<p>Surge is really easy to use with only one command. The website performance is fast. It is a great place to show place your projects. You can also add custom domain name with using CNAME.</p>
+<p>Right now I use it host my portfolio site and my react projects.</p>
+<p>Command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev surge</div><div class="line">surge</div></pre></td></tr></table></figure></p>
+<p>Reference:</p>
+<ul>
+<li><a href="https://surge.sh/help/getting-started-with-surge" target="_blank" rel="external">https://surge.sh/help/getting-started-with-surge</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Surge is a place where frontend developers can easily deploy static websites.&lt;br&gt;I first came across surge when it was mentioned in freec
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Days Code Challenge Day 40-50</title>
+    <link href="http://yoursite.com/2017/04/07/100-Days-Code-Challenge-Day-40-50/"/>
+    <id>http://yoursite.com/2017/04/07/100-Days-Code-Challenge-Day-40-50/</id>
+    <published>2017-04-07T06:24:07.000Z</published>
+    <updated>2017-04-07T06:27:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Goals-Completed"><a href="#Goals-Completed" class="headerlink" title="Goals Completed"></a>Goals Completed</h3><ul>
+<li>Deploy 3 React Projects(FCC Markdown Previewer, FCC Recipe Box, Random Text Generator)</li>
+</ul>
+<p>Day 41-3.18-React Day 6<br>[ ] Facebook React Tutorial<br>[x] ReactTraining Finish video 9<br>[x] FCC React 40<br>[ ] Codewar 229<br>[ ] Udemy Modren React #13</p>
+<p>Day 42-3.19-React Day 7<br>[x] FCC React 50<br>[ ] Codewar 231<br>[ ] Udemy Modren React #25</p>
+<p>Day 43-3.20-React Day 8<br>[x] ReactTraining Finish<br>[ ] Codewar 233<br>[ ] Udemy Modren React #45<br>[x] FCC Redux 7</p>
+<p>Day 44-3.21-React Day 9<br>[ ] Codewar 233<br>[ ] Udemy Modren React #50<br>[ ] FCC Redux 7</p>
+<p>Day 44-3.21-React Day 10<br>[ ] Codewar 235<br>[ ] Udemy Modren React #65<br>[ ] Finish FCC REDUX<br>[ ] JS Understanding the weird parts 43</p>
+<p>Day 45-3.22-React Day 11<br>[ ] Codewar 237<br>[ ] Work on React TodoList<br>[ ] Work on React 24hours tutorial</p>
+<p>Day 46-3.23-React Day 12<br>[ ] Udemy Modren React REVIEW 2nd Project<br>[ ] FCC REDUX + REACT Finished</p>
+<p>Day 46-3.24-React Day 13<br>[ ] FCC Markdown Previewer 1st Draft Complete</p>
+<p>Day 47-3.25-React Day 14<br>[ ] FCC Markdown Previewer-add JSHINT</p>
+<p>Day 47-3.26-React Day 15<br>[ ] React JS deployment<br>[ ] Codewar 292 Moved up to 5 KYU<br>[ ] Added ESLint to Atom</p>
+<p>Day 47-3.27-React Day 16<br>[ ] FCC Recipe Project - Finish ADD, View feature</p>
+<p>Day 48-3.29-React Day 17<br>[ ] FCC Recipe Project - Finish Project<br>[ ] Install Redux Dev tool<br>[ ] Play with dev tools<br>[ ] Work on KHH trash project</p>
+<p>Day 49-3.30-React Day 18<br>[ ] Redo Udemy project 3<br>[ ] Build Random Text generator app<br>[ ] Understand JS 2 video</p>
+<p>Day 50-3.31-React Day 19<br>[ ] Rebuild Random Text Generator App<br>[ ] Finish FCC D3 challenges</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Goals-Completed&quot;&gt;&lt;a href=&quot;#Goals-Completed&quot; class=&quot;headerlink&quot; title=&quot;Goals Completed&quot;&gt;&lt;/a&gt;Goals Completed&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Deploy 3 Rea
+    
+    </summary>
+    
+    
+      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
+    
+  </entry>
+  
+</feed>

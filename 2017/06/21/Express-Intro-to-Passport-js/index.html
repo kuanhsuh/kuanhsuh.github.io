@@ -1,0 +1,763 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="expressJS,nodeJS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="My Coding Journey" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="BackgroundPassport is a user authentication library for node. It provides tons of strategies (facebook, google, etc). I’ll be going over the basic passport-local strategy which you sign up with userna">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express-Intro to Passport.js part I">
+<meta property="og:url" content="http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/index.html">
+<meta property="og:site_name" content="My Coding Journey">
+<meta property="og:description" content="BackgroundPassport is a user authentication library for node. It provides tons of strategies (facebook, google, etc). I’ll be going over the basic passport-local strategy which you sign up with userna">
+<meta property="og:updated_time" content="2017-06-23T08:44:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express-Intro to Passport.js part I">
+<meta name="twitter:description" content="BackgroundPassport is a user authentication library for node. It provides tons of strategies (facebook, google, etc). I’ll be going over the basic passport-local strategy which you sign up with userna">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/"/>
+
+
+
+
+
+  <title> Express-Intro to Passport.js part I | My Coding Journey </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100430698-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Coding Journey</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Journey to a Full Stack Developer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Coding Journey">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Express-Intro to Passport.js part I
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T14:07:14+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/21/Express-Intro-to-Passport-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/21/Express-Intro-to-Passport-js/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Passport is a user authentication library for node. It provides tons of strategies (facebook, google, etc). I’ll be going over the basic passport-local strategy which you sign up with username and passpord. User login with valid name and password.</p>
+<p>I’ll also show to how to use session and flash to display error or success message. Also, use express validator to validate user input. Finally encrypt user password with the mighty bcryptjs.</p>
+<h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ol>
+<li><p>Install Packages. (bcryptJS, express-validator, passport, psasport-local, etc) You can refer to package.json</p>
+</li>
+<li><p>Setup User Model with some functions</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// routes/users.js</span></div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"><span class="keyword">var</span> bcrypt = <span class="built_in">require</span>(<span class="string">'bcryptjs'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> UserSchema = mongoose.Schema(&#123;</div><div class="line">  <span class="attr">username</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">index</span>: <span class="literal">true</span>&#125;,</div><div class="line">  <span class="attr">password</span>: &#123; <span class="attr">type</span>: <span class="built_in">String</span>&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">var</span> User = <span class="built_in">module</span>.exports = mongoose.model(<span class="string">'User'</span>, UserSchema)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.createUser = <span class="function"><span class="keyword">function</span>(<span class="params">newUser, callback</span>) </span>&#123;</div><div class="line">  bcrypt.genSalt(<span class="number">10</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>) </span>&#123;</div><div class="line">    bcrypt.hash(newUser.password, salt, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>)</span>&#123;</div><div class="line">      newUser.password = hash</div><div class="line">      newUser.save(callback)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.getUserByUsername = <span class="function"><span class="keyword">function</span>(<span class="params">username, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> query = &#123; <span class="attr">username</span>: username &#125;</div><div class="line">  User.findOne(query, callback)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.getUserById = <span class="function"><span class="keyword">function</span>(<span class="params">id, callback</span>) </span>&#123;</div><div class="line">  User.findById(id, callback)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports.comparePassword = <span class="function"><span class="keyword">function</span>(<span class="params">candidatePassword, hash,callback</span>) </span>&#123;</div><div class="line">  bcrypt.compare(candidatePassword, hash, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err</div><div class="line">    callback(<span class="literal">null</span>, isMatch)</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup mongoDB and passportJS in app.js ( I’m only going over the main imports the basic imports such as express please refer to my github, link below)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> passport = <span class="built_in">require</span>(<span class="string">'passport'</span>)</div><div class="line"><span class="keyword">var</span> LocalStrategy = <span class="built_in">require</span>(<span class="string">'passport-local'</span>)</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</div><div class="line"><span class="keyword">var</span> flash = <span class="built_in">require</span>(<span class="string">'connect-flash'</span>);</div><div class="line"><span class="keyword">var</span> users = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</div><div class="line"></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">mongoose.connect(<span class="string">'mongodb://localhost/loginappv2'</span>);</div><div class="line"><span class="keyword">var</span> db = mongoose.connection;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">app.use(passport.initialize());</div><div class="line">app.use(passport.session());</div></pre></td></tr></table></figure>
+</li>
+<li><p>set up routes in routes/user.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* GET users listing. */</span></div><div class="line">router.get(<span class="string">'/signin'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(res.locals)</div><div class="line">  res.render(<span class="string">'signin'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.post(<span class="string">'/signin'</span>,</div><div class="line">  passport.authenticate(<span class="string">'local'</span>, &#123;</div><div class="line">    <span class="attr">successRedirect</span>: <span class="string">'/users/profile'</span>,</div><div class="line">    <span class="attr">failureRedirect</span>: <span class="string">'/users/signin'</span>,</div><div class="line">    <span class="attr">failureFlash</span>: <span class="literal">true</span></div><div class="line">  &#125;),</div><div class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.redirect(<span class="string">'/users/profile'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/* GET users listing. */</span></div><div class="line">router.get(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">'signup'</span>, &#123;<span class="attr">errors</span>: <span class="string">''</span>&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Post Sign Up</span></div><div class="line">router.post(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// Parse Info</span></div><div class="line">  <span class="keyword">var</span> username = req.body.username</div><div class="line">  <span class="keyword">var</span> password = req.body.password</div><div class="line"></div><div class="line">  <span class="comment">//Create User</span></div><div class="line">  <span class="keyword">var</span> newUser = <span class="keyword">new</span> User(&#123;</div><div class="line">    <span class="attr">username</span>: username,</div><div class="line">    <span class="attr">password</span>: password</div><div class="line">  &#125;)</div><div class="line">  User.createUser(newUser, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">  &#125;)</div><div class="line">  res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">'/profile'</span>, ensureAuthenticated, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(req.user)</div><div class="line">  res.render(<span class="string">'profile'</span>, &#123;</div><div class="line">    <span class="attr">user</span>: req.user.username</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  req.logout()</div><div class="line">  req.flash(<span class="string">'success_msg'</span>, <span class="string">'You are logged out'</span>)</div><div class="line">  res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div></pre></td></tr></table></figure>
+</li>
+<li><p>setup passport and local in routes/user.js</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// routes/users.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ensureAuthenticated</span>(<span class="params">req, res, next</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(req.isAuthenticated())&#123;</div><div class="line">    <span class="keyword">return</span> next();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    req.flash(<span class="string">'error_msg'</span>, <span class="string">'you are not logged in'</span>)</div><div class="line">    res.redirect(<span class="string">'/users/signin'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">passport.use(<span class="keyword">new</span> LocalStrategy(</div><div class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">username, password, done</span>) </span>&#123;</div><div class="line">    User.findOne(&#123; <span class="attr">username</span>: username &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">      <span class="keyword">if</span> (!user) &#123;</div><div class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123; <span class="attr">message</span>: <span class="string">'Incorrect username.'</span> &#125;);</div><div class="line">      &#125;</div><div class="line">      User.comparePassword(password, user.password, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err</div><div class="line">        <span class="keyword">if</span>(isMatch) &#123;</div><div class="line">          <span class="keyword">return</span> done(<span class="literal">null</span>, user)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123;<span class="attr">message</span>: <span class="string">'Invalid password'</span>&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">));</div><div class="line"></div><div class="line">passport.serializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">user, done</span>) </span>&#123;</div><div class="line">  done(<span class="literal">null</span>, user.id);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">passport.deserializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">id, done</span>) </span>&#123;</div><div class="line">  User.getUserById(id, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">    done(err, user);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>This is part one. I’ll implement flash, session and express validator in next part.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><p><a href="https://github.com/kuanhsuh/express-passportJS/blob/master/routes/users.js" target="_blank" rel="external">My Github Demo</a></p>
+</li>
+<li><p><a href="http://passportjs.org/" target="_blank" rel="external">PassportJS</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/expressJS/" rel="tag"># expressJS</a>
+          
+            <a href="/tags/nodeJS/" rel="tag"># nodeJS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/21/Book Review-The-little-book-of-common-sense-investing/" rel="next" title="Book Review - The Little Book of Common Sense Investing">
+                <i class="fa fa-chevron-left"></i> Book Review - The Little Book of Common Sense Investing
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/23/Express-Intro-to-Passport-js-part-II/" rel="prev" title="Express-Intro to Passport.js part II">
+                Express-Intro to Passport.js part II <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Danny Huang" />
+          <p class="site-author-name" itemprop="name">Danny Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kuanhsuh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/dannyhuang24" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps"><span class="nav-number">1.1.</span> <span class="nav-text">Steps</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">2.</span> <span class="nav-text">Links</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Danny Huang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dannysblog-1';
+      var disqus_identifier = '2017/06/21/Express-Intro-to-Passport-js/';
+
+      var disqus_title = "Express-Intro to Passport.js part I";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

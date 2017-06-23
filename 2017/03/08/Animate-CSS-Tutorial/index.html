@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="My Coding Journey" type="application/atom+xml" />
+
 
 
 
@@ -103,7 +105,7 @@ How to use it.
 Add the animate cdn to your heade">
 <meta property="og:image" content="http://blog.infographics.tw/wp-content/uploads/2016/11/cover.gif">
 <meta property="og:image" content="http://i.giphy.com/3oz8xIIMTgPT3zNzkk.gif">
-<meta property="og:updated_time" content="2017-03-08T01:30:49.000Z">
+<meta property="og:updated_time" content="2017-06-23T08:36:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Animate CSS Tutorial">
 <meta name="twitter:description" content="Animate CSS
@@ -195,7 +197,7 @@ Add the animate cdn to your heade">
       </a>
     </div>
       
-        <p class="site-subtitle">What if I didn't try</p>
+        <p class="site-subtitle">Journey to a Full Stack Developer</p>
       
   </div>
 
@@ -367,16 +369,7 @@ Add the animate cdn to your heade">
 <p>HTML:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"cellSeven"</span> <span class="attr">onclick</span>=<span class="string">"handlers.animate(this);"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>JS:</p>
-<pre><code class="javascript">handlers = {
-  <span class="attr">animate</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
-    <span class="keyword">var</span> animationName = <span class="string">'animated shake'</span>;
-    <span class="keyword">var</span> animationEnd = <span class="string">'webkitanimationend mozanimationend msanimationend oanimationend animationend'</span>
-    $(e).addClass(animationName)
-      .one(animationEnd, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      $(<span class="keyword">this</span>).removeClass(<span class="string">'animated shake'</span>);
-  });
-}
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">handlers = &#123;</div><div class="line">  <span class="attr">animate</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> animationName = <span class="string">'animated shake'</span>;</div><div class="line">    <span class="keyword">var</span> animationEnd = <span class="string">'webkitanimationend mozanimationend msanimationend oanimationend animationend'</span></div><div class="line">    $(e).addClass(animationName)</div><div class="line">      .one(animationEnd, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      $(<span class="keyword">this</span>).removeClass(<span class="string">'animated shake'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><ul>
 <li><a href="https://daneden.github.io/animate.css/" target="_blank" rel="external">https://daneden.github.io/animate.css/</a></li>
 <li><a href="http://blog.infographics.tw/2016/11/animate-css/" target="_blank" rel="external">http://blog.infographics.tw/2016/11/animate-css/</a></li>
@@ -509,7 +502,7 @@ Add the animate cdn to your heade">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -522,7 +515,7 @@ Add the animate cdn to your heade">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -530,6 +523,13 @@ Add the animate cdn to your heade">
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
