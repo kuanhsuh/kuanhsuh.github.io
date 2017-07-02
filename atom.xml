@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-23T09:01:54.000Z</updated>
+  <updated>2017-07-02T21:29:42.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,114 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Express-Custom Facebook Chatbot</title>
+    <link href="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/"/>
+    <id>http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/</id>
+    <published>2017-06-29T22:48:57.000Z</published>
+    <updated>2017-07-02T21:29:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg" alt="Response 1" title="Response 1">
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p>Facebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.</p>
+<p>I have a FB page about room rental. For my chatbot, I want it to introduct some basic room types and if customer asks a too complicated question, I’ll have a generic response.</p>
+<h2 id="User-Story"><a href="#User-Story" class="headerlink" title="User Story"></a>User Story</h2><ul>
+<li>[ ] User should see a getting started button</li>
+<li>[ ] User see a welcome message</li>
+<li>[ ] User see options have room types, price, features</li>
+<li>[ ] User should see a generic phone number and message for complicated response</li>
+</ul>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><ol>
+<li><p>Change default message response</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/webhook/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">    if (event.postback &amp;&amp; event.postback.payload === <span class="string">"getstarted"</span>) &#123;</div><div class="line">      sendText(sender, <span class="string">"歡迎來到高醫套房， 請問你想了解什麼？房型？價錢？特色"</span>)</div><div class="line">      <span class="comment">// welcome, what would you like to know? room types, price, features</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (event.message &amp;&amp; event.message.text) &#123;</div><div class="line">      <span class="keyword">let</span> text = event.message.text</div><div class="line">      decideMessage(sender, text)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  res.sendStatus(<span class="number">200</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Direct mapping for specific keyword</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decideMessage</span>(<span class="params">sender, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (text.includes(<span class="string">"房型"</span>)) &#123; <span class="comment">// Room Types</span></div><div class="line">    sendText(sender, <span class="string">"我們這裡有一間5坪房間， 6間6坪房間， 2間7坪房間"</span>) <span class="comment">// We have 15sq, 25 sq, 35sq room</span></div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( text.includes(<span class="string">"價錢"</span>)) &#123; <span class="comment">//Price</span></div><div class="line">    sendText(sender, <span class="string">"長期約: 1年合約: 每月5500-6800$，2個月押金"</span>)</div><div class="line">    <span class="comment">// contract term is 1 year, monthly rent is 5500-6600, 2 months deposit</span></div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (text.includes(<span class="string">"特色"</span>)) &#123; <span class="comment">// Feature</span></div><div class="line">    sendText(sender, <span class="string">"獨立廁所，雙人床，桌子椅子，電視，冰箱，冷氣，烘洗衣機"</span>)</div><div class="line">    <span class="comment">//bathroom, queen size bed, tv, fridge, ac....</span></div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    sendText(sender, <span class="string">"如果有更多問題, 請打給 0800-123-333。 會有專人幫你服務"</span>)</div><div class="line">    <span class="comment">// if you have further question, please call...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup welcome message</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/setup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  setupGetStartedButton(res);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupGetStartedButton</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> messageData = &#123;</div><div class="line">    <span class="string">"get_started"</span>:&#123;</div><div class="line">        <span class="string">"payload"</span>:<span class="string">"getstarted"</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="comment">// Start the request</span></div><div class="line">  request(&#123;</div><div class="line">      <span class="attr">url</span>: <span class="string">"https://graph.facebook.com/v2.6/me/messenger_profile?access_token="</span>+ token,</div><div class="line">      <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">      <span class="attr">headers</span>: &#123;<span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>&#125;,</div><div class="line">      <span class="attr">form</span>: messageData</div><div class="line">  &#125;,</div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, response, body</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!error &amp;&amp; response.statusCode == <span class="number">200</span>) &#123;</div><div class="line">          <span class="comment">// Print out the response body</span></div><div class="line">          res.send(body);</div><div class="line"></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="comment">// <span class="doctag">TODO:</span> Handle errors</span></div><div class="line">          res.send(body);</div><div class="line">      &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="More-pictures"><a href="#More-pictures" class="headerlink" title="More pictures"></a>More pictures</h2><img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat2.jpg" alt="Response 2" title="Response 2">
+<img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat3.jpg" alt="Response 3" title="Response 3">
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>Facebook chatbot is still a new technology. Even more advanced chatbot such as cnn only maps user to news. I think the future is to have implement with a AI so chatbot can be more lively.</p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/kuanhsuh/express-fbChatBot/blob/master/index.js" target="_blank" rel="external">My Github Repo(basic)</a></li>
+<li><a href="https://www.techiediaries.com/build-messenger-bot-nodejs/" target="_blank" rel="external">Technie Diaries - build messenger bot</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/thread-settings/greeting-text" target="_blank" rel="external">Facebook Greeting Text</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/messenger-profile/get-started-button" target="_blank" rel="external">Facebook - Getting Started Button</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg&quot; alt=&quot;Response 1&quot; title=&quot;Response 1&quot;&gt;
+&lt;h2 id=&quot;Features&quot;&gt;&lt;a href=&quot;#Features&quot; 
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Express-Basic Facebook Chatbot</title>
+    <link href="http://yoursite.com/2017/06/30/Express-Facebook-Chatbot/"/>
+    <id>http://yoursite.com/2017/06/30/Express-Facebook-Chatbot/</id>
+    <published>2017-06-29T21:24:17.000Z</published>
+    <updated>2017-07-02T21:27:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.2178-6/13331537_288414224831849_853132949_n.png?oh=1e98ecca3eeeddbafd654a7b08c42826&amp;oe=59CEF51B" alt="Sample Response" title="Sample"></p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Facebook chatbot is a chatbot service that user can use to their own facebook pages. You can use chatbot to answer basic user questions and direct them to their desire products. However, it can not have a deep conversation with user. (You will need to use a Artificial Intelligence API or something for this)</p>
+<p>For this post I’ll show how to setup your chat app. It will connect to your facebook page and just respond what user types. In the next post I’ll show how to customize your facebook response.</p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>The code is in my github repo (LINK)</p>
+<ol>
+<li><p>Install following packages</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"body-parser"</span>: <span class="string">"^1.17.2"</span>,</div><div class="line"><span class="string">"express"</span>: <span class="string">"^4.15.3"</span>,</div><div class="line"><span class="string">"request"</span>: <span class="string">"^2.81.0"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Basic App setup</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>)</div><div class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express()</div><div class="line"></div><div class="line">app.set(<span class="string">'port'</span>, (process.env.PORT || <span class="number">8000</span>))</div><div class="line"></div><div class="line"><span class="comment">// Allow us to process the data</span></div><div class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;))</div><div class="line">app.use(bodyParser.json())</div></pre></td></tr></table></figure>
+</li>
+<li><p>Basic Routes Setup</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ROUTES</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">"Hi, I am a chatbot"</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">// FACEBOOK (security thing)</span></div><div class="line">app.get(<span class="string">'/webhook/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// hub?</span></div><div class="line">  <span class="keyword">if</span> (req.query[<span class="string">'hub.verify_token'</span>] === <span class="string">"dannyisexy"</span>) &#123;</div><div class="line">    res.send(req.query[<span class="string">'hub.challenge'</span>])</div><div class="line">  &#125;</div><div class="line">  res.send(<span class="string">"Wrong token"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>POST response for webhook. After user enter a message. It is sent to our webhook. We use body-parser to parse messages.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/webhook/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> messaging_events = req.body.entry[<span class="number">0</span>].messaging  <span class="comment">// Parse Messages from fb API the response look like the object below</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; messaging_events.length; i++)&#123;</div><div class="line">    <span class="keyword">let</span> event = messaging_events[i]</div><div class="line">    <span class="keyword">let</span> sender = event.sender.id <span class="comment">// get User ID, so we know who to send response to</span></div><div class="line">    <span class="keyword">if</span> (event.message &amp;&amp; event.message.text) &#123;</div><div class="line">      <span class="keyword">let</span> text = event.message.text <span class="comment">// get user text</span></div><div class="line">      sendText(sender, <span class="string">"Text echo: "</span>+ text.substring(<span class="number">0</span>,<span class="number">100</span>)) <span class="comment">// respond the same text as user</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  res.sendStatus(<span class="number">200</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>This is what facebook send to our webhook.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="string">"object"</span>:<span class="string">"page"</span>,</div><div class="line"><span class="string">"entry"</span>:[</div><div class="line">  &#123;</div><div class="line">    <span class="string">"id"</span>:<span class="string">"PAGE_ID"</span>,</div><div class="line">    <span class="string">"time"</span>:<span class="number">1458692752478</span>,</div><div class="line">    <span class="string">"messaging"</span>:[</div><div class="line">      &#123;</div><div class="line">        <span class="string">"sender"</span>:&#123;</div><div class="line">          <span class="string">"id"</span>:<span class="string">"USER_ID"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="string">"recipient"</span>:&#123;</div><div class="line">          <span class="string">"id"</span>:<span class="string">"PAGE_ID"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        ...</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Functions for sending response text. We use the request module from npm to send our response.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendText</span>(<span class="params">sender, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> messageData = &#123;<span class="attr">text</span>: text&#125;</div><div class="line">  sendRequest(sender, messageData)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendRequest</span>(<span class="params">sender, messageData</span>) </span>&#123;</div><div class="line">  request(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">"https://graph.facebook.com/v2.6/me/messages"</span>,</div><div class="line">    <span class="attr">qs</span>: &#123; <span class="attr">access_token</span>: token &#125;,</div><div class="line">    <span class="attr">method</span>: <span class="string">"POST"</span>,</div><div class="line">    <span class="attr">json</span>: &#123;</div><div class="line">      <span class="attr">recipient</span>: &#123;<span class="attr">id</span>: sender&#125;,</div><div class="line">      <span class="attr">message</span>: messageData</div><div class="line">    &#125;</div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error, response, body</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (error)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"sending error"</span>)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (response.body.error)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"response body error"</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.listen(app.get(<span class="string">'port'</span>), <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running: port'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>Here’s what our facebook’s send API ask for</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">curl -X POST -H "Content-Type: application/json" -d '&#123;</div><div class="line">  "recipient": &#123;</div><div class="line">    "id": "USER_ID"</div><div class="line">  &#125;,</div><div class="line">  "message": &#123;</div><div class="line">    "text": "hello, world!"</div><div class="line">  &#125;</div><div class="line">&#125;' "https://graph.facebook.com/v2.6/me/messages?access_token=PAGE_ACCESS_TOKEN"</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>We setup our server that accepts webhook.<br>Our webhook is able to deal with response and able to return a message back to user.<br>This is how to send basic text response to user. Next blog post i’ll show you how to customer your response.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/kuanhsuh/express-fbChatBot/blob/master/basic.js" target="_blank" rel="external">My Github Repo(basic)</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/guides/quick-start" target="_blank" rel="external">Facebook Quick Start Guide</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/webhook-reference" target="_blank" rel="external">Facebook webhook reference</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference" target="_blank" rel="external">Facebook Send API</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://scontent-tpe1-1.xx.fbcdn.net/v/t39.2178-6/13331537_288414224831849_853132949_n.png?oh=1e98ecca3eeeddbafd654a7b08c42826&amp;
+    
+    </summary>
+    
+    
+      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
   
   <entry>
     <title>Express-Intro to Passport.js part II</title>
@@ -33,7 +141,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// REVISED with validation feature. Post Sign Up</span></div><div class="line">router.post(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// Parse Info</span></div><div class="line">  <span class="keyword">var</span> username = req.body.username</div><div class="line">  <span class="keyword">var</span> password = req.body.password</div><div class="line"></div><div class="line">  <span class="comment">// Validation</span></div><div class="line">  req.checkBody(<span class="string">'username'</span>, <span class="string">'Username is required'</span>).notEmpty()</div><div class="line">  req.checkBody(<span class="string">'password'</span>, <span class="string">'Password is required'</span>).notEmpty()</div><div class="line"></div><div class="line">  <span class="keyword">var</span> errors = req.validationErrors();</div><div class="line">  <span class="keyword">if</span>(errors) &#123;</div><div class="line">    res.render(<span class="string">'signup'</span>, &#123;<span class="attr">errors</span>: errors&#125;)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">//Create User</span></div><div class="line">  ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  router.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  req.flash(<span class="string">'success_msg'</span>, <span class="string">'You are logged out'</span>)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ol>
 <li><p>Implement the flash message to sign in &amp; sign up views.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//signin.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(success_msg) &#123; %&gt;</div><div class="line">&lt;div class="success"&gt;</div><div class="line">  &lt;%= success_msg %&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div><div class="line"></div><div class="line"><span class="comment">//signup.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(errors)&#123; %&gt;</div><div class="line">  &lt;% errors.forEach(function(error)&#123; %&gt;</div><div class="line">  &lt;div class="error"&gt;&lt;%= error.msg %&gt;&lt;/div&gt;</div><div class="line">  &lt;% &#125;) %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//signin.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(success_msg) &#123; %&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"success"</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">success_msg</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;% &#125; %&gt;</div><div class="line"></div><div class="line"><span class="comment">//signup.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(errors)&#123; %&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">%</span> <span class="attr">errors.forEach</span>(<span class="attr">function</span>(<span class="attr">error</span>)&#123; %&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">error.msg</span> %&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>This is it on how to implement passportJS to your express app. A lot of code is the same from the library’s document. I recommend you going to each individual library and read their docs. This post is to show you on how to implement them together.</p>
@@ -111,7 +219,7 @@
     <link href="http://yoursite.com/2017/06/21/Book%20Review-The-little-book-of-common-sense-investing/"/>
     <id>http://yoursite.com/2017/06/21/Book Review-The-little-book-of-common-sense-investing/</id>
     <published>2017-06-21T06:03:57.000Z</published>
-    <updated>2017-06-23T02:52:03.000Z</updated>
+    <updated>2017-06-29T21:25:00.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://images.gr-assets.com/books/1347673616l/171127.jpg" alt="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns" title="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns"></p>
 <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>John Bogle, the founder of The Vanguard Group, preaches the idea of index investing. His company Vanguard Group also is one of the leaders in index funds. In his book he talks about why index fund is the best and safest strategy for average investors.</p>
@@ -134,6 +242,8 @@
     
     </summary>
     
+    
+      <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
     
   </entry>
   
@@ -700,72 +810,6 @@
     
     
       <category term="Reactjs" scheme="http://yoursite.com/tags/Reactjs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Best Deployment Website-Surge</title>
-    <link href="http://yoursite.com/2017/04/07/Best-Deployment-Website-Surge/"/>
-    <id>http://yoursite.com/2017/04/07/Best-Deployment-Website-Surge/</id>
-    <published>2017-04-07T06:28:26.000Z</published>
-    <updated>2017-06-16T00:10:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Surge is a place where frontend developers can easily deploy static websites.<br>I first came across surge when it was mentioned in freecodecamp forum. Then I quickly try it out for my small projects.</p>
-<p>Surge is really easy to use with only one command. The website performance is fast. It is a great place to show place your projects. You can also add custom domain name with using CNAME.</p>
-<p>Right now I use it host my portfolio site and my react projects.</p>
-<p>Command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev surge</div><div class="line">surge</div></pre></td></tr></table></figure></p>
-<p>Reference:</p>
-<ul>
-<li><a href="https://surge.sh/help/getting-started-with-surge" target="_blank" rel="external">https://surge.sh/help/getting-started-with-surge</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Surge is a place where frontend developers can easily deploy static websites.&lt;br&gt;I first came across surge when it was mentioned in freec
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Day 40-50</title>
-    <link href="http://yoursite.com/2017/04/07/100-Days-Code-Challenge-Day-40-50/"/>
-    <id>http://yoursite.com/2017/04/07/100-Days-Code-Challenge-Day-40-50/</id>
-    <published>2017-04-07T06:24:07.000Z</published>
-    <updated>2017-04-07T06:27:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Goals-Completed"><a href="#Goals-Completed" class="headerlink" title="Goals Completed"></a>Goals Completed</h3><ul>
-<li>Deploy 3 React Projects(FCC Markdown Previewer, FCC Recipe Box, Random Text Generator)</li>
-</ul>
-<p>Day 41-3.18-React Day 6<br>[ ] Facebook React Tutorial<br>[x] ReactTraining Finish video 9<br>[x] FCC React 40<br>[ ] Codewar 229<br>[ ] Udemy Modren React #13</p>
-<p>Day 42-3.19-React Day 7<br>[x] FCC React 50<br>[ ] Codewar 231<br>[ ] Udemy Modren React #25</p>
-<p>Day 43-3.20-React Day 8<br>[x] ReactTraining Finish<br>[ ] Codewar 233<br>[ ] Udemy Modren React #45<br>[x] FCC Redux 7</p>
-<p>Day 44-3.21-React Day 9<br>[ ] Codewar 233<br>[ ] Udemy Modren React #50<br>[ ] FCC Redux 7</p>
-<p>Day 44-3.21-React Day 10<br>[ ] Codewar 235<br>[ ] Udemy Modren React #65<br>[ ] Finish FCC REDUX<br>[ ] JS Understanding the weird parts 43</p>
-<p>Day 45-3.22-React Day 11<br>[ ] Codewar 237<br>[ ] Work on React TodoList<br>[ ] Work on React 24hours tutorial</p>
-<p>Day 46-3.23-React Day 12<br>[ ] Udemy Modren React REVIEW 2nd Project<br>[ ] FCC REDUX + REACT Finished</p>
-<p>Day 46-3.24-React Day 13<br>[ ] FCC Markdown Previewer 1st Draft Complete</p>
-<p>Day 47-3.25-React Day 14<br>[ ] FCC Markdown Previewer-add JSHINT</p>
-<p>Day 47-3.26-React Day 15<br>[ ] React JS deployment<br>[ ] Codewar 292 Moved up to 5 KYU<br>[ ] Added ESLint to Atom</p>
-<p>Day 47-3.27-React Day 16<br>[ ] FCC Recipe Project - Finish ADD, View feature</p>
-<p>Day 48-3.29-React Day 17<br>[ ] FCC Recipe Project - Finish Project<br>[ ] Install Redux Dev tool<br>[ ] Play with dev tools<br>[ ] Work on KHH trash project</p>
-<p>Day 49-3.30-React Day 18<br>[ ] Redo Udemy project 3<br>[ ] Build Random Text generator app<br>[ ] Understand JS 2 video</p>
-<p>Day 50-3.31-React Day 19<br>[ ] Rebuild Random Text Generator App<br>[ ] Finish FCC D3 challenges</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Goals-Completed&quot;&gt;&lt;a href=&quot;#Goals-Completed&quot; class=&quot;headerlink&quot; title=&quot;Goals Completed&quot;&gt;&lt;/a&gt;Goals Completed&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Deploy 3 Rea
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
     
   </entry>
   

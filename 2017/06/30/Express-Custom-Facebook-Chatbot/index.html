@@ -89,25 +89,23 @@
 
 
 
-<meta name="description" content="This is the second part on my Passport tutorial. Please read first part if you haven’t.
-
-Import session, express-validator, connect flash into app.js
-12345678910111213141516171819202122232425262728293">
+<meta name="description" content="FeaturesFacebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.
+I have a FB page about room rental. For my chatbot, I want it to in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Express-Intro to Passport.js part II">
-<meta property="og:url" content="http://yoursite.com/2017/06/23/Express-Intro-to-Passport-js-part-II/index.html">
+<meta property="og:title" content="Express-Custom Facebook Chatbot">
+<meta property="og:url" content="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="This is the second part on my Passport tutorial. Please read first part if you haven’t.
-
-Import session, express-validator, connect flash into app.js
-12345678910111213141516171819202122232425262728293">
-<meta property="og:updated_time" content="2017-06-23T09:01:54.000Z">
+<meta property="og:description" content="FeaturesFacebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.
+I have a FB page about room rental. For my chatbot, I want it to in">
+<meta property="og:image" content="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/chat2.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/chat3.jpg">
+<meta property="og:updated_time" content="2017-07-02T21:29:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Express-Intro to Passport.js part II">
-<meta name="twitter:description" content="This is the second part on my Passport tutorial. Please read first part if you haven’t.
-
-Import session, express-validator, connect flash into app.js
-12345678910111213141516171819202122232425262728293">
+<meta name="twitter:title" content="Express-Custom Facebook Chatbot">
+<meta name="twitter:description" content="FeaturesFacebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.
+I have a FB page about room rental. For my chatbot, I want it to in">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg">
 
 
 
@@ -135,13 +133,13 @@ Import session, express-validator, connect flash into app.js
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/23/Express-Intro-to-Passport-js-part-II/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/"/>
 
 
 
 
 
-  <title> Express-Intro to Passport.js part II | My Coding Journey </title>
+  <title> Express-Custom Facebook Chatbot | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -269,7 +267,7 @@ Import session, express-validator, connect flash into app.js
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/Express-Intro-to-Passport-js-part-II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -290,7 +288,7 @@ Import session, express-validator, connect flash into app.js
             
             
               
-                Express-Intro to Passport.js part II
+                Express-Custom Facebook Chatbot
               
             
           </h1>
@@ -305,8 +303,8 @@ Import session, express-validator, connect flash into app.js
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T16:44:19+08:00">
-                2017-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-30T06:48:57+08:00">
+                2017-06-30
               </time>
             
 
@@ -324,8 +322,8 @@ Import session, express-validator, connect flash into app.js
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/23/Express-Intro-to-Passport-js-part-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/23/Express-Intro-to-Passport-js-part-II/" itemprop="commentCount"></span>
+                <a href="/2017/06/30/Express-Custom-Facebook-Chatbot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/30/Express-Custom-Facebook-Chatbot/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,25 +349,34 @@ Import session, express-validator, connect flash into app.js
       
 
       
-        <p>This is the second part on my Passport tutorial. Please read first part if you haven’t.</p>
-<ol>
-<li><p>Import session, express-validator, connect flash into app.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>);</div><div class="line"><span class="keyword">var</span> flash = <span class="built_in">require</span>(<span class="string">'connect-flash'</span>);</div><div class="line"><span class="keyword">var</span> expressValidator = <span class="built_in">require</span>(<span class="string">'express-validator'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Express Session</span></div><div class="line">app.use(session(&#123;</div><div class="line">    <span class="attr">secret</span>: <span class="string">'secret'</span>,</div><div class="line">    <span class="attr">saveUninitialized</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">resave</span>: <span class="literal">true</span></div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="comment">// Express Validator</span></div><div class="line">app.use(expressValidator(&#123;</div><div class="line">  <span class="attr">errorFormatter</span>: <span class="function"><span class="keyword">function</span>(<span class="params">param, msg, value</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> namespace = param.split(<span class="string">'.'</span>)</div><div class="line">      , root    = namespace.shift()</div><div class="line">      , formParam = root;</div><div class="line"></div><div class="line">    <span class="keyword">while</span>(namespace.length) &#123;</div><div class="line">      formParam += <span class="string">'['</span> + namespace.shift() + <span class="string">']'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">param</span> : formParam,</div><div class="line">      <span class="attr">msg</span>   : msg,</div><div class="line">      <span class="attr">value</span> : value</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="comment">// Connect Flash</span></div><div class="line">app.use(flash());</div><div class="line"></div><div class="line"><span class="comment">// setup local variables so we can use it anywhere in our app</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.locals.success_msg = req.flash(<span class="string">'success_msg'</span>);</div><div class="line">  res.locals.error_msg = req.flash(<span class="string">'error_msg'</span>);</div><div class="line">  res.locals.error = req.flash(<span class="string">'error'</span>);</div><div class="line">  res.locals.user = req.user || <span class="literal">null</span>;</div><div class="line">  next();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg" alt="Response 1" title="Response 1">
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p>Facebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.</p>
+<p>I have a FB page about room rental. For my chatbot, I want it to introduct some basic room types and if customer asks a too complicated question, I’ll have a generic response.</p>
+<h2 id="User-Story"><a href="#User-Story" class="headerlink" title="User Story"></a>User Story</h2><ul>
+<li>[ ] User should see a getting started button</li>
+<li>[ ] User see a welcome message</li>
+<li>[ ] User see options have room types, price, features</li>
+<li>[ ] User should see a generic phone number and message for complicated response</li>
+</ul>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><ol>
+<li><p>Change default message response</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/webhook/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">    if (event.postback &amp;&amp; event.postback.payload === <span class="string">"getstarted"</span>) &#123;</div><div class="line">      sendText(sender, <span class="string">"歡迎來到高醫套房， 請問你想了解什麼？房型？價錢？特色"</span>)</div><div class="line">      <span class="comment">// welcome, what would you like to know? room types, price, features</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (event.message &amp;&amp; event.message.text) &#123;</div><div class="line">      <span class="keyword">let</span> text = event.message.text</div><div class="line">      decideMessage(sender, text)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  res.sendStatus(<span class="number">200</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p>Add flash and validation into routes/users.js</p>
+<li><p>Direct mapping for specific keyword</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decideMessage</span>(<span class="params">sender, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (text.includes(<span class="string">"房型"</span>)) &#123; <span class="comment">// Room Types</span></div><div class="line">    sendText(sender, <span class="string">"我們這裡有一間5坪房間， 6間6坪房間， 2間7坪房間"</span>) <span class="comment">// We have 15sq, 25 sq, 35sq room</span></div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( text.includes(<span class="string">"價錢"</span>)) &#123; <span class="comment">//Price</span></div><div class="line">    sendText(sender, <span class="string">"長期約: 1年合約: 每月5500-6800$，2個月押金"</span>)</div><div class="line">    <span class="comment">// contract term is 1 year, monthly rent is 5500-6600, 2 months deposit</span></div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (text.includes(<span class="string">"特色"</span>)) &#123; <span class="comment">// Feature</span></div><div class="line">    sendText(sender, <span class="string">"獨立廁所，雙人床，桌子椅子，電視，冰箱，冷氣，烘洗衣機"</span>)</div><div class="line">    <span class="comment">//bathroom, queen size bed, tv, fridge, ac....</span></div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    sendText(sender, <span class="string">"如果有更多問題, 請打給 0800-123-333。 會有專人幫你服務"</span>)</div><div class="line">    <span class="comment">// if you have further question, please call...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setup welcome message</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/setup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  setupGetStartedButton(res);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupGetStartedButton</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> messageData = &#123;</div><div class="line">    <span class="string">"get_started"</span>:&#123;</div><div class="line">        <span class="string">"payload"</span>:<span class="string">"getstarted"</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="comment">// Start the request</span></div><div class="line">  request(&#123;</div><div class="line">      <span class="attr">url</span>: <span class="string">"https://graph.facebook.com/v2.6/me/messenger_profile?access_token="</span>+ token,</div><div class="line">      <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">      <span class="attr">headers</span>: &#123;<span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>&#125;,</div><div class="line">      <span class="attr">form</span>: messageData</div><div class="line">  &#125;,</div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, response, body</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!error &amp;&amp; response.statusCode == <span class="number">200</span>) &#123;</div><div class="line">          <span class="comment">// Print out the response body</span></div><div class="line">          res.send(body);</div><div class="line"></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="comment">// <span class="doctag">TODO:</span> Handle errors</span></div><div class="line">          res.send(body);</div><div class="line">      &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// REVISED with validation feature. Post Sign Up</span></div><div class="line">router.post(<span class="string">'/signup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// Parse Info</span></div><div class="line">  <span class="keyword">var</span> username = req.body.username</div><div class="line">  <span class="keyword">var</span> password = req.body.password</div><div class="line"></div><div class="line">  <span class="comment">// Validation</span></div><div class="line">  req.checkBody(<span class="string">'username'</span>, <span class="string">'Username is required'</span>).notEmpty()</div><div class="line">  req.checkBody(<span class="string">'password'</span>, <span class="string">'Password is required'</span>).notEmpty()</div><div class="line"></div><div class="line">  <span class="keyword">var</span> errors = req.validationErrors();</div><div class="line">  <span class="keyword">if</span>(errors) &#123;</div><div class="line">    res.render(<span class="string">'signup'</span>, &#123;<span class="attr">errors</span>: errors&#125;)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">//Create User</span></div><div class="line">  ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  router.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  ...</div><div class="line">  req.flash(<span class="string">'success_msg'</span>, <span class="string">'You are logged out'</span>)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<ol>
-<li><p>Implement the flash message to sign in &amp; sign up views.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//signin.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(success_msg) &#123; %&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"success"</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">success_msg</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;% &#125; %&gt;</div><div class="line"></div><div class="line"><span class="comment">//signup.ejs</span></div><div class="line">&lt;% <span class="keyword">if</span>(errors)&#123; %&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">%</span> <span class="attr">errors.forEach</span>(<span class="attr">function</span>(<span class="attr">error</span>)&#123; %&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">error.msg</span> %&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>This is it on how to implement passportJS to your express app. A lot of code is the same from the library’s document. I recommend you going to each individual library and read their docs. This post is to show you on how to implement them together.</p>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://github.com/jaredhanson/connect-flash" target="_blank" rel="external">connect-flash</a></li>
-<li><a href="https://github.com/ctavan/express-validator" target="_blank" rel="external">express-validator</a></li>
-<li><a href="https://github.com/expressjs/session" target="_blank" rel="external">express-session</a></li>
+<h2 id="More-pictures"><a href="#More-pictures" class="headerlink" title="More pictures"></a>More pictures</h2><img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat2.jpg" alt="Response 2" title="Response 2">
+<img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat3.jpg" alt="Response 3" title="Response 3">
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>Facebook chatbot is still a new technology. Even more advanced chatbot such as cnn only maps user to news. I think the future is to have implement with a AI so chatbot can be more lively.</p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/kuanhsuh/express-fbChatBot/blob/master/index.js" target="_blank" rel="external">My Github Repo(basic)</a></li>
+<li><a href="https://www.techiediaries.com/build-messenger-bot-nodejs/" target="_blank" rel="external">Technie Diaries - build messenger bot</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/thread-settings/greeting-text" target="_blank" rel="external">Facebook Greeting Text</a></li>
+<li><a href="https://developers.facebook.com/docs/messenger-platform/messenger-profile/get-started-button" target="_blank" rel="external">Facebook - Getting Started Button</a></li>
 </ul>
 
       
@@ -409,8 +416,8 @@ Import session, express-validator, connect flash into app.js
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/21/Express-Intro-to-Passport-js/" rel="next" title="Express-Intro to Passport.js part I">
-                <i class="fa fa-chevron-left"></i> Express-Intro to Passport.js part I
+              <a href="/2017/06/30/Express-Facebook-Chatbot/" rel="next" title="Express-Basic Facebook Chatbot">
+                <i class="fa fa-chevron-left"></i> Express-Basic Facebook Chatbot
               </a>
             
           </div>
@@ -418,10 +425,6 @@ Import session, express-validator, connect flash into app.js
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/30/Express-Facebook-Chatbot/" rel="prev" title="Express-Basic Facebook Chatbot">
-                Express-Basic Facebook Chatbot <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +578,7 @@ Import session, express-validator, connect flash into app.js
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">1.</span> <span class="nav-text">Links</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Features"><span class="nav-number">1.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-Story"><span class="nav-number">2.</span> <span class="nav-text">User Story</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#More-pictures"><span class="nav-number">4.</span> <span class="nav-text">More pictures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thoughts"><span class="nav-number">5.</span> <span class="nav-text">Thoughts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">6.</span> <span class="nav-text">Link</span></a></li></ol></div>
             
 
           </div>
@@ -713,9 +716,9 @@ Import session, express-validator, connect flash into app.js
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/06/23/Express-Intro-to-Passport-js-part-II/';
+      var disqus_identifier = '2017/06/30/Express-Custom-Facebook-Chatbot/';
 
-      var disqus_title = "Express-Intro to Passport.js part II";
+      var disqus_title = "Express-Custom Facebook Chatbot";
 
 
       function run_disqus_script(disqus_script) {
