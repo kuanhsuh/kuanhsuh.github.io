@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-02T21:29:42.000Z</updated>
+  <updated>2017-07-08T22:11:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,102 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset</title>
+    <link href="http://yoursite.com/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/"/>
+    <id>http://yoursite.com/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/</id>
+    <published>2017-07-06T21:45:24.000Z</published>
+    <updated>2017-07-08T22:11:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here we will go over some more advanced git scenarios.</p>
+<h2 id="Squah-Multiple-Commits"><a href="#Squah-Multiple-Commits" class="headerlink" title="Squah Multiple Commits"></a>Squah Multiple Commits</h2><ol>
+<li><p>Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will come up.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">b1 <span class="comment"># commit 1</span></div><div class="line">b2 <span class="comment"># commit 2</span></div><div class="line">git rebase -i 49687a0a646954afdf3f4dae1f914ea793341ea2 (Commit 1 version number)</div></pre></td></tr></table></figure>
+</li>
+<li><p>After rebase command we enter editor interface where we can edit the commits. Basically you need to choose one to squash and choose pick for the rest of the commits.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">pick 033beb4 b1</div><div class="line">pick d426a8a b2</div><div class="line"></div><div class="line"><span class="comment"># Rebase 49687a0..d426a8a onto 49687a0</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Commands:</span></div><div class="line"><span class="comment">#  p, pick = use commit</span></div><div class="line"><span class="comment">#  r, reword = use commit, but edit the commit message</span></div><div class="line"><span class="comment">#  e, edit = use commit, but stop for amending</span></div><div class="line"><span class="comment">#  s, squash = use commit, but meld into previous commit</span></div><div class="line"><span class="comment">#  f, fixup = like "squash", but discard this commit's log message</span></div><div class="line"><span class="comment">#  x, exec = run command (the rest of the line) using shell</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span></div><div class="line"><span class="comment"># However, if you remove everything, the rebase will be aborted.</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Next you need to enter a new commit message</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">b</div><div class="line"><span class="comment"># This is a combination of 2 commits.</span></div><div class="line"><span class="comment"># The first commit's message is:</span></div><div class="line"><span class="comment"># b1</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># This is the 2nd commit message:</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># b2</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Please enter the commit message for your changes. Lines starting</span></div><div class="line"><span class="comment"># with '#' will be ignored, and an empty message aborts the commit.</span></div><div class="line"><span class="comment"># Not currently on any branch.</span></div><div class="line"><span class="comment"># Changes to be committed:</span></div><div class="line"><span class="comment">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#       modified:   a.txt</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>You can check git log for update</p>
+</li>
+</ol>
+<h2 id="Edit-last-Comment"><a href="#Edit-last-Comment" class="headerlink" title="Edit last Comment"></a>Edit last Comment</h2><ol>
+<li>You use the amend command. Ammend command go back to the previous commit and edit it.</li>
+<li><p>Another way is revert, which creates a new commit (does not interfere previous commit) but reverts status to previous commit.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit --amend -m <span class="string">"New commit message"</span></div><div class="line">git revert &lt;version number&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Git-Reset"><a href="#Git-Reset" class="headerlink" title="Git Reset"></a>Git Reset</h2><p>Here are some commands when you want to return to previous commit or situation before merge.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># return to previous commit</span></div><div class="line">git reset HEAD^ --hard</div><div class="line"><span class="comment"># return to previous commit or cancel merge when enter conflict</span></div><div class="line">git reset --hard</div><div class="line"><span class="comment"># after merge return to before merge</span></div><div class="line">git reset --hard ORIG_HEAD</div></pre></td></tr></table></figure>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="http://zerodie.github.io/blog/2012/01/19/git-rebase-i/" target="_blank" rel="external">Zerodie Github</a></li>
+<li><a href="http://blog.gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">gogojimmy</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here we will go over some more advanced git scenarios.&lt;/p&gt;
+&lt;h2 id=&quot;Squah-Multiple-Commits&quot;&gt;&lt;a href=&quot;#Squah-Multiple-Commits&quot; class=&quot;heade
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 101 - Basic Commands</title>
+    <link href="http://yoursite.com/2017/07/07/Git-101-Basic-Commands/"/>
+    <id>http://yoursite.com/2017/07/07/Git-101-Basic-Commands/</id>
+    <published>2017-07-06T21:01:10.000Z</published>
+    <updated>2017-07-08T22:10:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Git is a version control system. It tracks the changes you make. Every team uses some kind of versioning tool. One of the biggest features of git is branches. It’s the most popular version constrol system out there and many companies uses it.</p>
+<p>Before I start working I actually don’t use git or only use the basic commands. Now I started working I need to use git to upload my work and how to use git to enhance my work experience. Here are some basic commands to get started.</p>
+<h2 id="Basic-Commands"><a href="#Basic-Commands" class="headerlink" title="Basic Commands"></a>Basic Commands</h2><ol>
+<li><p>Basic config.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># config user</span></div><div class="line">git config --global user.name <span class="string">"Jimmy Kuo"</span></div><div class="line">git config --global user.email <span class="string">"jimmy@gogojimmy.net"</span></div><div class="line"><span class="comment"># set up git core editor</span></div><div class="line">git config --global core.editor <span class="string">"code --wait"</span></div><div class="line"><span class="comment"># checkout git config file</span></div><div class="line">cat ~/.gitconfig</div><div class="line"><span class="comment"># setup alias</span></div><div class="line">git config --global alias.st status</div><div class="line"><span class="comment">#Apply no white space warning</span></div><div class="line">git config --global apply.whitespace nowarn</div><div class="line"><span class="comment"># Add UI Color</span></div><div class="line">git config --global color.ui <span class="literal">true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Remote Git Commands</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Init Project</span></div><div class="line">git init</div><div class="line"><span class="comment"># Clone project</span></div><div class="line">git <span class="built_in">clone</span> &lt;remote url&gt;</div><div class="line"><span class="comment"># Push your repo</span></div><div class="line">git push or git push origin master</div><div class="line"><span class="comment"># Pull repo update your current repo with remote repo</span></div><div class="line">git pull</div></pre></td></tr></table></figure>
+</li>
+<li><p>Basic Git Commands</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># check current status</span></div><div class="line">git status</div><div class="line"><span class="comment"># add certain file</span></div><div class="line">git add &lt;certain file&gt;</div><div class="line"><span class="comment"># add all files</span></div><div class="line">git add.</div><div class="line"><span class="comment"># Commit with a message</span></div><div class="line">git commit -m <span class="string">"Git init"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Git Branch.</p>
+<p>Branch is one of the biggest features in git. It’s cheap. Basically you create a branch when you want a new feature, fix bug, or try something new.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># create new branch named cat</span></div><div class="line">git branch cat</div><div class="line"><span class="comment"># checkout to cat branch</span></div><div class="line">git checkout cat</div><div class="line"><span class="comment"># after you finished with branch, you checkout to master first and merge</span></div><div class="line">git merge</div><div class="line"><span class="comment"># you can rebase with master and your commits with branch will be put at the end of master branch</span></div><div class="line">git rebase master</div><div class="line"><span class="comment"># check out the diff between current branch and master branch</span></div><div class="line">git diff</div><div class="line"><span class="comment"># delete branch name</span></div><div class="line">git branch <span class="_">-d</span> <span class="string">"branch name"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Merge Conflict</p>
+<ul>
+<li>When merge conflict occurs, git should open your default editor where you can resolve conflict. (*don’t forget to delete &lt;&lt;&lt;, ===, &gt;&gt;&gt;)</li>
+<li>Use git add to stage finished file.(continue until all conflicts are complete)</li>
+<li>git commit -m “merge complete”</li>
+</ul>
+</li>
+</ol>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="http://blog.gogojimmy.net/2012/01/21/how-to-use-git-2-basic-usage-and-worflow/" target="_blank" rel="external">gogojimmy</a></li>
+<li><a href="https://git-scm.com/" target="_blank" rel="external">Git-scm</a></li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">Git branching model</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;Git is a version control system. It tr
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Express-Custom Facebook Chatbot</title>
@@ -745,71 +841,6 @@
     
     
       <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Day 50-60</title>
-    <link href="http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-50-60/"/>
-    <id>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-50-60/</id>
-    <published>2017-05-02T08:47:05.000Z</published>
-    <updated>2017-05-02T08:49:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Code-Log"><a href="#Code-Log" class="headerlink" title="Code Log"></a>Code Log</h2><p>Day 50-3.31-React Day 19<br>[ ] Rebuild Random Text Generator App<br>[ ] Finish FCC D3 challenges</p>
-<p>Day 51-4.1-D3 Day 1<br>[ ] D3 Practice</p>
-<p>Day 52-4.2-D3 Day 2<br>[ ] D3 Practice</p>
-<p>Day 53-4.3-D3 Day 3<br>[ ] D3 Practice</p>
-<p>Day 53-4.4-D3 Day 4<br>[ ] D3 Practice</p>
-<p>Day 53-4.5-D3 Day 5<br>[ ] Finish D3 USA GDP project<br>[ ] Work on React&amp;Redux Project</p>
-<p>Day 54-4.6-React Day 20<br>[ ] Finish on React&amp;Redux Project<br>[ ] Start Udemy React tutorial part 3 </p>
-<p>Day 55-4.7-React Day 21<br>[ ] Morning: Understand JS - 2 videos<br>[ ] Morning: Play with underscore.js-max<br>[ ] Start Udemy React tutorial - rewatch lecture 87<br>[ ] Write Blog &amp; readme files</p>
-<p>Day 56-4.8-D3 Day 6<br>[ ] Finish D3 Scatterplot</p>
-<p>Day 57-4.9-D3 Day 7<br>[ ] Working D3 Treemap<br>[ ] Understand JS weird parts </p>
-<p>Day 58-4.10-React Day 22<br>[ ] Daily React-UI #1<br>[ ] Daily React-UI #2 Part 1</p>
-<p>Day 58-4.11-React Day 22, Web Design Day 1<br>[ ] Daily React-UI #2<br>[ ] play with React Router V4 - <a href="http://quixotic-beginner.surge.sh/" target="_blank" rel="external">http://quixotic-beginner.surge.sh/</a><br>[ ] Finish JS weird parts<br>[ ] Accelerated ES6</p>
-<p>Day 58-4.12-<br>[ ] Morning Accelerated ES6 11/113<br>[ ] Morning RWD with css 05-07</p>
-<p>Day 59-4.13-React Day 22<br>[ ] Morning RWD with css 05-15<br>[ ] Redo React Blog app</p>
-<p>Day 60-4.14-React Day 22<br>[ ] Morning RWD with css 05-15<br>[ ] Redo React Blog app Almost Finish</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Code-Log&quot;&gt;&lt;a href=&quot;#Code-Log&quot; class=&quot;headerlink&quot; title=&quot;Code Log&quot;&gt;&lt;/a&gt;Code Log&lt;/h2&gt;&lt;p&gt;Day 50-3.31-React Day 19&lt;br&gt;[ ] Rebuild Random
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Create React App Review</title>
-    <link href="http://yoursite.com/2017/04/07/Create-React-App-Review/"/>
-    <id>http://yoursite.com/2017/04/07/Create-React-App-Review/</id>
-    <published>2017-04-07T06:35:20.000Z</published>
-    <updated>2017-04-07T06:45:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React code.</p>
-<p>Then I find out that in 2016/7 came out with this react cli create-react-app. The reason is because many React programmer has similar configuration problem, which lead to the term ‘javascript fatigue’ back in 2016. Facebook realize this problem and came up with a solution.</p>
-<p>create-react-app came is preconfigured. It has webpack configured so I can just focus on writing react code. For further customization I can use the eject command and customize from there.</p>
-<p>It also has a build tool so I can change my react site to static site and host it with surge.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line"></div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure>
-<p>Reference:</p>
-<ul>
-<li><a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="external">https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md</a></li>
-<li><a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html" target="_blank" rel="external">https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their 
-    
-    </summary>
-    
-    
-      <category term="Reactjs" scheme="http://yoursite.com/tags/Reactjs/"/>
     
   </entry>
   
