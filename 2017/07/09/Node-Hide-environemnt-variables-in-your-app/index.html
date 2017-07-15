@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Reactjs," />
+  <meta name="keywords" content="node," />
 
 
 
@@ -89,16 +89,23 @@
 
 
 
-<meta name="description" content="When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React">
+<meta name="description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
+dotenv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Create React App Review">
-<meta property="og:url" content="http://yoursite.com/2017/04/07/Create-React-App-Review/index.html">
+<meta property="og:title" content="Node-Hide environemnt variables in your app">
+<meta property="og:url" content="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React">
-<meta property="og:updated_time" content="2017-04-07T06:45:22.000Z">
+<meta property="og:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
+dotenv">
+<meta property="og:image" content="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar3.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar1.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar2.png">
+<meta property="og:updated_time" content="2017-07-15T07:36:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Create React App Review">
-<meta name="twitter:description" content="When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React">
+<meta name="twitter:title" content="Node-Hide environemnt variables in your app">
+<meta name="twitter:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
+dotenv">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar3.png">
 
 
 
@@ -126,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/07/Create-React-App-Review/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/"/>
 
 
 
 
 
-  <title> Create React App Review | My Coding Journey </title>
+  <title> Node-Hide environemnt variables in your app | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -260,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/07/Create-React-App-Review/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -281,7 +288,7 @@
             
             
               
-                Create React App Review
+                Node-Hide environemnt variables in your app
               
             
           </h1>
@@ -296,8 +303,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-07T14:35:20+08:00">
-                2017-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-09T06:13:30+08:00">
+                2017-07-09
               </time>
             
 
@@ -315,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/07/Create-React-App-Review/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/07/Create-React-App-Review/" itemprop="commentCount"></span>
+                <a href="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/09/Node-Hide-environemnt-variables-in-your-app/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -342,15 +349,25 @@
       
 
       
-        <p>When I started learning React, configuring my React project was my biggest problem. Everyone has a different pattern on setting up their React environment. Therefore it was hard to begin writing React code.</p>
-<p>Then I find out that in 2016/7 came out with this react cli create-react-app. The reason is because many React programmer has similar configuration problem, which lead to the term ‘javascript fatigue’ back in 2016. Facebook realize this problem and came up with a solution.</p>
-<p>create-react-app came is preconfigured. It has webpack configured so I can just focus on writing react code. For further customization I can use the eject command and customize from there.</p>
-<p>It also has a build tool so I can change my react site to static site and host it with surge.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line"></div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure>
-<p>Reference:</p>
-<ul>
-<li><a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="external">https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md</a></li>
-<li><a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html" target="_blank" rel="external">https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html</a></li>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.</p>
+<h2 id="dotenv-package"><a href="#dotenv-package" class="headerlink" title="dotenv package"></a>dotenv package</h2><p>Here’s my example repo: <a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="external">dotenv repo</a></p>
+<ol>
+<li>First install dotenv</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install dotenv --save-dev</div></pre></td></tr></table></figure>
+<p>Create .env file</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ABC_KEY = <span class="number">1234</span>qwer</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// in server/index.js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'dotenv'</span>).config()</div><div class="line"><span class="built_in">console</span>.log(process.env.ABC_KEY)</div></pre></td></tr></table></figure>
+<p>Remember in your .gitignore file to ignore .env file.</p>
+<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar3.png" alt="Screenshot 3" title="Screenshot 3">
+<h2 id="Set-process-env-variable-in-terminal"><a href="#Set-process-env-variable-in-terminal" class="headerlink" title="Set process.env variable in terminal"></a>Set process.env variable in terminal</h2><p>Second way is to directly set your variable in your terminal and access it in your node.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># type this in your terminal</span></div><div class="line"><span class="built_in">export</span> ABC_KEY=1234qwer <span class="comment"># no space and no quotation</span></div><div class="line"><span class="comment"># for window replace export for set</span></div><div class="line"><span class="built_in">unset</span> ABC_KEY <span class="comment"># unset variable</span></div></pre></td></tr></table></figure>
+<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar1.png" alt="Screenshot 1" title="Screenshot 1">
+<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar2.png" alt="Screenshot 2" title="Screenshot 2">
+<p>Now you can access the variables in your node app by using process.env.ABC_KEY</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=zDup0I2VGmk" target="_blank" rel="external">DevCoffee tutorial</a></li>
+<li><a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="external">dotenv repo</a></li>
 </ul>
 
       
@@ -375,7 +392,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Reactjs/" rel="tag"># Reactjs</a>
+            <a href="/tags/node/" rel="tag"># node</a>
           
         </div>
       
@@ -388,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/07/Best-Deployment-Website-Surge/" rel="next" title="Best Deployment Website-Surge">
-                <i class="fa fa-chevron-left"></i> Best Deployment Website-Surge
+              <a href="/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/" rel="next" title="Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset">
+                <i class="fa fa-chevron-left"></i> Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset
               </a>
             
           </div>
@@ -397,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/02/100-Days-Code-Challenge-Day-50-60/" rel="prev" title="100 Days Code Challenge Day 50-60">
-                100 Days Code Challenge Day 50-60 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -535,6 +557,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dotenv-package"><span class="nav-number">2.</span> <span class="nav-text">dotenv package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-process-env-variable-in-terminal"><span class="nav-number">3.</span> <span class="nav-text">Set process.env variable in terminal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">4.</span> <span class="nav-text">Links</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -667,9 +705,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/04/07/Create-React-App-Review/';
+      var disqus_identifier = '2017/07/09/Node-Hide-environemnt-variables-in-your-app/';
 
-      var disqus_title = "Create React App Review";
+      var disqus_title = "Node-Hide environemnt variables in your app";
 
 
       function run_disqus_script(disqus_script) {
