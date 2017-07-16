@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-15T07:36:38.000Z</updated>
+  <updated>2017-07-16T06:36:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NPM command cheatsheet</title>
+    <link href="http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/"/>
+    <id>http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/</id>
+    <published>2017-07-15T07:38:36.000Z</published>
+    <updated>2017-07-16T06:36:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Basic-Commands"><a href="#Basic-Commands" class="headerlink" title="Basic Commands"></a>Basic Commands</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line">npm init <span class="comment"># create package.json &amp; add -y is yes to all requirements</span></div><div class="line">npm install <span class="comment"># install all packages in package.json</span></div><div class="line">npm install &lt;package&gt; <span class="comment"># install in package but not written in package.json</span></div><div class="line">npm install &lt;package&gt; --save-dev <span class="comment"># install in modules only in develop dependencies</span></div><div class="line">npm install &lt;package&gt;  --save <span class="comment"># install in modules in dependencies</span></div><div class="line">npm install &lt;package&gt;@&lt;version&gt; <span class="comment"># install specific version of package</span></div><div class="line"></div><div class="line">npm cache clean <span class="comment"># clear npm cache</span></div><div class="line"></div><div class="line">npm ls -g <span class="comment"># list all modules installed globally</span></div><div class="line">npm ls <span class="comment">#  list all modules locally</span></div><div class="line">npm list --depth 0 <span class="comment"># list all npm modules with depth 0</span></div><div class="line"></div><div class="line">npm show &lt;package&gt; <span class="comment"># show versions, maintainers</span></div><div class="line">npm outdated <span class="comment"># show all outdated modules</span></div><div class="line"></div><div class="line">npm prune <span class="comment">#removes "extraneous" packages. Extraneous packages are packages that are not listed on the parent package's dependencies list.</span></div></pre></td></tr></table></figure>
+<h2 id="Range-Syntax"><a href="#Range-Syntax" class="headerlink" title="Range Syntax"></a>Range Syntax</h2><ol>
+<li>caret (^)</li>
+</ol>
+<p>Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple. In other words, this allows patch and minor updates for versions 1.0.0 and above, patch updates for versions 0.X &gt;=0.1.0, and no updates for versions 0.0.X.</p>
+<p>“express”: “^4.15.3” means it can upgrade to version 4.99.0. Basically anything before 5.0.0</p>
+<h2 id="Update-a-package"><a href="#Update-a-package" class="headerlink" title="Update a package"></a>Update a package</h2><ol>
+<li><p>First find out your outdated packages by typing npm outdated</p>
+</li>
+<li><p>Then update the package or packages that you want manually as npm update –save package_name</p>
+</li>
+</ol>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/npm/node-semver#ranges" target="_blank" rel="external">npm ranges</a></li>
+<li><a href="https://www.youtube.com/watch?v=N0M1ATiCqvM" target="_blank" rel="external">npm prune</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Basic-Commands&quot;&gt;&lt;a href=&quot;#Basic-Commands&quot; class=&quot;headerlink&quot; title=&quot;Basic Commands&quot;&gt;&lt;/a&gt;Basic Commands&lt;/h2&gt;&lt;figure class=&quot;highlight 
+    
+    </summary>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>Node-Hide environemnt variables in your app</title>
@@ -823,36 +859,6 @@
     
     
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Day 70-80</title>
-    <link href="http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-70-80/"/>
-    <id>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-70-80/</id>
-    <published>2017-05-02T08:51:28.000Z</published>
-    <updated>2017-05-02T08:52:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Code-Logs"><a href="#Code-Logs" class="headerlink" title="Code Logs"></a>Code Logs</h2><p>Day 71 4.23<br>[ ] ES6 Videos-extension in objects<br>[ ] 2 start bootstrap theme conversion</p>
-<p>Day 72 4.24<br>[ ]  ES6 Videos - Map Sets<br>[ ] 1 More Theme Conversion</p>
-<p>Day 73 4.25<br>[ ]  ES6 Videos - Map Sets<br>[ ] Looked at some react js animations<br>[ ] Finish 1 Theme Conversion<br>[ ] Work on 1 ReactJS conversion</p>
-<p>Day 74 4.26<br>[ ] Derek Banas CSS3<br>[ ] Finish 1 React Theme Conversion Freelancer</p>
-<p>Day 75 4.27<br>[ ] Derek Banas HTML5 + RWD<br>[ ] Finish 1 React Theme Conversion Freelancer - added animation</p>
-<p>Day 76 4.28<br>[ ] 1 Component Design<br>[ ] Finish React Love to eat Tutorial<br>[ ] start Frodev portfolio tutorial</p>
-<p>Day 77 4.29<br>[ ] start Frodev portfolio tutorial<br>[ ] Redo React Blog JS tutorial</p>
-<p>Day 78 4.30<br>[ ] Frodev portfolio tutorial</p>
-<p>Day 79 5.1<br>[ ] Frodev portfolio tutorial</p>
-<p>Day 80 5.2<br>[ ] Tesla Tutorial<br>[ ] React-Waypoint Animation Demo (react-animation-demo.surge.sh)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Code-Logs&quot;&gt;&lt;a href=&quot;#Code-Logs&quot; class=&quot;headerlink&quot; title=&quot;Code Logs&quot;&gt;&lt;/a&gt;Code Logs&lt;/h2&gt;&lt;p&gt;Day 71 4.23&lt;br&gt;[ ] ES6 Videos-extension in
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
     
   </entry>
   
