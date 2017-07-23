@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -89,19 +89,12 @@
 
 
 
-<meta name="description" content="In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared.Basically how javascript engine works
-12345var myvar = &apos;my value&apos;;(f">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS Hoisting">
-<meta property="og:url" content="http://yoursite.com/2017/02/16/JS-Hoisting/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My Coding Journey">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared.Basically how javascript engine works
-12345var myvar = &apos;my value&apos;;(f">
-<meta property="og:updated_time" content="2017-03-06T07:32:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS Hoisting">
-<meta name="twitter:description" content="In JavaScript, a variable can be declared after it has been used.In other words; a variable can be used before it has been declared.Basically how javascript engine works
-12345var myvar = &apos;my value&apos;;(f">
+<meta name="twitter:title" content="My Coding Journey">
 
 
 
@@ -129,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/16/JS-Hoisting/"/>
+  <link rel="canonical" href="http://yoursite.com/page/6/"/>
 
 
 
 
 
-  <title> JS Hoisting | My Coding Journey </title>
+  <title> My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -169,7 +162,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -263,7 +258,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/JS-Hoisting/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/14/100-Days-Code-Challenge-Day-1-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -284,7 +279,10 @@
             
             
               
-                JS Hoisting
+                
+                <a class="post-title-link" href="/2017/02/14/100-Days-Code-Challenge-Day-1-10/" itemprop="url">
+                  100 Days Code Challenge Day 1-10
+                </a>
               
             
           </h1>
@@ -299,8 +297,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-16T10:28:29+08:00">
-                2017-02-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-14T11:53:35+08:00">
+                2017-02-14
               </time>
             
 
@@ -318,8 +316,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/16/JS-Hoisting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/16/JS-Hoisting/" itemprop="commentCount"></span>
+                <a href="/2017/02/14/100-Days-Code-Challenge-Day-1-10/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/14/100-Days-Code-Challenge-Day-1-10/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -345,79 +343,60 @@
       
 
       
-        <p>In JavaScript, a variable can be declared after it has been used.<br>In other words; a variable can be used before it has been declared.<br>Basically how javascript engine works</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myvar = <span class="string">'my value'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(myvar); <span class="comment">// undefine</span></div><div class="line">    <span class="keyword">var</span> myvar = <span class="string">'local value'</span>;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>The reason why myvar is undefine is because in js engine variable is first declared.<br>(variable declaration is hoisted to top)</p>
-<p>The following code is how to the engine interpreted:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myvar = <span class="string">'my value'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> myvar;</div><div class="line">    alert(myvar); <span class="comment">// undefine</span></div><div class="line">    <span class="keyword">var</span> myvar = <span class="string">'local value'</span>;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>That’s why in the book the javascript the good part, the author suggest that we always<br>place variable in the top of the function.</p>
-<p>Another thing to note is function is hoisted to the top but not function expression.<br>For example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    newFunction(); <span class="comment">// will alert hello world</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">newFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'hello world'</span>);</div><div class="line">    &#125;    </div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    newFunction(); <span class="comment">// will not alert hello world</span></div><div class="line">    <span class="keyword">var</span> newFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'hello world'</span>);</div><div class="line">    &#125;    </div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>The second code snippet doesn’t work because function expression get hoisted to the top but not the expression.</p>
+        
+          
+          Here’s my main goals:
+Familar with Ruby on Rails
+Finish Free Code Camp Front Certificate
+Start learning REACTHere’s my log for my challenge.
 
+ Day 1-2/4 Ruby Koans 150tasksCodewar 2 KatasLRTHW - 5 tasks
+ Day 2-2/5 LRTHW -18 tasksCodewar 2 KatasRuby Koans 190 tasks
+ Day 3-2.6 Read Market genius 90pag
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/100-Days-Code-Challenge-Day-1-10/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-        </div>
+
       
 
       
-        
-      
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/16/JS-Scope/" rel="next" title="JS Scope">
-                <i class="fa fa-chevron-left"></i> JS Scope
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/17/Eloquent-JS-Functions-Excercise/" rel="prev" title="EloquentJS - Functions Excercise">
-                EloquentJS - Functions Excercise <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
 
           
           </div>
@@ -425,17 +404,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -648,10 +616,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 
@@ -668,9 +632,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/02/16/JS-Hoisting/';
+      var disqus_identifier = 'page/6/index.html';
 
-      var disqus_title = "JS Hoisting";
+      var disqus_title = "";
 
 
       function run_disqus_script(disqus_script) {
@@ -683,13 +647,6 @@
 
       run_disqus_script('count.js');
 
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
       
 
     </script>
