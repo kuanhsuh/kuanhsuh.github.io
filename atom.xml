@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-23T22:44:02.000Z</updated>
+  <updated>2017-07-28T12:56:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,15 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS - Ways to Center Your Divs</title>
+    <link href="http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/"/>
+    <id>http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/</id>
+    <published>2017-07-27T22:35:36.000Z</published>
+    <updated>2017-07-28T12:56:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Centering your div blocks both horizontally and vertically is a tricky tasky. Today I’m going to show you four ways to do it. So let’s do eeetttt!</p>
+<h2 id="1-Transform-Technique"><a href="#1-Transform-Technique" class="headerlink" title="1. Transform Technique"></a>1. Transform Technique</h2><p>Make the parent div position relative so the child position will based on parent’s position. Next to move it top and left 50% and transform back 50% in both x &amp; y-axis.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// Transform</div><div class="line">.hero-image1 &#123;</div><div class="line">  background: #3498db;</div><div class="line">  height: 100vh;</div><div class="line">  position: relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.hero-text1 &#123;</div><div class="line">  text-align: center;</div><div class="line">  position: absolute;</div><div class="line">  top: 50%;</div><div class="line">  left: 50%;</div><div class="line">  color: white;</div><div class="line">  transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2-FlexBox"><a href="#2-FlexBox" class="headerlink" title="2. FlexBox"></a>2. FlexBox</h2><p>Flexbox is the easiest way to center a div. It’s a newer feature in css, the unforunately thing is some old browsers don’t support it. (sign…) Basically you set display to flex and both align-items and justify-content to center.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-class">.hero-image2</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#34495e</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.hero-text2</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">color</span>: white;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-Table-Cell"><a href="#3-Table-Cell" class="headerlink" title="3. Table Cell"></a>3. Table Cell</h2><p>Table cell method is an old school way of doing this. This method was popular when web layout is organized by table, which is still popular with email templates.</p>
+<p>Basically you set parent div with display table and set child display to table-cell. Also set the child with text-align center and vertical align middle.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//Table Cell</div><div class="line">.hero-image3 &#123;</div><div class="line">  background: #e74c3c;</div><div class="line">  height: 100vh;</div><div class="line">  width: 100%;</div><div class="line">  display: table;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.hero-text3 &#123;</div><div class="line">  text-align: center;</div><div class="line">  display: table-cell;</div><div class="line">  vertical-align: middle;</div><div class="line">  color: white;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-Fixed-width-element"><a href="#4-Fixed-width-element" class="headerlink" title="4. Fixed width element"></a>4. Fixed width element</h2><p>This technique will only work with fixed width element. This will also work with older browsers.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line"></div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line"></div><div class="line">  <span class="attribute">margin</span>: -<span class="number">70px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">170px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://codepen.io/dannyhuang/pen/OjPNOa" target="_blank" rel="external">Codepen Demo</a></li>
+<li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">CSS Tricks</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;Centering your div blocks both horizon
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS-2 ways to build parallax effect</title>
     <link href="http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/"/>
     <id>http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/</id>
     <published>2017-07-23T22:25:33.000Z</published>
-    <updated>2017-07-23T22:44:02.000Z</updated>
+    <updated>2017-07-27T22:37:15.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="What-is-parallax"><a href="#What-is-parallax" class="headerlink" title="What is parallax"></a>What is parallax</h2><p>Parallax is an effect where the background layer or image in this case, is moved at a different speed than the front layer while scrolling.</p>
 <p>Parallax design is a popular technique in modern webdesign. There are two approaches to this effect: CSS and JS. Both are really easy. So here we go</p>
-<h1 id="CSS-Approach"><a href="#CSS-Approach" class="headerlink" title="CSS Approach"></a>CSS Approach</h1><p>For your background image, you need to make the background-attachment property fixed. This will set whether the background image is fixed or scrolls with the rest of the page.</p>
+<h2 id="CSS-Approach"><a href="#CSS-Approach" class="headerlink" title="CSS Approach"></a>CSS Approach</h2><p>For your background image, you need to make the background-attachment property fixed. This will set whether the background image is fixed or scrolls with the rest of the page.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">.parallax &#123;</div><div class="line">    /* The image used */</div><div class="line">    background-image: url("img_parallax.jpg");</div><div class="line"></div><div class="line">    /* Set a specific height */</div><div class="line">    height: 500px;</div><div class="line"></div><div class="line">    /* Create the parallax scrolling effect */</div><div class="line">    background-attachment: fixed;</div><div class="line">    background-position: center;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">    background-size: cover;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Container element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Here’s a demo of how the site will work. <a href="https://github.com/kuanhsuh/css_parallax" target="_blank" rel="external">My Github Demo</a></p>
 <h1 id="JS-Approach"><a href="#JS-Approach" class="headerlink" title="JS Approach"></a>JS Approach</h1><p>In your html section add data-type and data-speed attribute. The speed will adjust the speed of how the background move.</p>
@@ -47,7 +81,7 @@
     </summary>
     
     
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
@@ -830,40 +864,6 @@
     
       &lt;p&gt;Day 91 5.15&lt;br&gt;[ ] Work on interview technical questions&lt;br&gt;[ ] Review my Code&lt;br&gt;[ ] 104 job search site&lt;/p&gt;
 &lt;p&gt;Day 92 5.16&lt;br&gt;[ ] Inter
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Day 80-90</title>
-    <link href="http://yoursite.com/2017/05/15/100-Days-Code-Challenge-Day-80-90/"/>
-    <id>http://yoursite.com/2017/05/15/100-Days-Code-Challenge-Day-80-90/</id>
-    <published>2017-05-15T03:38:47.000Z</published>
-    <updated>2017-06-02T05:48:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Day 81 5.3<br>[ ] Netflix Clone Project -setup project, fetch upcoming</p>
-<p>Day 82 5.4<br>[ ] Netflix Clone Project -autosuggest, movieshow, react router</p>
-<p>Day 83 5.5<br>[ ] Netflix Clone Project Finish CSS</p>
-<p>Day 83 5.6<br>[ ] Went to FrontEnd conference<br>[ ] Finish Netflix Clone Project(fix bug)</p>
-<p>Day 84 5.7<br>[ ] Read HTML&amp;CSS Book</p>
-<p>Day 84 5.8<br>[ ] started Vue &amp; david Katz tutorial</p>
-<p>Day 85 5.9<br>[ ] 2 Vue tutorials</p>
-<p>Day 86 5.10<br>[ ] Work on Coding resume</p>
-<p>5.10<br>DIDN”t program</p>
-<p>Day 87 5.10<br>[ ] Work on Coding resume</p>
-<p>Day 88 5.12<br>[ ] Work on Coding resume v2<br>[ ] start working on interview questions<br>[ ] Submit 3 resumes</p>
-<p>Day 89 5.13<br>[ ] Work on interview questions<br>[ ] questions to ask employers</p>
-<p>Day 90 5.14<br>[ ] Work on interview technical questions</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Day 81 5.3&lt;br&gt;[ ] Netflix Clone Project -setup project, fetch upcoming&lt;/p&gt;
-&lt;p&gt;Day 82 5.4&lt;br&gt;[ ] Netflix Clone Project -autosuggest, movie
     
     </summary>
     
