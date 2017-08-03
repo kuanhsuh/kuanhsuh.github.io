@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T12:56:24.000Z</updated>
+  <updated>2017-08-03T13:56:16.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Optimization - Image</title>
+    <link href="http://yoursite.com/2017/08/03/Web-Optimization-Image/"/>
+    <id>http://yoursite.com/2017/08/03/Web-Optimization-Image/</id>
+    <published>2017-08-02T22:31:42.000Z</published>
+    <updated>2017-08-03T13:56:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Image optimization is very important for your web app. It accounts for more than 50% of the loading time. 47% of users expect a webpage to load in under 2 seconds, and 40% will abandon a page that takes more than 3 seconds to load.</p>
+<p>You can also optimize your image tag and image name for better SEO performance. Here’s a infograph of how loading time affects user experience.</p>
+<p><img src="https://blog.kissmetrics.com/wp-content/uploads/2011/04/loading-time-lrg.jpg" alt="Kissmetrics Loading Time infographic" title="Kissmetrics Loading Time infogrpahic"></p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
+<li>Change name to a descriptive name rather than a generic name such as DCMIMAGE10.jpg</li>
+<li>Use alt tag for better SEO</li>
+<li>Use the right dimension (simple tip 2x the mobile display dimension to get retina result)</li>
+<li><p>know which file type to use png vs jpg<br><img src="https://cdn.shopify.com/s/files/1/0070/7032/files/book-image-quality-example.jpg" alt="PNG vs GIF vs JPG" title="PNG vs GIF vs JPG"></p>
+</li>
+<li><p>Use compression tools such as <a href="http://optimizilla.com/" target="_blank" rel="external">http://optimizilla.com/</a> and ImageOptim <a href="https://imageoptim.com/mac" target="_blank" rel="external">link</a> to remove unnesscessary meta tags and also compress image size for web without losing much quality.</p>
+</li>
+</ol>
+<p>PRO TIP: As a general rule of thumb, I like my product photos to be a maximum 80-150 KB, and for large homepage hero images to be a maximum of 250-350 KB</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://shopify.barrelny.com/how-to-resize-your-logo-image-for-retina/" target="_blank" rel="external">Resize for retina result</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization" target="_blank" rel="external">Google Developer - Image Optimization</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;Image optimization is very important f
+    
+    </summary>
+    
+    
+      <category term="web optimization" scheme="http://yoursite.com/tags/web-optimization/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS - Ways to Center Your Divs</title>
@@ -832,38 +869,6 @@
     
       &lt;p&gt;Today I Finished my 100 Days Coding Challenge. Here’s my thoughts and accomplishments.&lt;/p&gt;
 &lt;p&gt;Here’s my github: (&lt;a href=&quot;https://github.
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Day 90-100</title>
-    <link href="http://yoursite.com/2017/05/25/100-Days-Code-Challenge-Day-90-100/"/>
-    <id>http://yoursite.com/2017/05/25/100-Days-Code-Challenge-Day-90-100/</id>
-    <published>2017-05-25T02:42:18.000Z</published>
-    <updated>2017-06-02T05:48:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Day 91 5.15<br>[ ] Work on interview technical questions<br>[ ] Review my Code<br>[ ] 104 job search site</p>
-<p>Day 92 5.16<br>[ ] Interview with BXB</p>
-<p>Day 92 5.17<br>[ ] Interview with Global<br>[ ] Work on gulp-construction</p>
-<p>Day 93 5.18<br>[ ] Install Wordpress<br>[ ] Work on gulp-construction</p>
-<p>Day 94 5.19<br>[ ] Finish Gulp Construction Project</p>
-<p>Day 95 5.20<br>[ ] Setup PHP files<br>[ ] Play with npm build system<br>[ ] Work on Designer website Project</p>
-<p>Day 96 5.21<br>[ ] Work on Designer website Project</p>
-<p>Day 97 5.22<br>[ ] Work on Designer website Project<br>[ ] Got 1st Job Offer</p>
-<p>Day 98 5.23<br>[ ] Work on Designer website Project<br>[ ] Tried NPM Build Tool</p>
-<p>Day 99 5.24<br>[ ]  Learn Nodejs + express</p>
-<p>Day 100 5.25<br>[ ] Learn Nodejs + express</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Day 91 5.15&lt;br&gt;[ ] Work on interview technical questions&lt;br&gt;[ ] Review my Code&lt;br&gt;[ ] 104 job search site&lt;/p&gt;
-&lt;p&gt;Day 92 5.16&lt;br&gt;[ ] Inter
     
     </summary>
     
