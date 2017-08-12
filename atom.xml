@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-03T13:56:16.000Z</updated>
+  <updated>2017-08-12T23:00:37.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web-Optimization - Semantic HTML</title>
+    <link href="http://yoursite.com/2017/08/05/Web-Optimization-semantic-HTML/"/>
+    <id>http://yoursite.com/2017/08/05/Web-Optimization-semantic-HTML/</id>
+    <published>2017-08-05T10:48:33.000Z</published>
+    <updated>2017-08-12T23:00:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Semantic HTML is a feature in HTML. It exist back in HTML such as form, img, and tables. In HTML5, more semantic tags are added, for example header, footer, and nav. There are many benefits to for this. This added more structure to our html page. In the following, I’ll discuss the benefits of semantic HTML.</p>
+<h2 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h2><ol>
+<li><p>SEO<br>Better structure allows search engines to identify which block is more important.</p>
+</li>
+<li><p>Download Speed</p>
+</li>
+<li><p>Maintainence.<br>Better structure means better maintainence.</p>
+</li>
+<li><p>Better for disability browsing</p>
+</li>
+</ol>
+<h2 id="How-to-implement"><a href="#How-to-implement" class="headerlink" title="How to implement"></a>How to implement</h2><p><img src="http://html5doctor.com/downloads/h5d-sectioning-flowchart.png" alt="HTML 5" title="HTML 5 semantic flow chart"></p>
+<ol>
+<li><p>Replace divs with section, header, nav, footer or others.</p>
+</li>
+<li><p>Use the above diagram to decide which html tag to use.</p>
+</li>
+</ol>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="http://html5doctor.com/lets-talk-about-semantics/" target="_blank" rel="external">HTML5 Semantics</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;Semantic HTML is a feature in HTML. It
+    
+    </summary>
+    
+    
+      <category term="Web Optimization" scheme="http://yoursite.com/tags/Web-Optimization/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web Optimization - Image</title>
     <link href="http://yoursite.com/2017/08/03/Web-Optimization-Image/"/>
     <id>http://yoursite.com/2017/08/03/Web-Optimization-Image/</id>
     <published>2017-08-02T22:31:42.000Z</published>
-    <updated>2017-08-03T13:56:16.000Z</updated>
+    <updated>2017-08-05T10:52:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Image optimization is very important for your web app. It accounts for more than 50% of the loading time. 47% of users expect a webpage to load in under 2 seconds, and 40% will abandon a page that takes more than 3 seconds to load.</p>
 <p>You can also optimize your image tag and image name for better SEO performance. Here’s a infograph of how loading time affects user experience.</p>
@@ -48,7 +89,7 @@
     </summary>
     
     
-      <category term="web optimization" scheme="http://yoursite.com/tags/web-optimization/"/>
+      <category term="Web Optimization" scheme="http://yoursite.com/tags/Web-Optimization/"/>
     
   </entry>
   
@@ -127,7 +168,7 @@
     <link href="http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/"/>
     <id>http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/</id>
     <published>2017-07-15T07:38:36.000Z</published>
-    <updated>2017-07-16T06:36:30.000Z</updated>
+    <updated>2017-08-05T10:52:13.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Basic-Commands"><a href="#Basic-Commands" class="headerlink" title="Basic Commands"></a>Basic Commands</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">npm -v</div><div class="line">npm init <span class="comment"># create package.json &amp; add -y is yes to all requirements</span></div><div class="line">npm install <span class="comment"># install all packages in package.json</span></div><div class="line">npm install &lt;package&gt; <span class="comment"># install in package but not written in package.json</span></div><div class="line">npm install &lt;package&gt; --save-dev <span class="comment"># install in modules only in develop dependencies</span></div><div class="line">npm install &lt;package&gt;  --save <span class="comment"># install in modules in dependencies</span></div><div class="line">npm install &lt;package&gt;@&lt;version&gt; <span class="comment"># install specific version of package</span></div><div class="line"></div><div class="line">npm cache clean <span class="comment"># clear npm cache</span></div><div class="line"></div><div class="line">npm ls -g <span class="comment"># list all modules installed globally</span></div><div class="line">npm ls <span class="comment">#  list all modules locally</span></div><div class="line">npm list --depth 0 <span class="comment"># list all npm modules with depth 0</span></div><div class="line"></div><div class="line">npm show &lt;package&gt; <span class="comment"># show versions, maintainers</span></div><div class="line">npm outdated <span class="comment"># show all outdated modules</span></div><div class="line"></div><div class="line">npm prune <span class="comment">#removes "extraneous" packages. Extraneous packages are packages that are not listed on the parent package's dependencies list.</span></div></pre></td></tr></table></figure>
 <h2 id="Range-Syntax"><a href="#Range-Syntax" class="headerlink" title="Range Syntax"></a>Range Syntax</h2><ol>
@@ -154,7 +195,7 @@
     </summary>
     
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
     
   </entry>
   
@@ -163,7 +204,7 @@
     <link href="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/"/>
     <id>http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/</id>
     <published>2017-07-08T22:13:30.000Z</published>
-    <updated>2017-07-15T07:36:38.000Z</updated>
+    <updated>2017-08-05T10:52:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.</p>
 <h2 id="dotenv-package"><a href="#dotenv-package" class="headerlink" title="dotenv package"></a>dotenv package</h2><p>Here’s my example repo: <a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="external">dotenv repo</a></p>
@@ -194,7 +235,7 @@
     </summary>
     
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
     
   </entry>
   
@@ -299,7 +340,7 @@
     <link href="http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/"/>
     <id>http://yoursite.com/2017/06/30/Express-Custom-Facebook-Chatbot/</id>
     <published>2017-06-29T22:48:57.000Z</published>
-    <updated>2017-07-02T21:29:42.000Z</updated>
+    <updated>2017-08-05T10:52:00.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/06/30/Express-Custom-Facebook-Chatbot/chat1.jpg" alt="Response 1" title="Response 1">
 <h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p>Facebook chat can custom response such as image, video, custom buttons. It can also add pay feature how ever still in demo.</p>
@@ -825,50 +866,6 @@
     
       &lt;p&gt;I decided to share a summary and thoughts on my 100dayscodechallenge on facebook.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/feedback1.png&quot; alt=&quot;Feedback1&quot;
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Thoughts on 100_Days_Code_Challege</title>
-    <link href="http://yoursite.com/2017/05/25/Thoughts-on-100-Days-Code-Challege/"/>
-    <id>http://yoursite.com/2017/05/25/Thoughts-on-100-Days-Code-Challege/</id>
-    <published>2017-05-25T02:44:04.000Z</published>
-    <updated>2017-05-25T03:17:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Today I Finished my 100 Days Coding Challenge. Here’s my thoughts and accomplishments.</p>
-<p>Here’s my github: (<a href="https://github.com/kuanhsuh" target="_blank" rel="external">https://github.com/kuanhsuh</a>)<br>Here’s my FCC certificate: (<a href="https://www.freecodecamp.com/kuanhsuh/front-end-certification" target="_blank" rel="external">https://www.freecodecamp.com/kuanhsuh/front-end-certification</a>)<br>Here’s my blog: (<a href="https://kuanhsuh.github.io/" target="_blank" rel="external">https://kuanhsuh.github.io/</a>)</p>
-<p>To View my 100 day coding log:(<a href="https://kuanhsuh.github.io/tags/100DaysCodeChallenge/" target="_blank" rel="external">https://kuanhsuh.github.io/tags/100DaysCodeChallenge/</a>)</p>
-<h3 id="Shit-I-accomplished"><a href="#Shit-I-accomplished" class="headerlink" title="Shit I accomplished:"></a>Shit I accomplished:</h3><p>FCC Frontend Certificate, 34 blog posts, 15 Github Stars, Codewar Ranking 5. 1 Job Offer</p>
-<h3 id="Technology-I-encounter"><a href="#Technology-I-encounter" class="headerlink" title="Technology I encounter"></a>Technology I encounter</h3><ul>
-<li>html, css, es5</li>
-<li>scss, gulp, react, vue, d3</li>
-</ul>
-<h3 id="Main-Coding-Timeline"><a href="#Main-Coding-Timeline" class="headerlink" title="Main Coding Timeline"></a>Main Coding Timeline</h3><ul>
-<li>Day 1-30 Working through tutorials, read books</li>
-<li>Day 36 Finish FCC Frontend Certicate</li>
-<li>Day 45 Finish React Markdown App</li>
-<li>Day 48 Finish React+Redux Recipe+Box App</li>
-<li>Day 50-60 Play with D3</li>
-<li>Day 60-75 html/css template conversions, gulp, web optimization</li>
-<li>Day 83 Finish Netflix Clone</li>
-<li>Day 85-95 Preparing Coding Interview, Company Interview</li>
-<li>Day 97 Got 1st Offer</li>
-</ul>
-<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><ul>
-<li>Coding everyday is !important because it builds momentum.</li>
-<li>My initial plan was just to atleast try for 100 days. The end result was much better than I image. Now I’m comfident that I can learn any technology + language.</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Today I Finished my 100 Days Coding Challenge. Here’s my thoughts and accomplishments.&lt;/p&gt;
-&lt;p&gt;Here’s my github: (&lt;a href=&quot;https://github.
     
     </summary>
     
