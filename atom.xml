@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-12T23:00:37.000Z</updated>
+  <updated>2017-08-26T22:43:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Sketch Workflow</title>
+    <link href="http://yoursite.com/2017/08/26/My-Sketch-Workflow/"/>
+    <id>http://yoursite.com/2017/08/26/My-Sketch-Workflow/</id>
+    <published>2017-08-26T13:56:46.000Z</published>
+    <updated>2017-08-26T22:43:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Pre-work"><a href="#Pre-work" class="headerlink" title="Pre-work"></a>Pre-work</h2><h3 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h3><img src="/2017/08/26/My-Sketch-Workflow/filestructure.png" alt="File Structure" title="File Structure">
+<p>The file structure that I take is to have a _assets, _exports, and design folder. The _assets folder is where I keep my dummy text, logo, images and etc. _exports is where I exports my design and images. Lastly the design folder is where I have my sketch file (usually only one).</p>
+<h3 id="Style-Sheet"><a href="#Style-Sheet" class="headerlink" title="Style Sheet"></a>Style Sheet</h3><img src="/2017/08/26/My-Sketch-Workflow/stylesheet.png" alt="Style Sheet" title="Style Sheet">
+<p>Style sheet is an artboard where I keep my color palettes and font. The style sheet I use is call One Day Frontend Design Framework. (Link below) However, I did not use the full feature of the stylesheet.<br>After settleing your stylesheet, set up your text styles and layer styles. This will save you time when you are in design phase.</p>
+<h2 id="WireFrame"><a href="#WireFrame" class="headerlink" title="WireFrame"></a>WireFrame</h2><img src="/2017/08/26/My-Sketch-Workflow/wf_home.png" alt="Design Wireframe" title="Design Wireframe">
+<p>I use some simple shapes to draw out my block wireframes basially to see what a basic section will look like and to have the elements in my design.</p>
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><img src="/2017/08/26/My-Sketch-Workflow/home.jpg" alt="Home Layout" title="Home Layout">
+<p>Finally into design, the hardest part. After doing the preworks, you should have a rough idea of what the final design will look like. First I would put all the things I know together in place, like the text and images. Keep doing this for the other sections. Don’t worry about the little details. There’s no such thing as perfect design. We want to get the first draft out ASAP.</p>
+<p>After first draft is out. I’ll look through each indivual section to see if there’s any thing I can improve. Remember every design has to align with your website’s purpose. Then I’ll ask random to see the design and get feedback.</p>
+<h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>Lastly, this is optional but you can build a prototype with <a href="https://marvelapp.com" target="_blank" rel="external">marvel</a> or <a href="https://www.invisionapp.com/" target="_blank" rel="external">invision</a>. Prototype provides a more realistic user experience for users.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://www.sketchappsources.com/free-source/2374-oneday-frontend-design-framework-sketch-freebie-resource.html" target="_blank" rel="external">One Day Frontend Design Framework</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Pre-work&quot;&gt;&lt;a href=&quot;#Pre-work&quot; class=&quot;headerlink&quot; title=&quot;Pre-work&quot;&gt;&lt;/a&gt;Pre-work&lt;/h2&gt;&lt;h3 id=&quot;File-Structure&quot;&gt;&lt;a href=&quot;#File-Structure&quot;
+    
+    </summary>
+    
+    
+      <category term="sketch" scheme="http://yoursite.com/tags/sketch/"/>
+    
+      <category term="UI" scheme="http://yoursite.com/tags/UI/"/>
+    
+  </entry>
   
   <entry>
     <title>Web-Optimization - Semantic HTML</title>
@@ -837,40 +872,6 @@
       <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
     
       <category term="Stripe" scheme="http://yoursite.com/tags/Stripe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100 Days Code Challenge Feedback</title>
-    <link href="http://yoursite.com/2017/06/02/100-Days-Code-Challenge-Feedback/"/>
-    <id>http://yoursite.com/2017/06/02/100-Days-Code-Challenge-Feedback/</id>
-    <published>2017-06-02T05:47:59.000Z</published>
-    <updated>2017-06-05T02:06:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I decided to share a summary and thoughts on my 100dayscodechallenge on facebook.</p>
-<p><img src="/images/feedback1.png" alt="Feedback1"><br><img src="/images/feedback2.png" alt="Feedback2"><br><img src="/images/feedback3.png" alt="Feedback3"><br><img src="/images/email.png" alt="Feedback4"></p>
-<p>I received close to 1000 likes and over 50 shares. I have to say I’m pretty shocked by the amount of likes that I’m getting from the community.</p>
-<p>I even receieved an email from Quicy Larson to share my forum post, which is a great honor.</p>
-<p>I received a lot of questions and people asking for suggestiong. Maybe I”ll write in more details in provide more specific answers.</p>
-<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
-<li><p><a href="https://www.facebook.com/groups/1594816820775537/permalink/1914006175523265/" target="_blank" rel="external">https://www.facebook.com/groups/1594816820775537/permalink/1914006175523265/</a></p>
-</li>
-<li><p><a href="https://www.facebook.com/groups/358503154261390/permalink/1190322591079438/" target="_blank" rel="external">https://www.facebook.com/groups/358503154261390/permalink/1190322591079438/</a></p>
-</li>
-<li><p><a href="https://www.facebook.com/groups/f2e.tw/permalink/1304738922896803/" target="_blank" rel="external">https://www.facebook.com/groups/f2e.tw/permalink/1304738922896803/</a></p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I decided to share a summary and thoughts on my 100dayscodechallenge on facebook.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/feedback1.png&quot; alt=&quot;Feedback1&quot;
-    
-    </summary>
-    
-    
-      <category term="100DaysCodeChallenge" scheme="http://yoursite.com/tags/100DaysCodeChallenge/"/>
     
   </entry>
   
