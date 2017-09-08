@@ -1,0 +1,763 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="My Coding Journey" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="IntroductionAlgorithem is a step by step process to how to solve a program. Algorithm is important because it can influence the speed and efficency of our program. As our program size grow or our use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript - Algorithm">
+<meta property="og:url" content="http://yoursite.com/2017/09/09/Javascript-Algorithm/index.html">
+<meta property="og:site_name" content="My Coding Journey">
+<meta property="og:description" content="IntroductionAlgorithem is a step by step process to how to solve a program. Algorithm is important because it can influence the speed and efficency of our program. As our program size grow or our use">
+<meta property="og:image" content="http://yoursite.com/2017/09/09/Javascript-Algorithm/bigochart.png">
+<meta property="og:updated_time" content="2017-09-08T22:55:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript - Algorithm">
+<meta name="twitter:description" content="IntroductionAlgorithem is a step by step process to how to solve a program. Algorithm is important because it can influence the speed and efficency of our program. As our program size grow or our use">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/09/Javascript-Algorithm/bigochart.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/09/Javascript-Algorithm/"/>
+
+
+
+
+
+  <title> Javascript - Algorithm | My Coding Journey </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100430698-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Coding Journey</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Journey to a Full Stack Developer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/Javascript-Algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Coding Journey">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript - Algorithm
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T05:06:36+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/09/Javascript-Algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/09/Javascript-Algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="video-container"><iframe src="//www.youtube.com/embed/6hfOvs8pY1k" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Algorithem is a step by step process to how to solve a program. Algorithm is important because it can influence the speed and efficency of our program. As our program size grow or our users grow, we don’t want slow functions affect our user experience.</p>
+<p>Here a sneak peak of some algorithm methods that I’ll go over in further blog series.</p>
+<ul>
+<li>Binary Search</li>
+<li>Fibonacci &amp; Memoized Fibonacci</li>
+<li>Merge Sort &amp; bubble sort</li>
+<li>Caesar Cipher</li>
+<li>Sieve of Eratosthenes</li>
+</ul>
+<h2 id="Big-O"><a href="#Big-O" class="headerlink" title="Big O"></a>Big O</h2><p>Lastly I want to talk about Big O notation (or Big O for short).  Big O notation is used to classify algorithms according to how their running time or space requirements grow as the input size grows. (source, Wiki). Basically Big O will tell us how scalable a function is?</p>
+<p>There are 4 types of Big O and here are some examples</p>
+<img src="/2017/09/09/Javascript-Algorithm/bigochart.png" alt="Big O Chart" title="Big O Chart">
+<h3 id="Big-O-O-1-Constant-Runtime"><a href="#Big-O-O-1-Constant-Runtime" class="headerlink" title="Big O - O (1) - Constant Runtime"></a>Big O - O (1) - Constant Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (1) - Constant Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(array[<span class="number">0</span>])</div><div class="line">  <span class="built_in">console</span>.log(array[<span class="number">1</span>])</div><div class="line">&#125;</div><div class="line"></div><div class="line">log ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line">log ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</div></pre></td></tr></table></figure>
+<p>The above example is a constant run time example or sometimes refer as O(1). This means as input size increases on X-axis, the time it takes to run never changes. (Refer to chart Above)</p>
+<h3 id="Big-O-O-n-Linear-Runtime"><a href="#Big-O-O-n-Linear-Runtime" class="headerlink" title="Big O - O (n) - Linear Runtime"></a>Big O - O (n) - Linear Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (n) - Linear Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logAll</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; array.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(array[i])</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">logAll ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line">logAll ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</div></pre></td></tr></table></figure>
+<p>The above example is a linear runtime example or sometimes refer as O(n). This means as input size increases on X-axis, the time will take to run increase linearly.(Refer to chart Above)</p>
+<h3 id="Big-O-O-n-2-Exponential-Runtime"><a href="#Big-O-O-n-2-Exponential-Runtime" class="headerlink" title="Big O - O (n^2) - Exponential Runtime"></a>Big O - O (n^2) - Exponential Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (n^2) - Exponential Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addAndLog</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; array.length; i++) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>, j &lt; array.length; j++)&#123;</div><div class="line">      <span class="built_in">console</span>.log(array[i] + array[j])</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">addAndLog ([<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>]) <span class="comment">// 9 pairs output</span></div><div class="line">addAndLog ([<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>, <span class="string">'D'</span>]) <span class="comment">// 16 pairs output</span></div><div class="line">addAndLog ([<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>]) <span class="comment">// 25 pairs output</span></div></pre></td></tr></table></figure>
+<p>The above example is a exponential runtime example or sometimes refer as O(n^2). This means as input size increases on X-axis, the time will take to run increase exponentially.(Refer to chart Above)</p>
+<p>We want to stay away from these functions because they are slow and inefficent. They will slow down your application when user grows.</p>
+<h3 id="Big-O-O-log-n-Logarithmic-Runtime"><a href="#Big-O-O-log-n-Logarithmic-Runtime" class="headerlink" title="Big O - O (log n) - Logarithmic Runtime"></a>Big O - O (log n) - Logarithmic Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (log n) - Logarithmic Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">array, key</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> low = <span class="number">0</span>;</div><div class="line">  <span class="keyword">var</span> high = array.lengh - <span class="number">1</span>;</div><div class="line">  <span class="keyword">var</span> mid;</div><div class="line">  <span class="keyword">var</span> element;</div><div class="line"></div><div class="line">  <span class="keyword">while</span> (low &lt;= high) &#123;</div><div class="line">    mid = <span class="built_in">Math</span>.floor((low + high)/ <span class="number">2</span>, <span class="number">10</span>)</div><div class="line">    element = array[mid]</div><div class="line">    <span class="keyword">if</span> (element &lt; key) &#123;</div><div class="line">      low = mid + <span class="number">1</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element &gt; key) &#123;</div><div class="line">      high = mid - <span class="number">1</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> mid;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Binary search takes a list (array) and a key. The array must be sorted in some way (numerically or alphabetically). This method is fast and as the input size grow our execution time will only grow logarithmicly(refer to chart above).</p>
+<p>An example of this is looking for a word in dictionary. If we want to look for the word, “House”, we flip to the middle of the dictionary and see how close we are to letter “H”, and we ignore the 2nd half of the dictionary. We keep repeating this process until we are at letter “H”.</p>
+<p>A search through 4,000 elements will take 12 operations, and 8000 elements will take 13 operations.</p>
+<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/Algorithm" target="_blank" rel="external">Wiki Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank" rel="external">Wiki Big O Notation</a></li>
+<li><a href="http://bigocheatsheet.com/" target="_blank" rel="external">Big O CheatSheet</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/03/Thoughts-on-Bootstrap-4/" rel="next" title="Thoughts on Bootstrap 4">
+                <i class="fa fa-chevron-left"></i> Thoughts on Bootstrap 4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Danny Huang" />
+          <p class="site-author-name" itemprop="name">Danny Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kuanhsuh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/dannyhuang24" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Big-O"><span class="nav-number">2.</span> <span class="nav-text">Big O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-O-O-1-Constant-Runtime"><span class="nav-number">2.1.</span> <span class="nav-text">Big O - O (1) - Constant Runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-O-O-n-Linear-Runtime"><span class="nav-number">2.2.</span> <span class="nav-text">Big O - O (n) - Linear Runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-O-O-n-2-Exponential-Runtime"><span class="nav-number">2.3.</span> <span class="nav-text">Big O - O (n^2) - Exponential Runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-O-O-log-n-Logarithmic-Runtime"><span class="nav-number">2.4.</span> <span class="nav-text">Big O - O (log n) - Logarithmic Runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resources"><span class="nav-number">2.5.</span> <span class="nav-text">Resources</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Danny Huang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dannysblog-1';
+      var disqus_identifier = '2017/09/09/Javascript-Algorithm/';
+
+      var disqus_title = "Javascript - Algorithm";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
