@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</loc>
+    
+    <lastmod>2017-09-16T08:00:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/09/Javascript-Algorithm/</loc>
     
     <lastmod>2017-09-08T22:55:25.000Z</lastmod>

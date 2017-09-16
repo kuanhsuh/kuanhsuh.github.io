@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-08T22:55:25.000Z</updated>
+  <updated>2017-09-16T08:00:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to implement multi-language  with Vue-i18n </title>
+    <link href="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/"/>
+    <id>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</id>
+    <published>2017-09-16T02:59:14.000Z</published>
+    <updated>2017-09-16T08:00:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Recently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.</p>
+<h2 id="Instruction"><a href="#Instruction" class="headerlink" title="Instruction"></a>Instruction</h2><h3 id="i18n-setup"><a href="#i18n-setup" class="headerlink" title="i18n setup"></a>i18n setup</h3><ul>
+<li>Install the package</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-i18n --save</div></pre></td></tr></table></figure>
+<ul>
+<li>Create lang folder to store your json file and Vue-i18n setup</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// Folder Structure</div><div class="line">src</div><div class="line">│</div><div class="line">└───lang</div><div class="line">    │   lang.js</div><div class="line">    │</div><div class="line">    └───subfolder1</div><div class="line">        │   en.json</div><div class="line">        │   cn.json</div><div class="line">        │   tw.json</div><div class="line">        │   es.json</div></pre></td></tr></table></figure>
+<ul>
+<li>Create a message and locale variable</li>
+<li>locale variable stores the current locale that you wish to display</li>
+<li>messages varaibles stores all the language package (en.json, cn.json)</li>
+<li>Store messages and locale in your VueI18n instance</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Vue.use(VueI18n)</div><div class="line"></div><div class="line"><span class="keyword">const</span> locale = <span class="string">'cn'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> messages = &#123;</div><div class="line">    <span class="attr">cn</span>: cn,</div><div class="line">    <span class="attr">tw</span>: tw,</div><div class="line">    <span class="attr">en</span>: en,</div><div class="line">    <span class="attr">es</span>: es,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> i18n = <span class="keyword">new</span> VueI18n(&#123;</div><div class="line">    <span class="comment">/** 默认值 */</span></div><div class="line">    locale,</div><div class="line">    messages</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> i18n</div></pre></td></tr></table></figure>
+<h3 id="Vuex-Setup"><a href="#Vuex-Setup" class="headerlink" title="Vuex Setup"></a>Vuex Setup</h3><ul>
+<li>In our main.js (where we handle all our imports), we want to export our Vue instance as a variable</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">    store,</div><div class="line">    i18n,</div><div class="line">    <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>Now we can import our Vue instance as app variable and use it in our vuex to access our i18n to change locale</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mutation.js</span></div><div class="line"><span class="keyword">import</span> &#123;app&#125; <span class="keyword">from</span> <span class="string">'../main'</span></div><div class="line">...</div><div class="line">export <span class="keyword">const</span> mutations = &#123;</div><div class="line">  [types.SET_LANG] (state, payload) &#123;</div><div class="line">    app.$i18n.locale = payload</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> actions = &#123;</div><div class="line">  setLang(&#123;commit&#125;, payload) &#123;</div><div class="line">    commit(types.SET_LANG, payload)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>In our Vue component, we can map our vuex action.</li>
+<li>Finally, all we need to do is to connect our directive with :click directive</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"setLang('cn')"</span>&gt;</span>cn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">  <span class="attr">setLang</span>: <span class="function"><span class="keyword">function</span>(<span class="params">lang</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'setLang'</span>, lang)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Debug-Technique"><a href="#Debug-Technique" class="headerlink" title="Debug Technique"></a>Debug Technique</h3><ul>
+<li>Set vue instance and vuex store as window variable, so we can ccess your i18n in your chrome</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="built_in">window</span>[<span class="string">'vue'</span>] = app</div><div class="line"><span class="built_in">window</span>.store = store</div></pre></td></tr></table></figure>
+<img src="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/kuanhsuh/vue-i18n-sandbox" target="_blank" rel="external">Source Code</a></li>
+<li><a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="external">Vue i18n Library</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Recently I been ask to impleme
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript - Algorithm</title>
@@ -258,7 +317,7 @@
     <content type="html"><![CDATA[<h2 id="What-is-parallax"><a href="#What-is-parallax" class="headerlink" title="What is parallax"></a>What is parallax</h2><p>Parallax is an effect where the background layer or image in this case, is moved at a different speed than the front layer while scrolling.</p>
 <p>Parallax design is a popular technique in modern webdesign. There are two approaches to this effect: CSS and JS. Both are really easy. So here we go</p>
 <h2 id="CSS-Approach"><a href="#CSS-Approach" class="headerlink" title="CSS Approach"></a>CSS Approach</h2><p>For your background image, you need to make the background-attachment property fixed. This will set whether the background image is fixed or scrolls with the rest of the page.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-class">.parallax</span> &#123;</div><div class="line">    <span class="comment">/* The image used */</span></div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"img_parallax.jpg"</span>);</div><div class="line"></div><div class="line">    <span class="comment">/* Set a specific height */</span></div><div class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line"></div><div class="line">    <span class="comment">/* Create the parallax scrolling effect */</span></div><div class="line">    <span class="attribute">background-attachment</span>: fixed;</div><div class="line">    <span class="attribute">background-position</span>: center;</div><div class="line">    <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">    <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Container element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">.parallax &#123;</div><div class="line">    /* The image used */</div><div class="line">    background-image: url("img_parallax.jpg");</div><div class="line"></div><div class="line">    /* Set a specific height */</div><div class="line">    height: 500px;</div><div class="line"></div><div class="line">    /* Create the parallax scrolling effect */</div><div class="line">    background-attachment: fixed;</div><div class="line">    background-position: center;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">    background-size: cover;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Container element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Here’s a demo of how the site will work. <a href="https://github.com/kuanhsuh/css_parallax" target="_blank" rel="external">My Github Demo</a></p>
 <h1 id="JS-Approach"><a href="#JS-Approach" class="headerlink" title="JS Approach"></a>JS Approach</h1><p>In your html section add data-type and data-speed attribute. The speed will adjust the speed of how the background move.</p>
 <p>Markup<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"home"</span> <span class="attr">data-type</span>=<span class="string">"background"</span> <span class="attr">data-speed</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>I am absolute positioned<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"about"</span> <span class="attr">data-type</span>=<span class="string">"background"</span> <span class="attr">data-speed</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>Simple Parallax Scroll<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -813,42 +872,6 @@
     
     
       <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Time to Learn Node/ExpressJS</title>
-    <link href="http://yoursite.com/2017/06/16/Express-Time-to-Learn-Node-ExpressJS/"/>
-    <id>http://yoursite.com/2017/06/16/Express-Time-to-Learn-Node-ExpressJS/</id>
-    <published>2017-06-15T23:37:20.000Z</published>
-    <updated>2017-06-16T02:13:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>After receiving a frontend job, I decided I want to learn some backend development before work started. I realize there’s only so far you can go with just frontend development. Eventually you still need to store the data in the database. Therefore, I decided to go with nodejs because nodeJS is eventually javascript. Hence I can just focus on the backend concepts without need to worry about a new language syntax.</p>
-<p>Having some prior Rails Knowledge, I have some idea what a backend language and framework need to do. Here are some concepts I listed that I need to master. (Obviously there are more, but here are some of important ones)</p>
-<h3 id="Concepts-to-master"><a href="#Concepts-to-master" class="headerlink" title="Concepts to master"></a>Concepts to master</h3><ul>
-<li>basic CRUD</li>
-<li>Authenticate</li>
-<li>session</li>
-<li>Create Apis</li>
-<li>relationships with databases</li>
-</ul>
-<h3 id="Plan-amp-Projects"><a href="#Plan-amp-Projects" class="headerlink" title="Plan &amp; Projects"></a>Plan &amp; Projects</h3><p>My plan is to watch some youtube tutorials and conference talks. Then I’m going to start building projects. The three projects that are currently in my mind are simple blog with comment feature, shopping cart, and a chatbot. Also I going to write 15 blog posts on node.</p>
-<p>I’m sure after these three prjects, I’ll have a pretty good understanding on Node. SO Let’s do EEET!!</p>
-<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
-<li><a href="https://medium.com/@amit_tushar/part-uh-what-does-it-take-to-be-a-full-stack-developer-a82c449ec969" target="_blank" rel="external">What does it take to be a full stack developer?</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;After receiving a frontend job, I decided I want to learn some backend development before work started. I realize there’s only so far you
-    
-    </summary>
-    
-    
-      <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
-    
-      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
     
   </entry>
   
