@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Vue," />
+  <meta name="keywords" content="React," />
 
 
 
@@ -89,24 +89,21 @@
 
 
 
-<meta name="description" content="IntroductionRecently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.
-Instructioni18n setup
-Ins">
+<meta name="description" content="BackgroundI started learning React after I finished my freecodecamp FCC. It seems like the obvious choice for multiple reasons. It’s the biggest frontend framework. It has the most jobs available. It">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to implement multi-language  with Vue-i18n ">
-<meta property="og:url" content="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/index.html">
+<meta property="og:title" content="My first JS framework - Learning React">
+<meta property="og:url" content="http://yoursite.com/2017/09/16/My-first-JS-framework-React/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="IntroductionRecently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.
-Instructioni18n setup
-Ins">
-<meta property="og:image" content="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png">
-<meta property="og:updated_time" content="2017-09-16T08:00:59.000Z">
+<meta property="og:description" content="BackgroundI started learning React after I finished my freecodecamp FCC. It seems like the obvious choice for multiple reasons. It’s the biggest frontend framework. It has the most jobs available. It">
+<meta property="og:image" content="https://tctechcrunch2011.files.wordpress.com/2015/09/react-native.png?w=738">
+<meta property="og:image" content="https://image.slidesharecdn.com/random-170808015058/95/29-8-638.jpg?cb=1502157181">
+<meta property="og:image" content="https://image.slidesharecdn.com/random-170808015058/95/29-10-638.jpg?cb=1502157181">
+<meta property="og:image" content="https://github.com/kdchang/reactjs101/raw/master/Ch04/images/react-lifecycle.png">
+<meta property="og:updated_time" content="2017-09-24T13:07:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to implement multi-language  with Vue-i18n ">
-<meta name="twitter:description" content="IntroductionRecently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.
-Instructioni18n setup
-Ins">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png">
+<meta name="twitter:title" content="My first JS framework - Learning React">
+<meta name="twitter:description" content="BackgroundI started learning React after I finished my freecodecamp FCC. It seems like the obvious choice for multiple reasons. It’s the biggest frontend framework. It has the most jobs available. It">
+<meta name="twitter:image" content="https://tctechcrunch2011.files.wordpress.com/2015/09/react-native.png?w=738">
 
 
 
@@ -134,13 +131,13 @@ Ins">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/16/My-first-JS-framework-React/"/>
 
 
 
 
 
-  <title> How to implement multi-language  with Vue-i18n  | My Coding Journey </title>
+  <title> My first JS framework - Learning React | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -268,7 +265,7 @@ Ins">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/My-first-JS-framework-React/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -289,7 +286,7 @@ Ins">
             
             
               
-                How to implement multi-language  with Vue-i18n 
+                My first JS framework - Learning React
               
             
           </h1>
@@ -304,7 +301,7 @@ Ins">
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-16T10:59:14+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-16T22:21:39+08:00">
                 2017-09-16
               </time>
             
@@ -323,8 +320,8 @@ Ins">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/16/How-to-implement-multi-language-with-Vue-i18n/" itemprop="commentCount"></span>
+                <a href="/2017/09/16/My-first-JS-framework-React/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/16/My-first-JS-framework-React/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,44 +347,23 @@ Ins">
       
 
       
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Recently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.</p>
-<h2 id="Instruction"><a href="#Instruction" class="headerlink" title="Instruction"></a>Instruction</h2><h3 id="i18n-setup"><a href="#i18n-setup" class="headerlink" title="i18n setup"></a>i18n setup</h3><ul>
-<li>Install the package</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-i18n --save</div></pre></td></tr></table></figure>
-<ul>
-<li>Create lang folder to store your json file and Vue-i18n setup</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// Folder Structure</div><div class="line">src</div><div class="line">│</div><div class="line">└───lang</div><div class="line">    │   lang.js</div><div class="line">    │</div><div class="line">    └───subfolder1</div><div class="line">        │   en.json</div><div class="line">        │   cn.json</div><div class="line">        │   tw.json</div><div class="line">        │   es.json</div></pre></td></tr></table></figure>
-<ul>
-<li>Create a message and locale variable</li>
-<li>locale variable stores the current locale that you wish to display</li>
-<li>messages varaibles stores all the language package (en.json, cn.json)</li>
-<li>Store messages and locale in your VueI18n instance</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Vue.use(VueI18n)</div><div class="line"></div><div class="line"><span class="keyword">const</span> locale = <span class="string">'cn'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> messages = &#123;</div><div class="line">    <span class="attr">cn</span>: cn,</div><div class="line">    <span class="attr">tw</span>: tw,</div><div class="line">    <span class="attr">en</span>: en,</div><div class="line">    <span class="attr">es</span>: es,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> i18n = <span class="keyword">new</span> VueI18n(&#123;</div><div class="line">    <span class="comment">/** 默认值 */</span></div><div class="line">    locale,</div><div class="line">    messages</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> i18n</div></pre></td></tr></table></figure>
-<h3 id="Vuex-Setup"><a href="#Vuex-Setup" class="headerlink" title="Vuex Setup"></a>Vuex Setup</h3><ul>
-<li>In our main.js (where we handle all our imports), we want to export our Vue instance as a variable</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">    store,</div><div class="line">    i18n,</div><div class="line">    <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>Now we can import our Vue instance as app variable and use it in our vuex to access our i18n to change locale</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// mutation.js</span></div><div class="line"><span class="keyword">import</span> &#123;app&#125; <span class="keyword">from</span> <span class="string">'../main'</span></div><div class="line">...</div><div class="line">export <span class="keyword">const</span> mutations = &#123;</div><div class="line">  [types.SET_LANG] (state, payload) &#123;</div><div class="line">    app.$i18n.locale = payload</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> actions = &#123;</div><div class="line">  setLang(&#123;commit&#125;, payload) &#123;</div><div class="line">    commit(types.SET_LANG, payload)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>In our Vue component, we can map our vuex action.</li>
-<li>Finally, all we need to do is to connect our directive with :click directive</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"setLang('cn')"</span>&gt;</span>cn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">  <span class="attr">setLang</span>: <span class="function"><span class="keyword">function</span>(<span class="params">lang</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'setLang'</span>, lang)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Debug-Technique"><a href="#Debug-Technique" class="headerlink" title="Debug Technique"></a>Debug Technique</h3><ul>
-<li>Set vue instance and vuex store as window variable, so we can ccess your i18n in your chrome</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="built_in">window</span>[<span class="string">'vue'</span>] = app</div><div class="line"><span class="built_in">window</span>.store = store</div></pre></td></tr></table></figure>
-<img src="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
+        <p><img src="https://tctechcrunch2011.files.wordpress.com/2015/09/react-native.png?w=738" alt="React Logo" title="React Logo"></p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>I started learning React after I finished my freecodecamp FCC. It seems like the obvious choice for multiple reasons. It’s the biggest frontend framework. It has the most jobs available. It is backed by facebook, so it won’t go away any time soon.</p>
+<p>I soon realize to learn react, I must learn webpack, babel, es6, blah blah blah. I found out I’m not the only one that who this problem. Luckily, facebook came out with create-react-app, so I don’t have to deal with configuration. (I feature I’ll learn the configuration later)</p>
+<p>I’m going to share with you the few must knows about react.</p>
+<h2 id="Must-knows"><a href="#Must-knows" class="headerlink" title="Must knows"></a>Must knows</h2><h3 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h3><p><img src="https://image.slidesharecdn.com/random-170808015058/95/29-8-638.jpg?cb=1502157181" alt="React props" title="React props example from React Maker"></p>
+<p><img src="https://image.slidesharecdn.com/random-170808015058/95/29-10-638.jpg?cb=1502157181" alt="React props" title="React props example from React Maker 2"></p>
+<p>Props are information that are passed between components. It is how components communicate. Because of this we can split our webpage into many components, and have one main component(which we call container) to get all the data. Then we can passdown the data to the following props.</p>
+<p>In the above example, there is a user component and  we can pass props from the parents compoent to the User component(user, desc, and src). Then we can reuse the User component and the User component is completely independent. Note props can also be functions.</p>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p>State is an object that manages the information and on this component. State can store information, the status of the component. For example if we want a component to show or hode such as modal.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// state is used to store state of component</span></div><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  <span class="attr">modal</span>: <span class="literal">false</span></div><div class="line">&#125;</div><div class="line">toggle = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        <span class="attr">modal</span>: !modal,</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">...</div><div class="line"><span class="comment">// modal = true，isOpen</span></div><div class="line">&lt;Modal isOpen=&#123;<span class="keyword">this</span>.state.modal&#125;&gt;</div><div class="line">&lt;/Modal&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// state can be used to store data.</span></div><div class="line">state = &#123;</div><div class="line">    <span class="attr">modal</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">album</span>: AlbumJson,</div><div class="line">    <span class="attr">cart</span>: [],</div><div class="line">&#125;</div><div class="line">...</div><div class="line">&lt;Button color=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.toggle&#125;&gt;Cart(&#123;<span class="keyword">this</span>.state.cart.length&#125;)&lt;<span class="regexp">/Button&gt;</span></div></pre></td></tr></table></figure>
+<p>Another debugging technique is that I usually type console.log(‘state’, this.state) between return and render to track the state for debugging purpose.</p>
+<h3 id="Component-life-cycle"><a href="#Component-life-cycle" class="headerlink" title="Component life cycle"></a>Component life cycle</h3><p><img src="https://github.com/kdchang/reactjs101/raw/master/Ch04/images/react-lifecycle.png" alt="Component Life Cycle" title="Component Life Cycle"><br>component life cycle is useful when we want to execute a function when the function state has changed. For example, if want to perform an ajax call before component mounted, we can use the componentWillMount() life cycle and then we can store the data in the state.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">  componentWillMount()&#123;</div><div class="line">    <span class="comment">// execute api here</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div id="pageHome"&gt;</div><div class="line">        hi this is home page</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://github.com/kuanhsuh/vue-i18n-sandbox" target="_blank" rel="external">Source Code</a></li>
-<li><a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="external">Vue i18n Library</a></li>
+<li><a href="https://medium.com/reactmaker/" target="_blank" rel="external">Medium React Maker</a></li>
+<li><a href="https://facebook.github.io/react/" target="_blank" rel="external">Facebook React Documentation</a></li>
 </ul>
 
       
@@ -412,7 +388,7 @@ Ins">
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
         </div>
       
@@ -425,8 +401,8 @@ Ins">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/09/Javascript-Algorithm/" rel="next" title="Javascript - Algorithm">
-                <i class="fa fa-chevron-left"></i> Javascript - Algorithm
+              <a href="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/" rel="next" title="How to implement multi-language  with Vue-i18n ">
+                <i class="fa fa-chevron-left"></i> How to implement multi-language  with Vue-i18n 
               </a>
             
           </div>
@@ -434,10 +410,6 @@ Ins">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/16/My-first-JS-framework-React/" rel="prev" title="My first JS framework - Learning React">
-                My first JS framework - Learning React <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,7 +563,7 @@ Ins">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instruction"><span class="nav-number">2.</span> <span class="nav-text">Instruction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#i18n-setup"><span class="nav-number">2.1.</span> <span class="nav-text">i18n setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex-Setup"><span class="nav-number">2.2.</span> <span class="nav-text">Vuex Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug-Technique"><span class="nav-number">2.3.</span> <span class="nav-text">Debug Technique</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">3.</span> <span class="nav-text">Links</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Must-knows"><span class="nav-number">2.</span> <span class="nav-text">Must knows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Props"><span class="nav-number">2.1.</span> <span class="nav-text">Props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.2.</span> <span class="nav-text">State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component-life-cycle"><span class="nav-number">2.3.</span> <span class="nav-text">Component life cycle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">3.</span> <span class="nav-text">Links</span></a></li></ol></div>
             
 
           </div>
@@ -729,9 +701,9 @@ Ins">
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/09/16/How-to-implement-multi-language-with-Vue-i18n/';
+      var disqus_identifier = '2017/09/16/My-first-JS-framework-React/';
 
-      var disqus_title = "How to implement multi-language  with Vue-i18n ";
+      var disqus_title = "My first JS framework - Learning React";
 
 
       function run_disqus_script(disqus_script) {

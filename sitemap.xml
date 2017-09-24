@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</loc>
+    
+    <lastmod>2017-09-24T13:07:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</loc>
     
     <lastmod>2017-09-16T08:00:59.000Z</lastmod>
