@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/</loc>
+    
+    <lastmod>2017-10-01T14:11:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</loc>
     
     <lastmod>2017-09-24T13:07:19.000Z</lastmod>

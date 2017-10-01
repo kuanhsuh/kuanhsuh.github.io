@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="expressJS,Stripe," />
+  <meta name="keywords" content="redux,react," />
 
 
 
@@ -89,31 +89,19 @@
 
 
 
-<meta name="description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
+<meta name="description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stripejs on express part II">
-<meta property="og:url" content="http://yoursite.com/2017/06/16/Express-Stripejs-on-express-part-II/index.html">
+<meta property="og:title" content="What's Redux and how to use it?">
+<meta property="og:url" content="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
-<meta property="og:updated_time" content="2017-06-19T03:29:02.000Z">
+<meta property="og:description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
+<meta property="og:image" content="https://camo.githubusercontent.com/9de527b9432cc9244dc600875b46b43311918b59/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d656469612d702e736c69642e65732f75706c6f6164732f3336343831322f696d616765732f323438343739302f415243482d5265647578322d657874656e6465642d7265616c2d6465636c657261746976652e676966">
+<meta property="og:updated_time" content="2017-10-01T14:11:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stripejs on express part II">
-<meta name="twitter:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
+<meta name="twitter:title" content="What's Redux and how to use it?">
+<meta name="twitter:description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
+<meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
 
 
 
@@ -141,13 +129,13 @@ Implement reques">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/16/Express-Stripejs-on-express-part-II/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/"/>
 
 
 
 
 
-  <title> Stripejs on express part II | My Coding Journey </title>
+  <title> What's Redux and how to use it? | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -275,7 +263,7 @@ Implement reques">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/Express-Stripejs-on-express-part-II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -296,7 +284,7 @@ Implement reques">
             
             
               
-                Stripejs on express part II
+                What's Redux and how to use it?
               
             
           </h1>
@@ -311,8 +299,8 @@ Implement reques">
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T07:36:23+08:00">
-                2017-06-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T21:13:18+08:00">
+                2017-09-28
               </time>
             
 
@@ -330,8 +318,8 @@ Implement reques">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/16/Express-Stripejs-on-express-part-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/16/Express-Stripejs-on-express-part-II/" itemprop="commentCount"></span>
+                <a href="/2017/09/28/What-s-Redux-and-how-to-use-it/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/28/What-s-Redux-and-how-to-use-it/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,29 +345,22 @@ Implement reques">
       
 
       
-        <p>After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.</p>
-<ol>
-<li><p>Install stripe through npm</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install stripe</div></pre></td></tr></table></figure>
-</li>
-<li><p>Implement request - here’s example request from <a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe API</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> stripe = <span class="built_in">require</span>(<span class="string">"stripe"</span>)(</div><div class="line">  <span class="string">"sk_test_UawoxUENSN7VkeeMIXXXXX"</span></div><div class="line">);</div><div class="line"></div><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: <span class="number">2000</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: <span class="string">"tok_187waCF6w9JvbRHHBeCqMoBg"</span>, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Charge for liam.johnson@example.com"</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">  <span class="comment">// asynchronously called</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>We need to modify a couple things</p>
-<ul>
-<li>amount is measured in cents therefore we need to multiple our amounts by 100.</li>
-<li>source is the token generated from our frontend validation</li>
-<li>I’m getting these info from my session cart</li>
-<li>images from stripe</li>
-</ul>
-<p>Here’s what my code look like.</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: cart.totalPrice * <span class="number">100</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: req.body.stripeToken, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Test Charge"</span></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      req.flash(<span class="string">'error'</span>, err.messages)</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/checkout'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// This is where we save our orders</span></div><div class="line">    <span class="keyword">var</span> order = <span class="keyword">new</span> Order(&#123;</div><div class="line">      <span class="attr">name</span>: req.body.name,</div><div class="line">      <span class="attr">address</span>: req.body.address,</div><div class="line">      <span class="attr">cart</span>: cart,</div><div class="line">      <span class="attr">paymentId</span>: charge.id</div><div class="line">    &#125;)</div><div class="line">    order.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</div><div class="line">      req.flash(<span class="string">'success'</span>, <span class="string">'Successfully bought product'</span>)</div><div class="line">      req.session.cart = <span class="literal">null</span></div><div class="line">      res.redirect(<span class="string">'/'</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>That should be it man. Your stripe should be charged. Now we need to save our orders.</p>
-<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
-<li><a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe Charge API</a></li>
-<li><a href="https://github.com/kuanhsuh/express-shoppingCart/blob/master/routes/index.js" target="_blank" rel="external">My github Shopping cart</a></li>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Redux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage our state. If two child component share the same state from parents. The child must pass the state back to parent and then to the other child component. To solve this problem, we need a global store.</p>
+<p><img src="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg" alt="React Child Component with and without Redux" title="React Child Component with and without Redux"></p>
+<p>Now with redux, we just need to change the state in our redux and all the react component will automatically be updated.</p>
+<h2 id="SO-How-do-we-use-it"><a href="#SO-How-do-we-use-it" class="headerlink" title="SO How do we use it."></a>SO How do we use it.</h2><p>I’ll use one of my demo app as in example. First we need to identify an action type. It is basically a string but we defined it as a variable. We do this for best practice so we don’t make typos.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Action Type</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_RECIPE = <span class="string">'ADD_RECIPE'</span>;</div></pre></td></tr></table></figure>
+<p>Now we identify our action. Here we call our action types and our payload(data that we want to send to our state.)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// action.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> addRecipe = <span class="function"><span class="params">recipe</span> =&gt;</span> (&#123; <span class="attr">type</span>: types.ADD_RECIPE, recipe &#125;)</div></pre></td></tr></table></figure>
+<p>Next we pass the recipe to our reducer to add to our state. And our state is now updated!! yay!!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//reducer_recipes.js</span></div><div class="line"><span class="keyword">const</span> initialState = [</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Sushi'</span>, <span class="attr">ingredients</span>: [<span class="string">'3 tablespoons rice vinegar'</span>, <span class="string">'4 sheets nori (dry seaweed)'</span>, <span class="string">'1/2 cucumber, sliced into thin strips'</span>]&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">state = initialState, action</span>)</span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> ADD_RECIPE:</div><div class="line">      <span class="keyword">return</span> [</div><div class="line">        ...state</div><div class="line">        ,</div><div class="line">        &#123;</div><div class="line">        <span class="attr">name</span>: action.recipe.name,</div><div class="line">        <span class="attr">ingredients</span>: action.recipe.ingredients</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reducers/index.js</span></div><div class="line"><span class="comment">// Now we export our reducers.</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  recipes</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">  &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>Here’s a diagram on how redux works. I also attach two examples with demo site that uses redux.</p>
+<p><img src="https://camo.githubusercontent.com/9de527b9432cc9244dc600875b46b43311918b59/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d656469612d702e736c69642e65732f75706c6f6164732f3336343831322f696d616765732f323438343739302f415243482d5265647578322d657874656e6465642d7265616c2d6465636c657261746976652e676966" alt="Redux Flow chart" title="Redux Flow Chart"></p>
+<p>I’ll talk about how to connect redux to our react component in the next blog post.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/kuanhsuh/netflix-clonev2" target="_blank" rel="external">My Netflix redux example</a></li>
+<li><a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box" target="_blank" rel="external">My FCC Recipebox example</a></li>
 </ul>
 
       
@@ -404,9 +385,9 @@ Implement reques">
       
         <div class="post-tags">
           
-            <a href="/tags/expressJS/" rel="tag"># expressJS</a>
+            <a href="/tags/redux/" rel="tag"># redux</a>
           
-            <a href="/tags/Stripe/" rel="tag"># Stripe</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -419,8 +400,8 @@ Implement reques">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/100-Days-Code-Challenge-Feedback/" rel="next" title="100 Days Code Challenge Feedback">
-                <i class="fa fa-chevron-left"></i> 100 Days Code Challenge Feedback
+              <a href="/2017/09/16/My-first-JS-framework-React/" rel="next" title="My first JS framework - Learning React">
+                <i class="fa fa-chevron-left"></i> My first JS framework - Learning React
               </a>
             
           </div>
@@ -428,10 +409,6 @@ Implement reques">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/16/Express-Basic-express-CRUD-with-MongoDB/" rel="prev" title="Basic express CRUD with MongoDB">
-                Basic express CRUD with MongoDB <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,7 +562,7 @@ Implement reques">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SO-How-do-we-use-it"><span class="nav-number">2.</span> <span class="nav-text">SO How do we use it.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">3.</span> <span class="nav-text">Links</span></a></li></ol></div>
             
 
           </div>
@@ -723,9 +700,9 @@ Implement reques">
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/06/16/Express-Stripejs-on-express-part-II/';
+      var disqus_identifier = '2017/09/28/What-s-Redux-and-how-to-use-it/';
 
-      var disqus_title = "Stripejs on express part II";
+      var disqus_title = "What\'s Redux and how to use it?";
 
 
       function run_disqus_script(disqus_script) {
