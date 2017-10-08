@@ -2,23 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/</loc>
+    <loc>http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/</loc>
     
-    <lastmod>2017-10-01T14:11:44.000Z</lastmod>
+    <lastmod>2017-10-08T00:26:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</loc>
+    <loc>http://yoursite.com/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/</loc>
     
-    <lastmod>2017-09-24T13:07:19.000Z</lastmod>
+    <lastmod>2017-10-08T00:26:29.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</loc>
     
-    <lastmod>2017-09-16T08:00:59.000Z</lastmod>
+    <lastmod>2017-10-07T07:18:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</loc>
+    
+    <lastmod>2017-10-07T00:51:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/07/Create-React-App-Review/</loc>
+    
+    <lastmod>2017-10-07T00:51:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/</loc>
+    
+    <lastmod>2017-10-07T00:50:19.000Z</lastmod>
     
   </url>
   
@@ -376,13 +397,6 @@
     <loc>http://yoursite.com/2017/05/02/100-Days-Code-Challenge-Day-50-60/</loc>
     
     <lastmod>2017-05-02T08:49:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/04/07/Create-React-App-Review/</loc>
-    
-    <lastmod>2017-04-07T06:45:22.000Z</lastmod>
     
   </url>
   

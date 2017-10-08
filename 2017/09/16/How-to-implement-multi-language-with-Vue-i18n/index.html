@@ -100,7 +100,7 @@ Ins">
 Instructioni18n setup
 Ins">
 <meta property="og:image" content="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png">
-<meta property="og:updated_time" content="2017-09-16T08:00:59.000Z">
+<meta property="og:updated_time" content="2017-10-07T07:18:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to implement multi-language  with Vue-i18n ">
 <meta name="twitter:description" content="IntroductionRecently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.
@@ -385,6 +385,9 @@ Ins">
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="built_in">window</span>[<span class="string">'vue'</span>] = app</div><div class="line"><span class="built_in">window</span>.store = store</div></pre></td></tr></table></figure>
 <img src="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
+<p><strong><em>Edit 2017.10.07</em></strong><br>How to use lazy loading (or dynamic locale ) in vue i18n.<br>You want use lazy loading becuase you don’t want to load all the language pack in the initial load. It will make your bundle size bigger and slow down your app.</p>
+<p>Here’s how you use it in your app.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> setLangNew(&#123;commit&#125;, payload)&#123;</div><div class="line">  <span class="keyword">if</span> (payload <span class="keyword">in</span> app.$i18n.messages) &#123;</div><div class="line">    commit(types.SET_LANG, payload)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="comment">// you can use fetch or import which ever you want.</span></div><div class="line">      <span class="comment">// Just make sure your webpack support import syntax</span></div><div class="line">      <span class="comment">// const res = await axios.get(`./src/lang/$&#123;payload&#125;.json`)</span></div><div class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./src/lang/locale/<span class="subst">$&#123;payload&#125;</span>.json`</span>)</div><div class="line">      app.$i18n.setLocaleMessage(payload, res.data)</div><div class="line">      commit(types.SET_LANG, payload)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span>(e) &#123;</div><div class="line">      <span class="built_in">console</span>.log(e)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://github.com/kuanhsuh/vue-i18n-sandbox" target="_blank" rel="external">Source Code</a></li>
 <li><a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="external">Vue i18n Library</a></li>
@@ -516,7 +519,7 @@ Ins">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -529,7 +532,7 @@ Ins">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

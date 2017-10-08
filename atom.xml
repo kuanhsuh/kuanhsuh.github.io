@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-01T14:11:44.000Z</updated>
+  <updated>2017-10-08T00:26:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,101 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>What&#39;s Redux and how to use it?</title>
+    <title>Redux Dev Tools + Tips, Redux Series III</title>
+    <link href="http://yoursite.com/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/"/>
+    <id>http://yoursite.com/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/</id>
+    <published>2017-10-07T07:05:43.000Z</published>
+    <updated>2017-10-08T00:26:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>You want to use dev tool because it’s great for debugging. It will track your state and action at all times. First, you want to install Chrome Redux Dev tool. <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=zh-TW" target="_blank" rel="external">Chrome Link</a></p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Then you want to setup your dev tool in your app. So we can view it only in develop mode not in production.</p>
+<p>Here’s my setup for redux dev tool. Since I have middleware, I have to set it up a little differently. For different setup you can view it here. <a href="https://github.com/kuanhsuh/netflix-clonev2/blob/master/src/index.js" target="_blank" rel="external">Link</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> composeEnhancers = <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;</div><div class="line"><span class="keyword">const</span> store = createStore(reducers, <span class="comment">/* preloadedState, */</span> composeEnhancers(</div><div class="line">    applyMiddleware(promise)</div><div class="line">));</div></pre></td></tr></table></figure>
+<h2 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it."></a>How to use it.</h2><p>When you dispatch an action, you can check out the process in the dev tool. You can track action and state. With this tool you can properly see if the state has changed.</p>
+<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_action.png" alt="Dev Tool-Action" title="Dev Tool-Action">
+<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_diff.png" alt="Dev Tool-Diff" title="Dev Tool-Diff">
+<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_state.png" alt="Dev Tool-State" title="Dev Tool-State">
+<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_test.png" alt="Dev Tool-Test" title="Dev Tool-Test">
+<h2 id="Tip-1-How-to-use-local-storage-with-Redux-Store"><a href="#Tip-1-How-to-use-local-storage-with-Redux-Store" class="headerlink" title="Tip # 1 How to use local storage with Redux Store."></a>Tip # 1 How to use local storage with Redux Store.</h2><p>Here’s another tip, I want to share. Here’s how to setup localstorage with redux.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> persistedState = localStorage.getItem(<span class="string">' _username_recipes'</span>) ? <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">' _username_recipes'</span>)) : &#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(reducer, persistedState);</div><div class="line">store.subscribe(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  localStorage.setItem(<span class="string">' _username_recipes'</span>, <span class="built_in">JSON</span>.stringify(store.getState()))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box/blob/master/src/index.js" target="_blank" rel="external">Redux with local storage</a></li>
+<li>[Redux Dev tool Doc](<a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank" rel="external">https://github.com/zalmoxisus/redux-devtools-extension</a></li>
+<li><a href="https://github.com/kuanhsuh/netflix-clonev2/blob/master/src/index.js" target="_blank" rel="external">My Netflix app with redux dev tool</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You want to use dev tool becau
+    
+    </summary>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux with React, Redux Series II</title>
+    <link href="http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/"/>
+    <id>http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/</id>
+    <published>2017-10-07T00:50:39.000Z</published>
+    <updated>2017-10-08T00:26:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo-title-dark.png" alt="Redux Logo" title="Redux Logo"></p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>First we must separate our react component into two different types, and they are container and components. Containers are components that interacts with redux. They handle the data and state management. Sometimes they are refer to as “smart component”. Components are sometimes refer to as “dumb components”. They only deal with markup and styles. They receive props from containers and display the data.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>I’m going to show you the following steps with my recipe app. You can view demo here or view source code here.<a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box" target="_blank" rel="external">Recipebox Github</a></p>
+<ol>
+<li>First we must install redux-react</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install redux react</div></pre></td></tr></table></figure>
+<ol>
+<li>Next we connect our redux with react in our index.js (where we do all the exporting)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducers'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line">...</div><div class="line">const store = createStore(reducer);</div><div class="line">...</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">  &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<ol>
+<li>Now we go to our container which is App.js and import the following modules and we connect mapStateToProps and mapDispatchToProps to our App.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// App.js</span></div><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line"><span class="keyword">import</span> &#123; bindActionCreators &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> RecipeActions <span class="keyword">from</span> <span class="string">'../actions/index'</span>;</div><div class="line">...</div><div class="line">const mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</div><div class="line">  <span class="attr">actions</span>: bindActionCreators(RecipeActions, dispatch)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">recipes</span>: state.recipes</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">...</div><div class="line">connect connect(mapStateToProps, mapDispatchToProps)(App);</div></pre></td></tr></table></figure>
+<ol>
+<li>If you do the above step correctly, now we get actions and state as our props. We can test by using console.log.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// App.js</span></div><div class="line">    <span class="comment">// console.log(this.props)</span></div><div class="line">    <span class="keyword">const</span> &#123;actions, recipes&#125; = <span class="keyword">this</span>.props;</div></pre></td></tr></table></figure>
+<ol>
+<li>Now I can pass the state and actions as props to my components (aka. dumb components). In my example I passed it to the Recipelist component and AddForm component. Then I can use the actions and states in my components.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//App.js</span></div><div class="line">  &lt;Grid&gt;</div><div class="line">    &lt;Header /&gt;</div><div class="line">    &lt;Recipelist</div><div class="line">      recipes=&#123;recipes&#125;</div><div class="line">      deleterecipe=&#123;actions.deleteRecipe&#125;</div><div class="line">      editrecipe=&#123;actions.editRecipe&#125;</div><div class="line">    /&gt;</div><div class="line">    &lt;AddForm</div><div class="line">      addrecipe=&#123;actions.addRecipe&#125;</div><div class="line">    /&gt;</div><div class="line">  &lt;/Grid&gt;</div></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>We successfully move our state to redux. As our app gets bigger having a central store management is imperative. This is not it. With redux install we can track our actions and state via Redux Dev tool. In the next blog post, I’ll share how to use the debugging tool and some extra tips.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box" target="_blank" rel="external">My FCC Recipebox Github</a></li>
+<li><a href="http://fcc-react-recipebox.surge.sh/" target="_blank" rel="external">My FCC Recipebox Demo</a></li>
+<li><a href="http://redux.js.org/docs/basics/UsageWithReact.html" target="_blank" rel="external">Redux React Documentation</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/reactjs/redux/master/logo/logo-title-dark.png&quot; alt=&quot;Redux Logo&quot; title=&quot;Redux Logo&quot;&gt;&lt;/p&gt;
+&lt;h2 i
+    
+    </summary>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>What&#39;s Redux and how to use it? Redux Series I</title>
     <link href="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/"/>
     <id>http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/</id>
     <published>2017-09-28T13:13:18.000Z</published>
-    <updated>2017-10-01T14:11:44.000Z</updated>
+    <updated>2017-10-07T00:50:19.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Redux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage our state. If two child component share the same state from parents. The child must pass the state back to parent and then to the other child component. To solve this problem, we need a global store.</p>
 <p><img src="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg" alt="React Child Component with and without Redux" title="React Child Component with and without Redux"></p>
@@ -31,10 +121,10 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// action.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> addRecipe = <span class="function"><span class="params">recipe</span> =&gt;</span> (&#123; <span class="attr">type</span>: types.ADD_RECIPE, recipe &#125;)</div></pre></td></tr></table></figure>
 <p>Next we pass the recipe to our reducer to add to our state. And our state is now updated!! yay!!</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//reducer_recipes.js</span></div><div class="line"><span class="keyword">const</span> initialState = [</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Sushi'</span>, <span class="attr">ingredients</span>: [<span class="string">'3 tablespoons rice vinegar'</span>, <span class="string">'4 sheets nori (dry seaweed)'</span>, <span class="string">'1/2 cucumber, sliced into thin strips'</span>]&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">state = initialState, action</span>)</span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> ADD_RECIPE:</div><div class="line">      <span class="keyword">return</span> [</div><div class="line">        ...state</div><div class="line">        ,</div><div class="line">        &#123;</div><div class="line">        <span class="attr">name</span>: action.recipe.name,</div><div class="line">        <span class="attr">ingredients</span>: action.recipe.ingredients</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reducers/index.js</span></div><div class="line"><span class="comment">// Now we export our reducers.</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  recipes</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">  &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reducers/index.js</span></div><div class="line"><span class="comment">// Now we export our reducers.</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  recipes</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span>,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
 <p>Here’s a diagram on how redux works. I also attach two examples with demo site that uses redux.</p>
 <p><img src="https://camo.githubusercontent.com/9de527b9432cc9244dc600875b46b43311918b59/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d656469612d702e736c69642e65732f75706c6f6164732f3336343831322f696d616765732f323438343739302f415243482d5265647578322d657874656e6465642d7265616c2d6465636c657261746976652e676966" alt="Redux Flow chart" title="Redux Flow Chart"></p>
-<p>I’ll talk about how to connect redux to our react component in the next blog post.</p>
+<p>This is it for redux. You can connect redux with jquery for plain javascript. Next I’ll talk about how to connect redux to our react component in the next blog post.</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://github.com/kuanhsuh/netflix-clonev2" target="_blank" rel="external">My Netflix redux example</a></li>
 <li><a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box" target="_blank" rel="external">My FCC Recipebox example</a></li>
@@ -48,9 +138,9 @@
     </summary>
     
     
-      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
-    
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
     
   </entry>
   
@@ -59,7 +149,7 @@
     <link href="http://yoursite.com/2017/09/16/My-first-JS-framework-React/"/>
     <id>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</id>
     <published>2017-09-16T14:21:39.000Z</published>
-    <updated>2017-09-24T13:07:19.000Z</updated>
+    <updated>2017-10-07T00:51:18.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://tctechcrunch2011.files.wordpress.com/2015/09/react-native.png?w=738" alt="React Logo" title="React Logo"></p>
 <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>I started learning React after I finished my freecodecamp FCC. It seems like the obvious choice for multiple reasons. It’s the biggest frontend framework. It has the most jobs available. It is backed by facebook, so it won’t go away any time soon.</p>
@@ -89,7 +179,7 @@
     </summary>
     
     
-      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
@@ -98,7 +188,7 @@
     <link href="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/"/>
     <id>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</id>
     <published>2017-09-16T02:59:14.000Z</published>
-    <updated>2017-09-16T08:00:59.000Z</updated>
+    <updated>2017-10-07T07:18:02.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Recently I been ask to implement i18n into our company’s web app. The library we use is Vue-i18n. I’ll share with you how to implement this library with your app.</p>
 <h2 id="Instruction"><a href="#Instruction" class="headerlink" title="Instruction"></a>Instruction</h2><h3 id="i18n-setup"><a href="#i18n-setup" class="headerlink" title="i18n setup"></a>i18n setup</h3><ul>
@@ -135,6 +225,9 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="built_in">window</span>[<span class="string">'vue'</span>] = app</div><div class="line"><span class="built_in">window</span>.store = store</div></pre></td></tr></table></figure>
 <img src="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
+<p><strong><em>Edit 2017.10.07</em></strong><br>How to use lazy loading (or dynamic locale ) in vue i18n.<br>You want use lazy loading becuase you don’t want to load all the language pack in the initial load. It will make your bundle size bigger and slow down your app.</p>
+<p>Here’s how you use it in your app.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> setLangNew(&#123;commit&#125;, payload)&#123;</div><div class="line">  <span class="keyword">if</span> (payload <span class="keyword">in</span> app.$i18n.messages) &#123;</div><div class="line">    commit(types.SET_LANG, payload)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="comment">// you can use fetch or import which ever you want.</span></div><div class="line">      <span class="comment">// Just make sure your webpack support import syntax</span></div><div class="line">      <span class="comment">// const res = await axios.get(`./src/lang/$&#123;payload&#125;.json`)</span></div><div class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./src/lang/locale/<span class="subst">$&#123;payload&#125;</span>.json`</span>)</div><div class="line">      app.$i18n.setLocaleMessage(payload, res.data)</div><div class="line">      commit(types.SET_LANG, payload)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span>(e) &#123;</div><div class="line">      <span class="built_in">console</span>.log(e)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://github.com/kuanhsuh/vue-i18n-sandbox" target="_blank" rel="external">Source Code</a></li>
 <li><a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="external">Vue i18n Library</a></li>
@@ -789,81 +882,6 @@
       <category term="expressJS" scheme="http://yoursite.com/tags/expressJS/"/>
     
       <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Book Review - The Little Book of Common Sense Investing</title>
-    <link href="http://yoursite.com/2017/06/21/Book%20Review-The-little-book-of-common-sense-investing/"/>
-    <id>http://yoursite.com/2017/06/21/Book Review-The-little-book-of-common-sense-investing/</id>
-    <published>2017-06-21T06:03:57.000Z</published>
-    <updated>2017-06-29T21:25:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://images.gr-assets.com/books/1347673616l/171127.jpg" alt="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns" title="The Little Book of Common Sense Investing: The Only Way to Guarantee Your Fair Share of Stock Market Returns"></p>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>John Bogle, the founder of The Vanguard Group, preaches the idea of index investing. His company Vanguard Group also is one of the leaders in index funds. In his book he talks about why index fund is the best and safest strategy for average investors.</p>
-<h2 id="Index-Fund-vs-Mutal-Fund"><a href="#Index-Fund-vs-Mutal-Fund" class="headerlink" title="Index Fund vs Mutal Fund"></a>Index Fund vs Mutal Fund</h2><p>John compares stock market to fable story, the Gotrocks family (link below). He explains how fund managers and wall street turn investing from a winning game to a losing game.</p>
-<p>Mutual fund is a loser’s game because of 3 reasons: transation cost, tax and management fees. Mutual fund has turnover ratio, which means the amount of stocks they buy and sell over a year. The turnover rate will generate higher transaction cost which eventually lowers your returns.</p>
-<p>Also most mutual fund charges a management fee from 1-3%. This may look small but actually eats up majority of your profit. For example, S&amp;P500 returns about 10% annually, which means the management fee takes 10-30% of your profit. If you do this annually, this fee will cost you a lot.</p>
-<p>Lastly, there’s the tax, US government tax when a transaction is finish. This hurts the most for short term investors.</p>
-<h2 id="Asset-Allocation"><a href="#Asset-Allocation" class="headerlink" title="Asset Allocation"></a>Asset Allocation</h2><p>There’s no definate answer on this, but basically the book suggest buying a well diverse index fund(S&amp;P500, Total Market Fund) and a bond fund(total bond fund). The suggest the portion should base on your age. For example if you are 30, then you should have 30% in bonds and 70% in stocks.</p>
-<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>In summary this book can be summarize in that longterm investing in equities market is a winner’s game and don’t get other people take your profit from you. There’s two times where there’s a race between index fund and mutual fund, one in 1993 hosted by NY Times and 2007 when Warren Buffet challenged Wall Street hedge fund for 10 year challenge. You can check both the story below. Basically in both index fund destroyed active managed fund by a large margin. In fact the 1993 race was stopped in 1999 because the spread was just too humiliating for active mutual funds.</p>
-<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
-<li><a href="http://johncbogle.com/wordpress/wp-content/uploads/2007/03/chapter%20one.pdf" target="_blank" rel="external">John Bogle Parable story</a></li>
-<li><a href="https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397" target="_blank" rel="external">Warren Buffet Hedge Fund Bet</a></li>
-<li><a href="http://www.nytimes.com/1999/07/04/business/mutual-funds-report-in-this-race-3-of-the-5-runners-left-a-benchmark-in-the-dust.html" target="_blank" rel="external">1993 NY Times Index Fund Race</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://images.gr-assets.com/books/1347673616l/171127.jpg&quot; alt=&quot;The Little Book of Common Sense Investing: The Only Way to Guara
-    
-    </summary>
-    
-    
-      <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Book Review - Millionaire Teacher</title>
-    <link href="http://yoursite.com/2017/06/21/Book-Review-Millionaire-Teacher/"/>
-    <id>http://yoursite.com/2017/06/21/Book-Review-Millionaire-Teacher/</id>
-    <published>2017-06-21T06:02:56.000Z</published>
-    <updated>2017-06-23T02:53:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg" alt="https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg" title="Millionaire Teacher"></p>
-<h2 id="Background-on-author"><a href="#Background-on-author" class="headerlink" title="Background on author"></a>Background on author</h2><p>Andrew is an English teacher from Cananda currently teaching in Singapore. Andrew is also a middle class person. He started learning investing when he was 19. He learned from a mechanic who was also a millionaire. His investing strategy is very simple and buys stocks only when stock market drops. In his book he explains a lot of misconceptions on investing and how average investors can beat wall street.</p>
-<h2 id="Investing-strategies"><a href="#Investing-strategies" class="headerlink" title="Investing strategies"></a>Investing strategies</h2><ol>
-<li><p>Savings is important.</p>
-<p>Before investing you need to be financially responsible. For example, if you have credit card debt (which charge 17% interest) you should pay down your debt before you go into investing.</p>
-</li>
-<li><p>Responsible Spending.</p>
-<p>Determine what’s need and what’s want. 87% of first generation millionaire only spend 31K on buy a car, which means majority of rich people don’t buy luxury cars. Another example is Warren Buffet, he drove his 30 years old Lincoln Town Car until 2006. The Millionaire Next Door(another book)also documents the fact that most millionaires drive older or used automobiles.</p>
-</li>
-<li><p>Stop timing the market.</p>
-<p>We often hear people say the key to be successfull in stock market is to buy low and sell high. However, this book argues otherwise. For example let’s say Dow Jones was trading about 400 and drop below 100, which is about 70%. However Dow is trading at 800 in 1980, 2400 in 1990, 10220 in 2000 and 20000 in 2017(this doesn’t include dividends).</p>
-<p>Over the long run and if you use dollar cost average you will your share of return.</p>
-</li>
-<li><p>Index Fund vs Mutual Fund</p>
-<p>The book argues to buy index fund over mutual fund that are managed by people. The reason is because lower cost, transaction fee, and tax. (I’ll explain more in the other blog post). Basically market return is the maximum return for all investor. It’s simple math.</p>
-</li>
-</ol>
-<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>This book opens my mind on investing. Currently, I only invest S&amp;P500 index fund, but I plan on moving a bond index into my portfolio soon. I started investing in S&amp;P500 when it was around 1900 back in 2015. I remember it was the highest at the time. Now S&amp;P is trading at 2400 (2017). So what Andrew says make sense, long term investing in equties market is a winner’s game.</p>
-<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
-<li><a href="https://www.amazon.com/Millionaire-Teacher-Wealth-Should-Learned/dp/1119356296/ref=sr_1_1?ie=UTF8&amp;qid=1498170264&amp;sr=8-1&amp;keywords=millionaire+teacher" target="_blank" rel="external">Amazon Link</a></li>
-<li><a href="https://andrewhallam.com/about/" target="_blank" rel="external">Andrew’s blog</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://andrewhallam.com/wp-content/uploads/2016/12/millionaire-teacher-book-2ed_300x450.jpg&quot; alt=&quot;https://andrewhallam.com/wp-
-    
-    </summary>
-    
-    
-      <category term="Book Review" scheme="http://yoursite.com/tags/Book-Review/"/>
     
   </entry>
   

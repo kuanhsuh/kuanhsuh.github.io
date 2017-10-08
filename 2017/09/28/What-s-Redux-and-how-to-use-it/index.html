@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="redux,react," />
+  <meta name="keywords" content="react,redux," />
 
 
 
@@ -91,15 +91,15 @@
 
 <meta name="description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What's Redux and how to use it?">
+<meta property="og:title" content="What's Redux and how to use it? Redux Series I">
 <meta property="og:url" content="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/index.html">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
 <meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
 <meta property="og:image" content="https://camo.githubusercontent.com/9de527b9432cc9244dc600875b46b43311918b59/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d656469612d702e736c69642e65732f75706c6f6164732f3336343831322f696d616765732f323438343739302f415243482d5265647578322d657874656e6465642d7265616c2d6465636c657261746976652e676966">
-<meta property="og:updated_time" content="2017-10-01T14:11:44.000Z">
+<meta property="og:updated_time" content="2017-10-07T00:50:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="What's Redux and how to use it?">
+<meta name="twitter:title" content="What's Redux and how to use it? Redux Series I">
 <meta name="twitter:description" content="IntroductionRedux is a global state management object for your react app. It’s basic idea comes from the flux architecture. We Need to redux because as our react app gets bigger. It’s hard to manage o">
 <meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
 
@@ -135,7 +135,7 @@
 
 
 
-  <title> What's Redux and how to use it? | My Coding Journey </title>
+  <title> What's Redux and how to use it? Redux Series I | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -284,7 +284,7 @@
             
             
               
-                What's Redux and how to use it?
+                What's Redux and how to use it? Redux Series I
               
             
           </h1>
@@ -354,10 +354,10 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// action.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> addRecipe = <span class="function"><span class="params">recipe</span> =&gt;</span> (&#123; <span class="attr">type</span>: types.ADD_RECIPE, recipe &#125;)</div></pre></td></tr></table></figure>
 <p>Next we pass the recipe to our reducer to add to our state. And our state is now updated!! yay!!</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//reducer_recipes.js</span></div><div class="line"><span class="keyword">const</span> initialState = [</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Sushi'</span>, <span class="attr">ingredients</span>: [<span class="string">'3 tablespoons rice vinegar'</span>, <span class="string">'4 sheets nori (dry seaweed)'</span>, <span class="string">'1/2 cucumber, sliced into thin strips'</span>]&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">state = initialState, action</span>)</span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> ADD_RECIPE:</div><div class="line">      <span class="keyword">return</span> [</div><div class="line">        ...state</div><div class="line">        ,</div><div class="line">        &#123;</div><div class="line">        <span class="attr">name</span>: action.recipe.name,</div><div class="line">        <span class="attr">ingredients</span>: action.recipe.ingredients</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reducers/index.js</span></div><div class="line"><span class="comment">// Now we export our reducers.</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  recipes</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">  &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reducers/index.js</span></div><div class="line"><span class="comment">// Now we export our reducers.</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  recipes</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span>,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
 <p>Here’s a diagram on how redux works. I also attach two examples with demo site that uses redux.</p>
 <p><img src="https://camo.githubusercontent.com/9de527b9432cc9244dc600875b46b43311918b59/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d656469612d702e736c69642e65732f75706c6f6164732f3336343831322f696d616765732f323438343739302f415243482d5265647578322d657874656e6465642d7265616c2d6465636c657261746976652e676966" alt="Redux Flow chart" title="Redux Flow Chart"></p>
-<p>I’ll talk about how to connect redux to our react component in the next blog post.</p>
+<p>This is it for redux. You can connect redux with jquery for plain javascript. Next I’ll talk about how to connect redux to our react component in the next blog post.</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://github.com/kuanhsuh/netflix-clonev2" target="_blank" rel="external">My Netflix redux example</a></li>
 <li><a href="https://github.com/kuanhsuh/ReactJS-FCC_Recipe_Box" target="_blank" rel="external">My FCC Recipebox example</a></li>
@@ -385,9 +385,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/redux/" rel="tag"># redux</a>
-          
             <a href="/tags/react/" rel="tag"># react</a>
+          
+            <a href="/tags/redux/" rel="tag"># redux</a>
           
         </div>
       
@@ -409,6 +409,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/07/Redux-with-React-Redux-Series-II/" rel="prev" title="Redux with React, Redux Series II">
+                Redux with React, Redux Series II <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -487,7 +491,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -500,7 +504,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -702,7 +706,7 @@
       var disqus_shortname = 'dannysblog-1';
       var disqus_identifier = '2017/09/28/What-s-Redux-and-how-to-use-it/';
 
-      var disqus_title = "What\'s Redux and how to use it?";
+      var disqus_title = "What\'s Redux and how to use it? Redux Series I";
 
 
       function run_disqus_script(disqus_script) {
