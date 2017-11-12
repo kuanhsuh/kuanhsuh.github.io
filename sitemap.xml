@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/11/11/Intro-to-React-Router/</loc>
+    
+    <lastmod>2017-11-12T14:23:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/05/15/My-Awesome-CSS-Components/</loc>
+    
+    <lastmod>2017-11-11T00:04:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/</loc>
+    
+    <lastmod>2017-11-11T00:03:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/</loc>
+    
+    <lastmod>2017-11-11T00:03:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/03/08/Animate-CSS-Tutorial/</loc>
+    
+    <lastmod>2017-11-11T00:03:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/</loc>
     
     <lastmod>2017-10-08T00:26:56.000Z</lastmod>
@@ -163,20 +198,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/</loc>
-    
-    <lastmod>2017-07-28T12:56:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/</loc>
-    
-    <lastmod>2017-07-27T22:37:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/</loc>
     
     <lastmod>2017-07-08T22:11:45.000Z</lastmod>
@@ -264,13 +285,6 @@
     <loc>http://yoursite.com/2017/06/21/Express-Intro-to-Passport-js/</loc>
     
     <lastmod>2017-06-23T08:44:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/03/08/Animate-CSS-Tutorial/</loc>
-    
-    <lastmod>2017-06-23T08:36:26.000Z</lastmod>
     
   </url>
   
@@ -369,13 +383,6 @@
     <loc>http://yoursite.com/2017/02/14/100-Days-Code-Challenge-Day-1-10/</loc>
     
     <lastmod>2017-05-25T02:44:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/05/15/My-Awesome-CSS-Components/</loc>
-    
-    <lastmod>2017-05-15T03:35:18.000Z</lastmod>
     
   </url>
   

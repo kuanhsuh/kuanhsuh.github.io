@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="react," />
 
 
 
@@ -89,18 +89,19 @@
 
 
 
-<meta name="description" content="IntroductionBootstrap has been my favorite css framework because of it’s large amount of components and its well css structure. Bootstrap is currently the largest CSS framework which means it also ha">
+<meta name="description" content="IntroductionReact-Router is a routing library for react js. This is important if you want to build single page application.
+The reason that you want routing to be on the frontend is mainly for user ex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thoughts on Bootstrap 4">
-<meta property="og:url" content="http://yoursite.com/2017/09/03/Thoughts-on-Bootstrap-4/index.html">
+<meta property="og:title" content="Intro to React Router">
+<meta property="og:url" content="http://yoursite.com/2017/11/11/Intro-to-React-Router/index.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="IntroductionBootstrap has been my favorite css framework because of it’s large amount of components and its well css structure. Bootstrap is currently the largest CSS framework which means it also ha">
-<meta property="og:image" content="https://getbootstrap.com/assets/img/bootstrap-stack.png">
-<meta property="og:updated_time" content="2017-09-03T06:53:26.000Z">
+<meta property="og:description" content="IntroductionReact-Router is a routing library for react js. This is important if you want to build single page application.
+The reason that you want routing to be on the frontend is mainly for user ex">
+<meta property="og:updated_time" content="2017-11-12T14:23:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Thoughts on Bootstrap 4">
-<meta name="twitter:description" content="IntroductionBootstrap has been my favorite css framework because of it’s large amount of components and its well css structure. Bootstrap is currently the largest CSS framework which means it also ha">
-<meta name="twitter:image" content="https://getbootstrap.com/assets/img/bootstrap-stack.png">
+<meta name="twitter:title" content="Intro to React Router">
+<meta name="twitter:description" content="IntroductionReact-Router is a routing library for react js. This is important if you want to build single page application.
+The reason that you want routing to be on the frontend is mainly for user ex">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/03/Thoughts-on-Bootstrap-4/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/11/Intro-to-React-Router/"/>
 
 
 
 
 
-  <title> Thoughts on Bootstrap 4 | My Coding Journey </title>
+  <title> Intro to React Router | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -262,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/03/Thoughts-on-Bootstrap-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/Intro-to-React-Router/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Danny Huang">
@@ -283,7 +284,7 @@
             
             
               
-                Thoughts on Bootstrap 4
+                Intro to React Router
               
             
           </h1>
@@ -298,8 +299,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-03T05:50:29+08:00">
-                2017-09-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-11T08:02:54+08:00">
+                2017-11-11
               </time>
             
 
@@ -317,8 +318,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/03/Thoughts-on-Bootstrap-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/03/Thoughts-on-Bootstrap-4/" itemprop="commentCount"></span>
+                <a href="/2017/11/11/Intro-to-React-Router/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/11/Intro-to-React-Router/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -344,20 +345,37 @@
       
 
       
-        <p><img src="https://getbootstrap.com/assets/img/bootstrap-stack.png" alt="Bootstrap v4" title="Bootstrap v4"></p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Bootstrap has been my favorite css framework because of it’s large amount of components and its well css structure. Bootstrap is currently the largest CSS framework which means it also has the most resources. Bootstrap has definately help me with my css workflow. I usually let bootstrap take care of the major layouts and RWD. After the layout is confirmed, I’ll dig in to each individual block and customize each block with my own css.</p>
-<p>Recently Bootstrap 4 beta has been released. It was in alpha for A LONG TIME (~ 1 year). Since beta is released, I decided to use it with my current project. Here are some of my thoughts on this.</p>
-<h2 id="Big-Upgrades"><a href="#Big-Upgrades" class="headerlink" title="Big Upgrades"></a>Big Upgrades</h2><h3 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h3><p>The biggest upgrade in V4 is that it uses flexbox. Flexbox is one of newer features in css. It was released in 2016 and is quickly popularized. It’s purpose is to replace float for CSS layout. Flexbox offers an easier and powerful way of designing css layout. We are given more tools and flexability in bootstrap layouts especially in navigation, grid, and spacing.</p>
-<p>We can customize that a specific margin to applied only in a certain width. For example, by applying .mt-4 .mt-sm-0, we can margin-top 4rem but when window width is larger than small we get margin-top zero. Before to accomplish this in bootstrap 3, we need to write custom media queries.</p>
-<p>The downside of this major upgrade is that bootstrap 4 is not supported by ie8 or ie9. So if you still need to support those browsers, you can use bootstrap 3.</p>
-<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><ul>
-<li>Other upgrades such as 2 more grid size xl and xs.</li>
-<li>Bootstrap uses sass instead of less. To customize bootstrap we can just edit the variable.scss</li>
-<li>We get more utilities in many components, grid,  typography.</li>
-<li>Bootstrap also drop glyicons to reduce size.</li>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>React-Router is a routing library for react js. This is important if you want to build single page application.</p>
+<p>The reason that you want routing to be on the frontend is mainly for user experience. It reduce the loading time because the web app has been initally loaded in the beginning.</p>
+<p>A good example of this is the angular 4 website. <a href="https://angular.io/" target="_blank" rel="external">(link)</a> You will notice that the website doesn’t load. (hint: you can see the refresh bottom doesn’t change)</p>
+<p>Front end routing has pros and cons. The pros are great for user experience so that the web app performs like native apps. The cons are that your web app is not SEO friendly. Some SEO crawler does not read javasript well.</p>
+<h2 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it"></a>How to use it</h2><ol>
+<li><p>Create a App.js(some use route.js)</p>
+</li>
+<li><p>import router related components &amp;  our Components</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import router related components</span></div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">  BrowserRouter <span class="keyword">as</span> Router,</div><div class="line">  Route,</div><div class="line">  Switch,</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></div><div class="line"></div><div class="line"><span class="comment">// import our components</span></div><div class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'containers/Nav/Nav'</span></div><div class="line"><span class="keyword">import</span> MovieList <span class="keyword">from</span> <span class="string">'containers/MovieList/MovieList'</span></div><div class="line"><span class="keyword">import</span> MovieShow <span class="keyword">from</span> <span class="string">'containers/MovieShow/MovieShow'</span></div><div class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'components/NotFound/NotFound'</span>;</div><div class="line"><span class="keyword">import</span> Footer <span class="keyword">from</span> <span class="string">'components/Footer/Footer'</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Set up our routes</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;Router&gt;</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;Nav /&gt;</div><div class="line">        &lt;Switch&gt;</div><div class="line">        &lt;Route exact path="/" component=&#123;MovieList&#125;/&gt;</div><div class="line">        &lt;Route path="/movie/:id" component=&#123;MovieShow&#125;/&gt;</div><div class="line">        &lt;Route component=&#123;NotFound&#125;/&gt;</div><div class="line">        &lt;/Switch&gt;</div><div class="line">        &lt;Footer /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;/Router&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>import to our index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</div><div class="line"></div><div class="line">...</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">    &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>** Some important notes</p>
+<ul>
+<li><p>We link our routes with the component that it refers to. For example the route “/movie/:id” is link to the MovieShow component.</p>
+</li>
+<li><p>exact means that the path must be exactly or it will load anything with “/“</p>
+</li>
+<li><p><switch> is unique in that it renders a route exclusively. There’s more desciption on react router api. <a href="https://reacttraining.com/react-router/web/api/Switch" target="_blank" rel="external">Link</a></switch></p>
+</li>
 </ul>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://getbootstrap.com/docs/4.0/migration/" target="_blank" rel="external">Bootstrap v3-v4 migration</a></li>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://github.com/kuanhsuh/netflix-clonev2" target="_blank" rel="external">Sample Code from my netflix-clone app</a></li>
+<li><a href="https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf" target="_blank" rel="external">A simple react router v4 tutorial</a></li>
+<li><a href="https://medium.freecodecamp.org/beginner-s-guide-to-react-router-53094349669" target="_blank" rel="external">Beginner’s Guide to React Router</a></li>
+<li><a href="https://reacttraining.com/react-router" target="_blank" rel="external">React Router Offical Doc</a></li>
 </ul>
 
       
@@ -382,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -395,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/26/My-Sketch-Workflow/" rel="next" title="My Sketch Workflow">
-                <i class="fa fa-chevron-left"></i> My Sketch Workflow
+              <a href="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/" rel="next" title="Redux Dev Tools + Tips, Redux Series III">
+                <i class="fa fa-chevron-left"></i> Redux Dev Tools + Tips, Redux Series III
               </a>
             
           </div>
@@ -404,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/09/Javascript-Algorithm/" rel="prev" title="Javascript - Algorithm">
-                Javascript - Algorithm <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Big-Upgrades"><span class="nav-number">2.</span> <span class="nav-text">Big Upgrades</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flexbox"><span class="nav-number">2.1.</span> <span class="nav-text">flexbox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Others"><span class="nav-number">2.2.</span> <span class="nav-text">Others</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">3.</span> <span class="nav-text">Links</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-use-it"><span class="nav-number">2.</span> <span class="nav-text">How to use it</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
@@ -699,9 +713,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = '2017/09/03/Thoughts-on-Bootstrap-4/';
+      var disqus_identifier = '2017/11/11/Intro-to-React-Router/';
 
-      var disqus_title = "Thoughts on Bootstrap 4";
+      var disqus_title = "Intro to React Router";
 
 
       function run_disqus_script(disqus_script) {
