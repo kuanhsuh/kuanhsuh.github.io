@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/11/26/My-Recommended-Wordpress-Plugins/</loc>
+    
+    <lastmod>2017-11-26T11:43:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/19/Once-Upon-Wall-Street-Book-Review/</loc>
+    
+    <lastmod>2017-11-26T08:08:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/19/Wordpress-htaccess-setup/</loc>
+    
+    <lastmod>2017-11-19T13:06:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/11/11/Intro-to-React-Router/</loc>
     
     <lastmod>2017-11-12T14:23:54.000Z</lastmod>
