@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="wordpress," />
 
 
 
@@ -89,12 +89,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Coding Journey">
-<meta property="og:url" content="http://yoursite.com/archives/page/7/index.html">
+<meta name="description" content="IntroductionWordpress Hierarchy is very important for theme development in wordpress. Hierarchy determines what custom template to display during specific situations. For example we can have a custom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wordpress Theme Development - Hierarchy">
+<meta property="og:url" content="http://yoursite.com/2017/12/01/Wordpress-Theme-Development-Hierarchy/index.html">
 <meta property="og:site_name" content="My Coding Journey">
+<meta property="og:description" content="IntroductionWordpress Hierarchy is very important for theme development in wordpress. Hierarchy determines what custom template to display during specific situations. For example we can have a custom">
+<meta property="og:image" content="https://developer.wordpress.org/files/2014/10/wp-hierarchy.png">
+<meta property="og:updated_time" content="2017-12-03T14:14:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Coding Journey">
+<meta name="twitter:title" content="Wordpress Theme Development - Hierarchy">
+<meta name="twitter:description" content="IntroductionWordpress Hierarchy is very important for theme development in wordpress. Hierarchy determines what custom template to display during specific situations. For example we can have a custom">
+<meta name="twitter:image" content="https://developer.wordpress.org/files/2014/10/wp-hierarchy.png">
 
 
 
@@ -122,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/7/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/01/Wordpress-Theme-Development-Hierarchy/"/>
 
 
 
 
 
-  <title> Archive | My Coding Journey </title>
+  <title> Wordpress Theme Development - Hierarchy | My Coding Journey </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -162,7 +168,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,291 +252,169 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      Nice! 67 posts in total. Keep on posting.
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/Wordpress-Theme-Development-Hierarchy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Coding Journey">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Wordpress Theme Development - Hierarchy
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-01T23:02:29+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/01/Wordpress-Theme-Development-Hierarchy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/01/Wordpress-Theme-Development-Hierarchy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Wordpress Hierarchy is very important for theme development in wordpress. Hierarchy determines what custom template to display during specific situations. For example we can have a custom category or a custom archive page if we want to.</p>
+<p>Here’s a hierarchy chart that shows the ranking of the hierachy wordpress template. However, to be honest I only use couple of the custom templates.</p>
+<p><img src="https://developer.wordpress.org/files/2014/10/wp-hierarchy.png" alt="WP Hierarchy" title="WP Hierarchy"></p>
+<h2 id="Custom-page"><a href="#Custom-page" class="headerlink" title="Custom page"></a>Custom page</h2><p>For custom page you want to create a page-$slug.php (for example page-about.php). Then in your pages in wordpress we can select which page template we want to use for this page. I use this the most in my custom theme development.</p>
+<p>Some of the other ones in the hierachy chart is pretty obvious like category.php is a custom template for category page, archive.php for archive page, single.php for single post page.</p>
+<p>If you really want a specific template css for a specific category page. Then you would need to look up the chart and look at the options for category. So the ranking is category.php &gt; $category-$id.php &gt; category-$slug.php.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank" rel="external">WP hierarchy template</a></li>
+<li><a href="https://wphierarchy.com/" target="_blank" rel="external">WP Hierarchy Visual Reference</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wordpress/" rel="tag"># wordpress</a>
+          
         </div>
       
+
+      
+        
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/26/My-Recommended-Wordpress-Plugins/" rel="next" title="My Recommended Wordpress Plugins">
+                <i class="fa fa-chevron-left"></i> My Recommended Wordpress Plugins
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/18/EloquentJS-Data-Structures/" itemprop="url">
-              
-                <span itemprop="name">EloquentJS - Data Structures</span>
-              
-            </a>
-        
-      </h1>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-18T14:57:53+08:00"
-              content="2017-02-18" >
-          02-18
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/17/Eloquent-JS-Functions-Excercise/" itemprop="url">
-              
-                <span itemprop="name">EloquentJS - Functions Excercise</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-17T10:07:44+08:00"
-              content="2017-02-17" >
-          02-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/16/JS-Hoisting/" itemprop="url">
-              
-                <span itemprop="name">JS Hoisting</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-16T10:28:29+08:00"
-              content="2017-02-16" >
-          02-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/16/JS-Scope/" itemprop="url">
-              
-                <span itemprop="name">JS Scope</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-16T10:28:24+08:00"
-              content="2017-02-16" >
-          02-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/16/Eloquent-Javascript-Program-Structure-excercise/" itemprop="url">
-              
-                <span itemprop="name">EloquentJS-Program Structure excercise</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-16T10:22:01+08:00"
-              content="2017-02-16" >
-          02-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/14/BookReview: YDKJS-Up-Going-Review/" itemprop="url">
-              
-                <span itemprop="name">YDKJS Up&Going Review</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-14T12:07:34+08:00"
-              content="2017-02-14" >
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/14/100-Days-Code-Challenge-Day-1-10/" itemprop="url">
-              
-                <span itemprop="name">100 Days Code Challenge Day 1-10</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-14T11:53:35+08:00"
-              content="2017-02-14" >
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span>
-  </nav>
-
-
+    </div>
+  </div>
 
           
           </div>
@@ -538,6 +422,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -557,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -638,6 +542,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-page"><span class="nav-number">2.</span> <span class="nav-text">Custom page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -750,11 +670,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
@@ -772,9 +690,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dannysblog-1';
-      var disqus_identifier = 'archives/page/7/index.html';
+      var disqus_identifier = '2017/12/01/Wordpress-Theme-Development-Hierarchy/';
 
-      var disqus_title = "";
+      var disqus_title = "Wordpress Theme Development - Hierarchy";
 
 
       function run_disqus_script(disqus_script) {
@@ -787,6 +705,13 @@
 
       run_disqus_script('count.js');
 
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
       
 
     </script>
