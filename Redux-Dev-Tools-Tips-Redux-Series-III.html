@@ -97,16 +97,11 @@ SetupThen you wan">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="IntroductionYou want to use dev tool because it’s great for debugging. It will track your state and action at all times. First, you want to install Chrome Redux Dev tool. Chrome Link
 SetupThen you wan">
-<meta property="og:image" content="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_action.png">
-<meta property="og:image" content="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_diff.png">
-<meta property="og:image" content="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_state.png">
-<meta property="og:image" content="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_test.png">
 <meta property="og:updated_time" content="2017-10-08T00:26:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux Dev Tools + Tips, Redux Series III">
 <meta name="twitter:description" content="IntroductionYou want to use dev tool because it’s great for debugging. It will track your state and action at all times. First, you want to install Chrome Redux Dev tool. Chrome Link
 SetupThen you wan">
-<meta name="twitter:image" content="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_action.png">
 
 
 
@@ -355,10 +350,10 @@ SetupThen you wan">
 <p>Here’s my setup for redux dev tool. Since I have middleware, I have to set it up a little differently. For different setup you can view it here. <a href="https://github.com/kuanhsuh/netflix-clonev2/blob/master/src/index.js" target="_blank" rel="external">Link</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> composeEnhancers = <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;</div><div class="line"><span class="keyword">const</span> store = createStore(reducers, <span class="comment">/* preloadedState, */</span> composeEnhancers(</div><div class="line">    applyMiddleware(promise)</div><div class="line">));</div></pre></td></tr></table></figure>
 <h2 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it."></a>How to use it.</h2><p>When you dispatch an action, you can check out the process in the dev tool. You can track action and state. With this tool you can properly see if the state has changed.</p>
-<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_action.png" alt="Dev Tool-Action" title="Dev Tool-Action">
-<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_diff.png" alt="Dev Tool-Diff" title="Dev Tool-Diff">
-<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_state.png" alt="Dev Tool-State" title="Dev Tool-State">
-<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_test.png" alt="Dev Tool-Test" title="Dev Tool-Test">
+
+
+
+
 <h2 id="Tip-1-How-to-use-local-storage-with-Redux-Store"><a href="#Tip-1-How-to-use-local-storage-with-Redux-Store" class="headerlink" title="Tip # 1 How to use local storage with Redux Store."></a>Tip # 1 How to use local storage with Redux Store.</h2><p>Here’s another tip, I want to share. Here’s how to setup localstorage with redux.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> persistedState = localStorage.getItem(<span class="string">' _username_recipes'</span>) ? <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">' _username_recipes'</span>)) : &#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(reducer, persistedState);</div><div class="line">store.subscribe(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  localStorage.setItem(<span class="string">' _username_recipes'</span>, <span class="built_in">JSON</span>.stringify(store.getState()))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>

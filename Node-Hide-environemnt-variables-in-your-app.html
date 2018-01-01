@@ -97,15 +97,15 @@ dotenv">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
 dotenv">
-<meta property="og:image" content="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html/hidevar3.png">
-<meta property="og:image" content="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html/hidevar1.png">
-<meta property="og:image" content="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html/hidevar2.png">
-<meta property="og:updated_time" content="2017-08-05T10:52:18.000Z">
+<meta property="og:image" content="https://i.imgur.com/HiC2Rs4.png">
+<meta property="og:image" content="https://i.imgur.com/2Ey1CIb.png">
+<meta property="og:image" content="https://i.imgur.com/VfplNpO.png">
+<meta property="og:updated_time" content="2018-01-01T01:53:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node-Hide environemnt variables in your app">
 <meta name="twitter:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
 dotenv">
-<meta name="twitter:image" content="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html/hidevar3.png">
+<meta name="twitter:image" content="https://i.imgur.com/HiC2Rs4.png">
 
 
 
@@ -359,11 +359,10 @@ dotenv">
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ABC_KEY = <span class="number">1234</span>qwer</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// in server/index.js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'dotenv'</span>).config()</div><div class="line"><span class="built_in">console</span>.log(process.env.ABC_KEY)</div></pre></td></tr></table></figure>
 <p>Remember in your .gitignore file to ignore .env file.</p>
-<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar3.png" alt="Screenshot 3" title="Screenshot 3">
+<p><img src="https://i.imgur.com/HiC2Rs4.png" alt="Screenshot 3"></p>
 <h2 id="Set-process-env-variable-in-terminal"><a href="#Set-process-env-variable-in-terminal" class="headerlink" title="Set process.env variable in terminal"></a>Set process.env variable in terminal</h2><p>Second way is to directly set your variable in your terminal and access it in your node.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># type this in your terminal</span></div><div class="line"><span class="built_in">export</span> ABC_KEY=1234qwer <span class="comment"># no space and no quotation</span></div><div class="line"><span class="comment"># for window replace export for set</span></div><div class="line"><span class="built_in">unset</span> ABC_KEY <span class="comment"># unset variable</span></div></pre></td></tr></table></figure>
-<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar1.png" alt="Screenshot 1" title="Screenshot 1">
-<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar2.png" alt="Screenshot 2" title="Screenshot 2">
+<p><img src="https://i.imgur.com/2Ey1CIb.png" alt="Hide Var"><br><img src="https://i.imgur.com/VfplNpO.png" alt="Hide Var 2"></p>
 <p>Now you can access the variables in your node app by using process.env.ABC_KEY</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://www.youtube.com/watch?v=zDup0I2VGmk" target="_blank" rel="external">DevCoffee tutorial</a></li>
