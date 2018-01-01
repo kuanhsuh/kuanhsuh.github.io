@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-01T00:12:20.188Z</updated>
+  <updated>2018-01-01T01:22:20.913Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,19 +20,18 @@
     <link href="http://yoursite.com/My-2017-Stock-Portfolio-Performance.html"/>
     <id>http://yoursite.com/My-2017-Stock-Portfolio-Performance.html</id>
     <published>2017-12-31T13:30:17.000Z</published>
-    <updated>2018-01-01T00:12:20.188Z</updated>
+    <updated>2018-01-01T01:22:20.913Z</updated>
     
-    <content type="html"><![CDATA[<img src="/My-2017-Stock-Portfolio-Performance.html/market.png" alt="Market Performance" title="Market Performance">
-<img src="/My-2017-Stock-Portfolio-Performance.html/my_performance.png" alt="ETF Performance" title="ETF Performance">
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/Q11qvL0.png" alt="Market Performance"><br><img src="https://i.imgur.com/ZqwKdd0.png" alt="My balance"></p>
 <p>This is a great year for US stocks both S&amp;P500 and Dow Jones did incredible this year. S&amp;P500 return 19.45% and Dow has a return of 25%. My portfolio did 21.2% this year I started with 316,000 and I ended the year with 383,200. (The sudden spike in the graph is due to transferring money, after tranfering is done my balance back to normal)</p>
 <p>This year I allocate my portfolio into 4 main sections: ETF, Stocks, Options, Preferred shares.</p>
-<h2 id="ETF-26-of-my-portfolio"><a href="#ETF-26-of-my-portfolio" class="headerlink" title="ETF (26% of my portfolio)"></a>ETF (26% of my portfolio)</h2><img src="/My-2017-Stock-Portfolio-Performance.html/etf_performance.png" alt="ETF Performance" title="ETF Performance">
+<p><img src="https://i.imgur.com/Pj1pE7e.png" alt="Allocation"></p>
+<h2 id="ETF-26-of-my-portfolio"><a href="#ETF-26-of-my-portfolio" class="headerlink" title="ETF (26% of my portfolio)"></a>ETF (26% of my portfolio)</h2><p><img src="https://i.imgur.com/6oFkgL4.png" alt="ETF"></p>
 <p>ETF compose about 26% of my portfolio. I have VOO and BRK.B as my ETF. I understand some people may say BRK.B is not an ETF. However since BRK is a holding company of over 88 business and stocks. I treat it as a fund. BRK.B return about 21.6 this year and VOO return about 21% as well(19.4+~2% dividend).</p>
 <p> So not much to comment here, just standard market return. Luckily market did well this year, so I just ride with the wave. My goal for ETF allocation should remain 25~30%.</p>
 <h2 id="Preferred-Stocks-23-of-my-portfolio"><a href="#Preferred-Stocks-23-of-my-portfolio" class="headerlink" title="Preferred Stocks (23% of my portfolio)"></a>Preferred Stocks (23% of my portfolio)</h2><p>I treat preferred shares as bonds. They provide fixed income for me.</p>
 <p>I currently have HSEA, MERpK, AEH. They compose 23% of my portfolio. These preferred share generate about 6-7% dividend with no 30% dividend tax. So that’s good. If I see a good opportunity in stocks or dip in ETF. I’ll probably continue to reduce my preferred stocks holding. I believe since interest rate remain low, new perferred shares will probably have low yields as well. In that case I think buying stocks is a better choice.</p>
-<h2 id="Common-Stocks-47-of-my-portfolio"><a href="#Common-Stocks-47-of-my-portfolio" class="headerlink" title="Common Stocks (47% of my portfolio)"></a>Common Stocks (47% of my portfolio)</h2><img src="/My-2017-Stock-Portfolio-Performance.html/stock_holding1.png" alt="Stock Holding 1" title="Stock Holding 1">
-<img src="/My-2017-Stock-Portfolio-Performance.html/stock_holding2.png" alt="Stock Holding 2" title="Stock Holding 2">
+<h2 id="Common-Stocks-47-of-my-portfolio"><a href="#Common-Stocks-47-of-my-portfolio" class="headerlink" title="Common Stocks (47% of my portfolio)"></a>Common Stocks (47% of my portfolio)</h2><p><img src="https://i.imgur.com/c9letVo.png" alt="Stock Holding 1"><br><img src="https://i.imgur.com/v3Vzmvh.png" alt="Stock Holding 2"></p>
 <p>Common stocks currrently takes up about 47% of my portfolio. I currently have a diversified portoflio. I have 25 holdings. And I’m pretty happy with that. There are 3 different types of stocks in my stock portfolio and they are cycnical stocks, tech stocks, and dividend growth stocks.</p>
 <p>Cycnical stocks I currently have DAL, GM, and FCAU. I’ll continue to see how these perform. They are still currently under value. So I don’t have plans to do anything yet. So we’ll see.</p>
 <p>My tech stocks I have FB, NVDA, GOOG, and AMZN. I bought them with 5000$ each and I’ll probably keep holding them. Even though I don’t know how to evaluate them. I think they are all over price. But these business have strong moat and monoplies. So I think they will continue to do fine.</p>
@@ -47,8 +46,8 @@
     
     <summary type="html">
     
-      &lt;img src=&quot;/My-2017-Stock-Portfolio-Performance.html/market.png&quot; alt=&quot;Market Performance&quot; title=&quot;Market Performance&quot;&gt;
-&lt;img src=&quot;/My-2017-Stoc
+      &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Q11qvL0.png&quot; alt=&quot;Market Performance&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/ZqwKdd0.png&quot; alt=&quot;My balance&quot;&gt;&lt;/p&gt;
+
     
     </summary>
     
