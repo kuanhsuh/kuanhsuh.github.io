@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-03T14:14:57.000Z</updated>
+  <updated>2018-01-01T00:12:20.188Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,9 +16,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>My 2017 Stock Portfolio Performance</title>
+    <link href="http://yoursite.com/My-2017-Stock-Portfolio-Performance.html"/>
+    <id>http://yoursite.com/My-2017-Stock-Portfolio-Performance.html</id>
+    <published>2017-12-31T13:30:17.000Z</published>
+    <updated>2018-01-01T00:12:20.188Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/My-2017-Stock-Portfolio-Performance.html/market.png" alt="Market Performance" title="Market Performance">
+<img src="/My-2017-Stock-Portfolio-Performance.html/my_performance.png" alt="ETF Performance" title="ETF Performance">
+<p>This is a great year for US stocks both S&amp;P500 and Dow Jones did incredible this year. S&amp;P500 return 19.45% and Dow has a return of 25%. My portfolio did 21.2% this year I started with 316,000 and I ended the year with 383,200. (The sudden spike in the graph is due to transferring money, after tranfering is done my balance back to normal)</p>
+<p>This year I allocate my portfolio into 4 main sections: ETF, Stocks, Options, Preferred shares.</p>
+<h2 id="ETF-26-of-my-portfolio"><a href="#ETF-26-of-my-portfolio" class="headerlink" title="ETF (26% of my portfolio)"></a>ETF (26% of my portfolio)</h2><img src="/My-2017-Stock-Portfolio-Performance.html/etf_performance.png" alt="ETF Performance" title="ETF Performance">
+<p>ETF compose about 26% of my portfolio. I have VOO and BRK.B as my ETF. I understand some people may say BRK.B is not an ETF. However since BRK is a holding company of over 88 business and stocks. I treat it as a fund. BRK.B return about 21.6 this year and VOO return about 21% as well(19.4+~2% dividend).</p>
+<p> So not much to comment here, just standard market return. Luckily market did well this year, so I just ride with the wave. My goal for ETF allocation should remain 25~30%.</p>
+<h2 id="Preferred-Stocks-23-of-my-portfolio"><a href="#Preferred-Stocks-23-of-my-portfolio" class="headerlink" title="Preferred Stocks (23% of my portfolio)"></a>Preferred Stocks (23% of my portfolio)</h2><p>I treat preferred shares as bonds. They provide fixed income for me.</p>
+<p>I currently have HSEA, MERpK, AEH. They compose 23% of my portfolio. These preferred share generate about 6-7% dividend with no 30% dividend tax. So that’s good. If I see a good opportunity in stocks or dip in ETF. I’ll probably continue to reduce my preferred stocks holding. I believe since interest rate remain low, new perferred shares will probably have low yields as well. In that case I think buying stocks is a better choice.</p>
+<h2 id="Common-Stocks-47-of-my-portfolio"><a href="#Common-Stocks-47-of-my-portfolio" class="headerlink" title="Common Stocks (47% of my portfolio)"></a>Common Stocks (47% of my portfolio)</h2><img src="/My-2017-Stock-Portfolio-Performance.html/stock_holding1.png" alt="Stock Holding 1" title="Stock Holding 1">
+<img src="/My-2017-Stock-Portfolio-Performance.html/stock_holding2.png" alt="Stock Holding 2" title="Stock Holding 2">
+<p>Common stocks currrently takes up about 47% of my portfolio. I currently have a diversified portoflio. I have 25 holdings. And I’m pretty happy with that. There are 3 different types of stocks in my stock portfolio and they are cycnical stocks, tech stocks, and dividend growth stocks.</p>
+<p>Cycnical stocks I currently have DAL, GM, and FCAU. I’ll continue to see how these perform. They are still currently under value. So I don’t have plans to do anything yet. So we’ll see.</p>
+<p>My tech stocks I have FB, NVDA, GOOG, and AMZN. I bought them with 5000$ each and I’ll probably keep holding them. Even though I don’t know how to evaluate them. I think they are all over price. But these business have strong moat and monoplies. So I think they will continue to do fine.</p>
+<p>DGI is my bread and butter. I hold a lot of DGI stocks(CVS, CVX, XOM, T, VLO, MO, PM, DIS and etc). I plan on increase number of holdings. I did sell KO this year because of the high PE ratio. I just enjoy the the raising dividiend every year. So effortless.</p>
+<p>I can’t calculate a total return for my common stock performance. Since I sold some and I bought some recently. I estimate about ~27-30% return, Since my common stock need to cover my lower performace from preferred shares.</p>
+<h2 id="Options-4-of-my-portfolio"><a href="#Options-4-of-my-portfolio" class="headerlink" title="Options (4% of my portfolio)"></a>Options (4% of my portfolio)</h2><p>I started doing options this year and had some great results. My plan was to use only 10,000$ to play options. I buy LEAP calls(2 years call) on QCOM and TGT this year and with profit of 30%. I also bought warrants on BAC and GM. Warrants are similar to LEAP calls. They have brought return 30% as well. Recently I bought calls on GE, so far I’m losing about -30$, but it’s okay. It’s a small amount of my portfolio and I understand the risk.</p>
+<h2 id="2018-Goals"><a href="#2018-Goals" class="headerlink" title="2018 Goals"></a>2018 Goals</h2><ul>
+<li>Overall 10% return, so 384,000*1.1 = 422,000</li>
+<li>1000$ increase in Dividends: 2017 Total Dividend is 9,200$USD, I wish 2018 would be 10,200USD</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/My-2017-Stock-Portfolio-Performance.html/market.png&quot; alt=&quot;Market Performance&quot; title=&quot;Market Performance&quot;&gt;
+&lt;img src=&quot;/My-2017-Stoc
+    
+    </summary>
+    
+    
+      <category term="investing" scheme="http://yoursite.com/tags/investing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Wordpress Theme Development - Hierarchy</title>
-    <link href="http://yoursite.com/2017/12/01/Wordpress-Theme-Development-Hierarchy/"/>
-    <id>http://yoursite.com/2017/12/01/Wordpress-Theme-Development-Hierarchy/</id>
+    <link href="http://yoursite.com/Wordpress-Theme-Development-Hierarchy.html"/>
+    <id>http://yoursite.com/Wordpress-Theme-Development-Hierarchy.html</id>
     <published>2017-12-01T15:02:29.000Z</published>
     <updated>2017-12-03T14:14:57.000Z</updated>
     
@@ -47,8 +89,8 @@
   
   <entry>
     <title>My Recommended Wordpress Plugins</title>
-    <link href="http://yoursite.com/2017/11/26/My-Recommended-Wordpress-Plugins/"/>
-    <id>http://yoursite.com/2017/11/26/My-Recommended-Wordpress-Plugins/</id>
+    <link href="http://yoursite.com/My-Recommended-Wordpress-Plugins.html"/>
+    <id>http://yoursite.com/My-Recommended-Wordpress-Plugins.html</id>
     <published>2017-11-26T11:19:10.000Z</published>
     <updated>2017-11-26T11:43:59.000Z</updated>
     
@@ -75,8 +117,8 @@
   
   <entry>
     <title>Book Review: Once Upon Wall Street Book Review</title>
-    <link href="http://yoursite.com/2017/11/19/Once-Upon-Wall-Street-Book-Review/"/>
-    <id>http://yoursite.com/2017/11/19/Once-Upon-Wall-Street-Book-Review/</id>
+    <link href="http://yoursite.com/Once-Upon-Wall-Street-Book-Review.html"/>
+    <id>http://yoursite.com/Once-Upon-Wall-Street-Book-Review.html</id>
     <published>2017-11-19T13:07:14.000Z</published>
     <updated>2017-11-26T08:08:52.000Z</updated>
     
@@ -112,8 +154,8 @@
   
   <entry>
     <title>Wordpress htaccess setup</title>
-    <link href="http://yoursite.com/2017/11/19/Wordpress-htaccess-setup/"/>
-    <id>http://yoursite.com/2017/11/19/Wordpress-htaccess-setup/</id>
+    <link href="http://yoursite.com/Wordpress-htaccess-setup.html"/>
+    <id>http://yoursite.com/Wordpress-htaccess-setup.html</id>
     <published>2017-11-19T11:46:20.000Z</published>
     <updated>2017-11-19T13:06:34.000Z</updated>
     
@@ -154,8 +196,8 @@
   
   <entry>
     <title>Intro to React Router</title>
-    <link href="http://yoursite.com/2017/11/11/Intro-to-React-Router/"/>
-    <id>http://yoursite.com/2017/11/11/Intro-to-React-Router/</id>
+    <link href="http://yoursite.com/Intro-to-React-Router.html"/>
+    <id>http://yoursite.com/Intro-to-React-Router.html</id>
     <published>2017-11-11T00:02:54.000Z</published>
     <updated>2017-11-12T14:23:54.000Z</updated>
     
@@ -206,8 +248,8 @@
   
   <entry>
     <title>Redux Dev Tools + Tips, Redux Series III</title>
-    <link href="http://yoursite.com/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/"/>
-    <id>http://yoursite.com/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/</id>
+    <link href="http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html"/>
+    <id>http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html</id>
     <published>2017-10-07T07:05:43.000Z</published>
     <updated>2017-10-08T00:26:29.000Z</updated>
     
@@ -216,10 +258,10 @@
 <p>Here’s my setup for redux dev tool. Since I have middleware, I have to set it up a little differently. For different setup you can view it here. <a href="https://github.com/kuanhsuh/netflix-clonev2/blob/master/src/index.js" target="_blank" rel="external">Link</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> composeEnhancers = <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;</div><div class="line"><span class="keyword">const</span> store = createStore(reducers, <span class="comment">/* preloadedState, */</span> composeEnhancers(</div><div class="line">    applyMiddleware(promise)</div><div class="line">));</div></pre></td></tr></table></figure>
 <h2 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it."></a>How to use it.</h2><p>When you dispatch an action, you can check out the process in the dev tool. You can track action and state. With this tool you can properly see if the state has changed.</p>
-<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_action.png" alt="Dev Tool-Action" title="Dev Tool-Action">
-<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_diff.png" alt="Dev Tool-Diff" title="Dev Tool-Diff">
-<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_state.png" alt="Dev Tool-State" title="Dev Tool-State">
-<img src="/2017/10/07/Redux-Dev-Tools-Tips-Redux-Series-III/devtool_test.png" alt="Dev Tool-Test" title="Dev Tool-Test">
+<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_action.png" alt="Dev Tool-Action" title="Dev Tool-Action">
+<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_diff.png" alt="Dev Tool-Diff" title="Dev Tool-Diff">
+<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_state.png" alt="Dev Tool-State" title="Dev Tool-State">
+<img src="/Redux-Dev-Tools-Tips-Redux-Series-III.html/devtool_test.png" alt="Dev Tool-Test" title="Dev Tool-Test">
 <h2 id="Tip-1-How-to-use-local-storage-with-Redux-Store"><a href="#Tip-1-How-to-use-local-storage-with-Redux-Store" class="headerlink" title="Tip # 1 How to use local storage with Redux Store."></a>Tip # 1 How to use local storage with Redux Store.</h2><p>Here’s another tip, I want to share. Here’s how to setup localstorage with redux.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="keyword">const</span> persistedState = localStorage.getItem(<span class="string">' _username_recipes'</span>) ? <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">' _username_recipes'</span>)) : &#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(reducer, persistedState);</div><div class="line">store.subscribe(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  localStorage.setItem(<span class="string">' _username_recipes'</span>, <span class="built_in">JSON</span>.stringify(store.getState()))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
@@ -244,8 +286,8 @@
   
   <entry>
     <title>Redux with React, Redux Series II</title>
-    <link href="http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/"/>
-    <id>http://yoursite.com/2017/10/07/Redux-with-React-Redux-Series-II/</id>
+    <link href="http://yoursite.com/Redux-with-React-Redux-Series-II.html"/>
+    <id>http://yoursite.com/Redux-with-React-Redux-Series-II.html</id>
     <published>2017-10-07T00:50:39.000Z</published>
     <updated>2017-10-08T00:26:56.000Z</updated>
     
@@ -296,8 +338,8 @@
   
   <entry>
     <title>What&#39;s Redux and how to use it? Redux Series I</title>
-    <link href="http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/"/>
-    <id>http://yoursite.com/2017/09/28/What-s-Redux-and-how-to-use-it/</id>
+    <link href="http://yoursite.com/What-s-Redux-and-how-to-use-it.html"/>
+    <id>http://yoursite.com/What-s-Redux-and-how-to-use-it.html</id>
     <published>2017-09-28T13:13:18.000Z</published>
     <updated>2017-10-07T00:50:19.000Z</updated>
     
@@ -335,8 +377,8 @@
   
   <entry>
     <title>My first JS framework - Learning React</title>
-    <link href="http://yoursite.com/2017/09/16/My-first-JS-framework-React/"/>
-    <id>http://yoursite.com/2017/09/16/My-first-JS-framework-React/</id>
+    <link href="http://yoursite.com/My-first-JS-framework-React.html"/>
+    <id>http://yoursite.com/My-first-JS-framework-React.html</id>
     <published>2017-09-16T14:21:39.000Z</published>
     <updated>2017-10-07T00:51:18.000Z</updated>
     
@@ -374,8 +416,8 @@
   
   <entry>
     <title>How to implement multi-language  with Vue-i18n </title>
-    <link href="http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/"/>
-    <id>http://yoursite.com/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/</id>
+    <link href="http://yoursite.com/How-to-implement-multi-language-with-Vue-i18n.html"/>
+    <id>http://yoursite.com/How-to-implement-multi-language-with-Vue-i18n.html</id>
     <published>2017-09-16T02:59:14.000Z</published>
     <updated>2017-10-07T07:18:02.000Z</updated>
     
@@ -413,7 +455,7 @@
 <li>Set vue instance and vuex store as window variable, so we can ccess your i18n in your chrome</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="built_in">window</span>[<span class="string">'vue'</span>] = app</div><div class="line"><span class="built_in">window</span>.store = store</div></pre></td></tr></table></figure>
-<img src="/2017/09/16/How-to-implement-multi-language-with-Vue-i18n/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
+<img src="/How-to-implement-multi-language-with-Vue-i18n.html/i18n_debug.png" alt="i18n chrome dev" title="i18n chrome dev">
 <p><strong><em>Edit 2017.10.07</em></strong><br>How to use lazy loading (or dynamic locale ) in vue i18n.<br>You want use lazy loading becuase you don’t want to load all the language pack in the initial load. It will make your bundle size bigger and slow down your app.</p>
 <p>Here’s how you use it in your app.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> setLangNew(&#123;commit&#125;, payload)&#123;</div><div class="line">  <span class="keyword">if</span> (payload <span class="keyword">in</span> app.$i18n.messages) &#123;</div><div class="line">    commit(types.SET_LANG, payload)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="comment">// you can use fetch or import which ever you want.</span></div><div class="line">      <span class="comment">// Just make sure your webpack support import syntax</span></div><div class="line">      <span class="comment">// const res = await axios.get(`./src/lang/$&#123;payload&#125;.json`)</span></div><div class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./src/lang/locale/<span class="subst">$&#123;payload&#125;</span>.json`</span>)</div><div class="line">      app.$i18n.setLocaleMessage(payload, res.data)</div><div class="line">      commit(types.SET_LANG, payload)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span>(e) &#123;</div><div class="line">      <span class="built_in">console</span>.log(e)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -436,8 +478,8 @@
   
   <entry>
     <title>Javascript - Algorithm</title>
-    <link href="http://yoursite.com/2017/09/09/Javascript-Algorithm/"/>
-    <id>http://yoursite.com/2017/09/09/Javascript-Algorithm/</id>
+    <link href="http://yoursite.com/Javascript-Algorithm.html"/>
+    <id>http://yoursite.com/Javascript-Algorithm.html</id>
     <published>2017-09-08T21:06:36.000Z</published>
     <updated>2017-09-08T22:55:25.000Z</updated>
     
@@ -453,7 +495,7 @@
 </ul>
 <h2 id="Big-O"><a href="#Big-O" class="headerlink" title="Big O"></a>Big O</h2><p>Lastly I want to talk about Big O notation (or Big O for short).  Big O notation is used to classify algorithms according to how their running time or space requirements grow as the input size grows. (source, Wiki). Basically Big O will tell us how scalable a function is?</p>
 <p>There are 4 types of Big O and here are some examples</p>
-<img src="/2017/09/09/Javascript-Algorithm/bigochart.png" alt="Big O Chart" title="Big O Chart">
+<img src="/Javascript-Algorithm.html/bigochart.png" alt="Big O Chart" title="Big O Chart">
 <h3 id="Big-O-O-1-Constant-Runtime"><a href="#Big-O-O-1-Constant-Runtime" class="headerlink" title="Big O - O (1) - Constant Runtime"></a>Big O - O (1) - Constant Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (1) - Constant Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(array[<span class="number">0</span>])</div><div class="line">  <span class="built_in">console</span>.log(array[<span class="number">1</span>])</div><div class="line">&#125;</div><div class="line"></div><div class="line">log ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line">log ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</div></pre></td></tr></table></figure>
 <p>The above example is a constant run time example or sometimes refer as O(1). This means as input size increases on X-axis, the time it takes to run never changes. (Refer to chart Above)</p>
 <h3 id="Big-O-O-n-Linear-Runtime"><a href="#Big-O-O-n-Linear-Runtime" class="headerlink" title="Big O - O (n) - Linear Runtime"></a>Big O - O (n) - Linear Runtime</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// Big O - O (n) - Linear Runtime</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logAll</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, i &lt; array.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(array[i])</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">logAll ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line">logAll ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</div></pre></td></tr></table></figure>
@@ -486,8 +528,8 @@
   
   <entry>
     <title>Thoughts on Bootstrap 4</title>
-    <link href="http://yoursite.com/2017/09/03/Thoughts-on-Bootstrap-4/"/>
-    <id>http://yoursite.com/2017/09/03/Thoughts-on-Bootstrap-4/</id>
+    <link href="http://yoursite.com/Thoughts-on-Bootstrap-4.html"/>
+    <id>http://yoursite.com/Thoughts-on-Bootstrap-4.html</id>
     <published>2017-09-02T21:50:29.000Z</published>
     <updated>2017-09-03T06:53:26.000Z</updated>
     
@@ -522,18 +564,18 @@
   
   <entry>
     <title>My Sketch Workflow</title>
-    <link href="http://yoursite.com/2017/08/26/My-Sketch-Workflow/"/>
-    <id>http://yoursite.com/2017/08/26/My-Sketch-Workflow/</id>
+    <link href="http://yoursite.com/My-Sketch-Workflow.html"/>
+    <id>http://yoursite.com/My-Sketch-Workflow.html</id>
     <published>2017-08-26T13:56:46.000Z</published>
     <updated>2017-08-26T22:43:53.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Pre-work"><a href="#Pre-work" class="headerlink" title="Pre-work"></a>Pre-work</h2><h3 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h3><img src="/2017/08/26/My-Sketch-Workflow/filestructure.png" alt="File Structure" title="File Structure">
+    <content type="html"><![CDATA[<h2 id="Pre-work"><a href="#Pre-work" class="headerlink" title="Pre-work"></a>Pre-work</h2><h3 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h3><img src="/My-Sketch-Workflow.html/filestructure.png" alt="File Structure" title="File Structure">
 <p>The file structure that I take is to have a _assets, _exports, and design folder. The _assets folder is where I keep my dummy text, logo, images and etc. _exports is where I exports my design and images. Lastly the design folder is where I have my sketch file (usually only one).</p>
-<h3 id="Style-Sheet"><a href="#Style-Sheet" class="headerlink" title="Style Sheet"></a>Style Sheet</h3><img src="/2017/08/26/My-Sketch-Workflow/stylesheet.png" alt="Style Sheet" title="Style Sheet">
+<h3 id="Style-Sheet"><a href="#Style-Sheet" class="headerlink" title="Style Sheet"></a>Style Sheet</h3><img src="/My-Sketch-Workflow.html/stylesheet.png" alt="Style Sheet" title="Style Sheet">
 <p>Style sheet is an artboard where I keep my color palettes and font. The style sheet I use is call One Day Frontend Design Framework. (Link below) However, I did not use the full feature of the stylesheet.<br>After settleing your stylesheet, set up your text styles and layer styles. This will save you time when you are in design phase.</p>
-<h2 id="WireFrame"><a href="#WireFrame" class="headerlink" title="WireFrame"></a>WireFrame</h2><img src="/2017/08/26/My-Sketch-Workflow/wf_home.png" alt="Design Wireframe" title="Design Wireframe">
+<h2 id="WireFrame"><a href="#WireFrame" class="headerlink" title="WireFrame"></a>WireFrame</h2><img src="/My-Sketch-Workflow.html/wf_home.png" alt="Design Wireframe" title="Design Wireframe">
 <p>I use some simple shapes to draw out my block wireframes basially to see what a basic section will look like and to have the elements in my design.</p>
-<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><img src="/2017/08/26/My-Sketch-Workflow/home.jpg" alt="Home Layout" title="Home Layout">
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><img src="/My-Sketch-Workflow.html/home.jpg" alt="Home Layout" title="Home Layout">
 <p>Finally into design, the hardest part. After doing the preworks, you should have a rough idea of what the final design will look like. First I would put all the things I know together in place, like the text and images. Keep doing this for the other sections. Don’t worry about the little details. There’s no such thing as perfect design. We want to get the first draft out ASAP.</p>
 <p>After first draft is out. I’ll look through each indivual section to see if there’s any thing I can improve. Remember every design has to align with your website’s purpose. Then I’ll ask random to see the design and get feedback.</p>
 <h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>Lastly, this is optional but you can build a prototype with <a href="https://marvelapp.com" target="_blank" rel="external">marvel</a> or <a href="https://www.invisionapp.com/" target="_blank" rel="external">invision</a>. Prototype provides a more realistic user experience for users.</p>
@@ -557,8 +599,8 @@
   
   <entry>
     <title>Web-Optimization - Semantic HTML</title>
-    <link href="http://yoursite.com/2017/08/05/Web-Optimization-semantic-HTML/"/>
-    <id>http://yoursite.com/2017/08/05/Web-Optimization-semantic-HTML/</id>
+    <link href="http://yoursite.com/Web-Optimization-semantic-HTML.html"/>
+    <id>http://yoursite.com/Web-Optimization-semantic-HTML.html</id>
     <published>2017-08-05T10:48:33.000Z</published>
     <updated>2017-08-12T23:00:37.000Z</updated>
     
@@ -598,8 +640,8 @@
   
   <entry>
     <title>Web Optimization - Image</title>
-    <link href="http://yoursite.com/2017/08/03/Web-Optimization-Image/"/>
-    <id>http://yoursite.com/2017/08/03/Web-Optimization-Image/</id>
+    <link href="http://yoursite.com/Web-Optimization-Image.html"/>
+    <id>http://yoursite.com/Web-Optimization-Image.html</id>
     <published>2017-08-02T22:31:42.000Z</published>
     <updated>2017-08-05T10:52:48.000Z</updated>
     
@@ -635,8 +677,8 @@
   
   <entry>
     <title>CSS - Ways to Center Your Divs</title>
-    <link href="http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/"/>
-    <id>http://yoursite.com/2017/07/28/CSS-Ways-to-Center-Your-Divs/</id>
+    <link href="http://yoursite.com/CSS-Ways-to-Center-Your-Divs.html"/>
+    <id>http://yoursite.com/CSS-Ways-to-Center-Your-Divs.html</id>
     <published>2017-07-27T22:35:36.000Z</published>
     <updated>2017-11-11T00:03:56.000Z</updated>
     
@@ -669,15 +711,15 @@
   
   <entry>
     <title>CSS-2 ways to build parallax effect</title>
-    <link href="http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/"/>
-    <id>http://yoursite.com/2017/07/24/CSS-2-ways-to-build-parallax-effect/</id>
+    <link href="http://yoursite.com/CSS-2-ways-to-build-parallax-effect.html"/>
+    <id>http://yoursite.com/CSS-2-ways-to-build-parallax-effect.html</id>
     <published>2017-07-23T22:25:33.000Z</published>
     <updated>2017-11-11T00:03:54.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="What-is-parallax"><a href="#What-is-parallax" class="headerlink" title="What is parallax"></a>What is parallax</h2><p>Parallax is an effect where the background layer or image in this case, is moved at a different speed than the front layer while scrolling.</p>
 <p>Parallax design is a popular technique in modern webdesign. There are two approaches to this effect: CSS and JS. Both are really easy. So here we go</p>
 <h2 id="CSS-Approach"><a href="#CSS-Approach" class="headerlink" title="CSS Approach"></a>CSS Approach</h2><p>For your background image, you need to make the background-attachment property fixed. This will set whether the background image is fixed or scrolls with the rest of the page.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-class">.parallax</span> &#123;</div><div class="line">    <span class="comment">/* The image used */</span></div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"img_parallax.jpg"</span>);</div><div class="line"></div><div class="line">    <span class="comment">/* Set a specific height */</span></div><div class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line"></div><div class="line">    <span class="comment">/* Create the parallax scrolling effect */</span></div><div class="line">    <span class="attribute">background-attachment</span>: fixed;</div><div class="line">    <span class="attribute">background-position</span>: center;</div><div class="line">    <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">    <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Container element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">.parallax &#123;</div><div class="line">    /* The image used */</div><div class="line">    background-image: url("img_parallax.jpg");</div><div class="line"></div><div class="line">    /* Set a specific height */</div><div class="line">    height: 500px;</div><div class="line"></div><div class="line">    /* Create the parallax scrolling effect */</div><div class="line">    background-attachment: fixed;</div><div class="line">    background-position: center;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">    background-size: cover;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Container element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Here’s a demo of how the site will work. <a href="https://github.com/kuanhsuh/css_parallax" target="_blank" rel="external">My Github Demo</a></p>
 <h1 id="JS-Approach"><a href="#JS-Approach" class="headerlink" title="JS Approach"></a>JS Approach</h1><p>In your html section add data-type and data-speed attribute. The speed will adjust the speed of how the background move.</p>
 <p>Markup<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"home"</span> <span class="attr">data-type</span>=<span class="string">"background"</span> <span class="attr">data-speed</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>I am absolute positioned<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"about"</span> <span class="attr">data-type</span>=<span class="string">"background"</span> <span class="attr">data-speed</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>Simple Parallax Scroll<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -705,8 +747,8 @@
   
   <entry>
     <title>NPM command cheatsheet</title>
-    <link href="http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/"/>
-    <id>http://yoursite.com/2017/07/15/Node-NPM-command-cheatsheet/</id>
+    <link href="http://yoursite.com/Node-NPM-command-cheatsheet.html"/>
+    <id>http://yoursite.com/Node-NPM-command-cheatsheet.html</id>
     <published>2017-07-15T07:38:36.000Z</published>
     <updated>2017-08-05T10:52:13.000Z</updated>
     
@@ -741,8 +783,8 @@
   
   <entry>
     <title>Node-Hide environemnt variables in your app</title>
-    <link href="http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/"/>
-    <id>http://yoursite.com/2017/07/09/Node-Hide-environemnt-variables-in-your-app/</id>
+    <link href="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html"/>
+    <id>http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html</id>
     <published>2017-07-08T22:13:30.000Z</published>
     <updated>2017-08-05T10:52:18.000Z</updated>
     
@@ -756,11 +798,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ABC_KEY = <span class="number">1234</span>qwer</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// in server/index.js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'dotenv'</span>).config()</div><div class="line"><span class="built_in">console</span>.log(process.env.ABC_KEY)</div></pre></td></tr></table></figure>
 <p>Remember in your .gitignore file to ignore .env file.</p>
-<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar3.png" alt="Screenshot 3" title="Screenshot 3">
+<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar3.png" alt="Screenshot 3" title="Screenshot 3">
 <h2 id="Set-process-env-variable-in-terminal"><a href="#Set-process-env-variable-in-terminal" class="headerlink" title="Set process.env variable in terminal"></a>Set process.env variable in terminal</h2><p>Second way is to directly set your variable in your terminal and access it in your node.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># type this in your terminal</span></div><div class="line"><span class="built_in">export</span> ABC_KEY=1234qwer <span class="comment"># no space and no quotation</span></div><div class="line"><span class="comment"># for window replace export for set</span></div><div class="line"><span class="built_in">unset</span> ABC_KEY <span class="comment"># unset variable</span></div></pre></td></tr></table></figure>
-<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar1.png" alt="Screenshot 1" title="Screenshot 1">
-<img src="/2017/07/09/Node-Hide-environemnt-variables-in-your-app/hidevar2.png" alt="Screenshot 2" title="Screenshot 2">
+<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar1.png" alt="Screenshot 1" title="Screenshot 1">
+<img src="/Node-Hide-environemnt-variables-in-your-app.html/hidevar2.png" alt="Screenshot 2" title="Screenshot 2">
 <p>Now you can access the variables in your node app by using process.env.ABC_KEY</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://www.youtube.com/watch?v=zDup0I2VGmk" target="_blank" rel="external">DevCoffee tutorial</a></li>
@@ -776,53 +818,6 @@
     
     
       <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset</title>
-    <link href="http://yoursite.com/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/"/>
-    <id>http://yoursite.com/2017/07/07/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset/</id>
-    <published>2017-07-06T21:45:24.000Z</published>
-    <updated>2017-07-08T22:11:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Here we will go over some more advanced git scenarios.</p>
-<h2 id="Squah-Multiple-Commits"><a href="#Squah-Multiple-Commits" class="headerlink" title="Squah Multiple Commits"></a>Squah Multiple Commits</h2><ol>
-<li><p>Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will come up.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">b1 <span class="comment"># commit 1</span></div><div class="line">b2 <span class="comment"># commit 2</span></div><div class="line">git rebase -i 49687a0a646954afdf3f4dae1f914ea793341ea2 (Commit 1 version number)</div></pre></td></tr></table></figure>
-</li>
-<li><p>After rebase command we enter editor interface where we can edit the commits. Basically you need to choose one to squash and choose pick for the rest of the commits.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">pick 033beb4 b1</div><div class="line">pick d426a8a b2</div><div class="line"></div><div class="line"><span class="comment"># Rebase 49687a0..d426a8a onto 49687a0</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Commands:</span></div><div class="line"><span class="comment">#  p, pick = use commit</span></div><div class="line"><span class="comment">#  r, reword = use commit, but edit the commit message</span></div><div class="line"><span class="comment">#  e, edit = use commit, but stop for amending</span></div><div class="line"><span class="comment">#  s, squash = use commit, but meld into previous commit</span></div><div class="line"><span class="comment">#  f, fixup = like "squash", but discard this commit's log message</span></div><div class="line"><span class="comment">#  x, exec = run command (the rest of the line) using shell</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span></div><div class="line"><span class="comment"># However, if you remove everything, the rebase will be aborted.</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Next you need to enter a new commit message</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">b</div><div class="line"><span class="comment"># This is a combination of 2 commits.</span></div><div class="line"><span class="comment"># The first commit's message is:</span></div><div class="line"><span class="comment"># b1</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># This is the 2nd commit message:</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># b2</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Please enter the commit message for your changes. Lines starting</span></div><div class="line"><span class="comment"># with '#' will be ignored, and an empty message aborts the commit.</span></div><div class="line"><span class="comment"># Not currently on any branch.</span></div><div class="line"><span class="comment"># Changes to be committed:</span></div><div class="line"><span class="comment">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#       modified:   a.txt</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>You can check git log for update</p>
-</li>
-</ol>
-<h2 id="Edit-last-Comment"><a href="#Edit-last-Comment" class="headerlink" title="Edit last Comment"></a>Edit last Comment</h2><ol>
-<li>You use the amend command. Ammend command go back to the previous commit and edit it.</li>
-<li><p>Another way is revert, which creates a new commit (does not interfere previous commit) but reverts status to previous commit.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit --amend -m <span class="string">"New commit message"</span></div><div class="line">git revert &lt;version number&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Git-Reset"><a href="#Git-Reset" class="headerlink" title="Git Reset"></a>Git Reset</h2><p>Here are some commands when you want to return to previous commit or situation before merge.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># return to previous commit</span></div><div class="line">git reset HEAD^ --hard</div><div class="line"><span class="comment"># return to previous commit or cancel merge when enter conflict</span></div><div class="line">git reset --hard</div><div class="line"><span class="comment"># after merge return to before merge</span></div><div class="line">git reset --hard ORIG_HEAD</div></pre></td></tr></table></figure>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="http://zerodie.github.io/blog/2012/01/19/git-rebase-i/" target="_blank" rel="external">Zerodie Github</a></li>
-<li><a href="http://blog.gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">gogojimmy</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here we will go over some more advanced git scenarios.&lt;/p&gt;
-&lt;h2 id=&quot;Squah-Multiple-Commits&quot;&gt;&lt;a href=&quot;#Squah-Multiple-Commits&quot; class=&quot;heade
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
