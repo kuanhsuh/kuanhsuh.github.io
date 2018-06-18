@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -90,12 +90,14 @@
 
 
 <meta name="description" content="Turning EVERYTHING into an ObjectAfter all the functions work individually, I create a model object and turn all my variables and functions into object variables and object methods. The model object w">
+<meta name="keywords" content="Javascript,WorkFlow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript WorkFlow Series 2">
 <meta property="og:url" content="http://yoursite.com/Javascript-WorkFlow-Series-2.html">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="Turning EVERYTHING into an ObjectAfter all the functions work individually, I create a model object and turn all my variables and functions into object variables and object methods. The model object w">
-<meta property="og:updated_time" content="2017-08-05T10:50:39.000Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-05T10:50:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript WorkFlow Series 2">
 <meta name="twitter:description" content="Turning EVERYTHING into an ObjectAfter all the functions work individually, I create a model object and turn all my variables and functions into object variables and object methods. The model object w">
@@ -133,6 +135,8 @@
 
 
   <title> Javascript WorkFlow Series 2 | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -344,8 +348,8 @@
       
         <h2 id="Turning-EVERYTHING-into-an-Object"><a href="#Turning-EVERYTHING-into-an-Object" class="headerlink" title="Turning EVERYTHING into an Object"></a>Turning EVERYTHING into an Object</h2><p>After all the functions work individually, I create a model object and turn all my variables and functions into object variables and object methods. The model object will take care of my app logic and calculation.</p>
 <p>For example.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Before</span></div><div class="line"><span class="keyword">var</span> randomSeries = [];</div><div class="line"><span class="keyword">var</span> userInput = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">game</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (isOn) &#123;</div><div class="line">    reset();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Now</span></div><div class="line"><span class="keyword">var</span> model = &#123;</div><div class="line">  <span class="attr">randomSeries</span>: [],</div><div class="line">  <span class="attr">userInput</span>: [],</div><div class="line">  <span class="attr">game</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isOn) &#123;</div><div class="line">      <span class="keyword">this</span>.reset()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>And test out the model object in console to make sure it works. If this part is complete we’re about 60% complete with our app. Here’s my draft 2 <a href="https://github.com/kuanhsuh/jsSimonGame/blob/master/blog/script2.js#L11" target="_blank" rel="external">github</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Before</span></span><br><span class="line"><span class="keyword">var</span> randomSeries = [];</span><br><span class="line"><span class="keyword">var</span> userInput = []</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">game</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (isOn) &#123;</span><br><span class="line">    reset();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Now</span></span><br><span class="line"><span class="keyword">var</span> model = &#123;</span><br><span class="line">  randomSeries: [],</span><br><span class="line">  userInput: [],</span><br><span class="line">  game: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isOn) &#123;</span><br><span class="line">      <span class="keyword">this</span>.reset()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And test out the model object in console to make sure it works. If this part is complete we’re about 60% complete with our app. Here’s my draft 2 <a href="https://github.com/kuanhsuh/jsSimonGame/blob/master/blog/script2.js#L11" target="_blank" rel="noopener">github</a></p>
 
       
     </div>

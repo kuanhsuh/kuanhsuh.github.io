@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,22 +89,21 @@
 
 
 
-<meta name="description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
-dotenv">
+<meta name="description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually. dotenv">
+<meta name="keywords" content="nodeJS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node-Hide environemnt variables in your app">
 <meta property="og:url" content="http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
-dotenv">
+<meta property="og:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually. dotenv">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.imgur.com/HiC2Rs4.png">
 <meta property="og:image" content="https://i.imgur.com/2Ey1CIb.png">
 <meta property="og:image" content="https://i.imgur.com/VfplNpO.png">
-<meta property="og:updated_time" content="2018-01-01T01:53:07.000Z">
+<meta property="og:updated_time" content="2018-01-01T01:53:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node-Hide environemnt variables in your app">
-<meta name="twitter:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.
-dotenv">
+<meta name="twitter:description" content="IntroductionThis is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually. dotenv">
 <meta name="twitter:image" content="https://i.imgur.com/HiC2Rs4.png">
 
 
@@ -140,6 +139,8 @@ dotenv">
 
 
   <title> Node-Hide environemnt variables in your app | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -350,23 +351,23 @@ dotenv">
 
       
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a question that I been struggle for a long time. However, I final figure it out. There are two ways that I recommend doing this using dotenv package or setting it manually.</p>
-<h2 id="dotenv-package"><a href="#dotenv-package" class="headerlink" title="dotenv package"></a>dotenv package</h2><p>Here’s my example repo: <a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="external">dotenv repo</a></p>
+<h2 id="dotenv-package"><a href="#dotenv-package" class="headerlink" title="dotenv package"></a>dotenv package</h2><p>Here’s my example repo: <a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="noopener">dotenv repo</a></p>
 <ol>
 <li>First install dotenv</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install dotenv --save-dev</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install dotenv --save-dev</span><br></pre></td></tr></table></figure>
 <p>Create .env file</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ABC_KEY = <span class="number">1234</span>qwer</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// in server/index.js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'dotenv'</span>).config()</div><div class="line"><span class="built_in">console</span>.log(process.env.ABC_KEY)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ABC_KEY = <span class="number">1234</span>qwer</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in server/index.js</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'dotenv'</span>).config()</span><br><span class="line"><span class="built_in">console</span>.log(process.env.ABC_KEY)</span><br></pre></td></tr></table></figure>
 <p>Remember in your .gitignore file to ignore .env file.</p>
 <p><img src="https://i.imgur.com/HiC2Rs4.png" alt="Screenshot 3"></p>
 <h2 id="Set-process-env-variable-in-terminal"><a href="#Set-process-env-variable-in-terminal" class="headerlink" title="Set process.env variable in terminal"></a>Set process.env variable in terminal</h2><p>Second way is to directly set your variable in your terminal and access it in your node.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># type this in your terminal</span></div><div class="line"><span class="built_in">export</span> ABC_KEY=1234qwer <span class="comment"># no space and no quotation</span></div><div class="line"><span class="comment"># for window replace export for set</span></div><div class="line"><span class="built_in">unset</span> ABC_KEY <span class="comment"># unset variable</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># type this in your terminal</span></span><br><span class="line"><span class="built_in">export</span> ABC_KEY=1234qwer <span class="comment"># no space and no quotation</span></span><br><span class="line"><span class="comment"># for window replace export for set</span></span><br><span class="line"><span class="built_in">unset</span> ABC_KEY <span class="comment"># unset variable</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://i.imgur.com/2Ey1CIb.png" alt="Hide Var"><br><img src="https://i.imgur.com/VfplNpO.png" alt="Hide Var 2"></p>
 <p>Now you can access the variables in your node app by using process.env.ABC_KEY</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://www.youtube.com/watch?v=zDup0I2VGmk" target="_blank" rel="external">DevCoffee tutorial</a></li>
-<li><a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="external">dotenv repo</a></li>
+<li><a href="https://www.youtube.com/watch?v=zDup0I2VGmk" target="_blank" rel="noopener">DevCoffee tutorial</a></li>
+<li><a href="https://github.com/kuanhsuh/node_hideglobalvar_demo" target="_blank" rel="noopener">dotenv repo</a></li>
 </ul>
 
       

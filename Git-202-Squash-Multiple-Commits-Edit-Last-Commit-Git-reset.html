@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,22 +89,18 @@
 
 
 
-<meta name="description" content="Here we will go over some more advanced git scenarios.
-Squah Multiple Commits
-Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
+<meta name="description" content="Here we will go over some more advanced git scenarios. Squah Multiple Commits Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset">
 <meta property="og:url" content="http://yoursite.com/Git-202-Squash-Multiple-Commits-Edit-Last-Commit-Git-reset.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="Here we will go over some more advanced git scenarios.
-Squah Multiple Commits
-Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
-<meta property="og:updated_time" content="2017-07-08T22:11:45.000Z">
+<meta property="og:description" content="Here we will go over some more advanced git scenarios. Squah Multiple Commits Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-07-08T22:11:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset">
-<meta name="twitter:description" content="Here we will go over some more advanced git scenarios.
-Squah Multiple Commits
-Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
+<meta name="twitter:description" content="Here we will go over some more advanced git scenarios. Squah Multiple Commits Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will c">
 
 
 
@@ -139,6 +135,8 @@ Let’s say we have multiple commits and we want to squash them. We use rebase t
 
 
   <title> Git 202 - Squash Multiple Commits, Edit Last Commit, Git reset | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -351,13 +349,13 @@ Let’s say we have multiple commits and we want to squash them. We use rebase t
         <p>Here we will go over some more advanced git scenarios.</p>
 <h2 id="Squah-Multiple-Commits"><a href="#Squah-Multiple-Commits" class="headerlink" title="Squah Multiple Commits"></a>Squah Multiple Commits</h2><ol>
 <li><p>Let’s say we have multiple commits and we want to squash them. We use rebase to the first commit. The rebase screen will come up.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">b1 <span class="comment"># commit 1</span></div><div class="line">b2 <span class="comment"># commit 2</span></div><div class="line">git rebase -i 49687a0a646954afdf3f4dae1f914ea793341ea2 (Commit 1 version number)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b1 <span class="comment"># commit 1</span></span><br><span class="line">b2 <span class="comment"># commit 2</span></span><br><span class="line">git rebase -i 49687a0a646954afdf3f4dae1f914ea793341ea2 (Commit 1 version number)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>After rebase command we enter editor interface where we can edit the commits. Basically you need to choose one to squash and choose pick for the rest of the commits.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">pick 033beb4 b1</div><div class="line">pick d426a8a b2</div><div class="line"></div><div class="line"><span class="comment"># Rebase 49687a0..d426a8a onto 49687a0</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Commands:</span></div><div class="line"><span class="comment">#  p, pick = use commit</span></div><div class="line"><span class="comment">#  r, reword = use commit, but edit the commit message</span></div><div class="line"><span class="comment">#  e, edit = use commit, but stop for amending</span></div><div class="line"><span class="comment">#  s, squash = use commit, but meld into previous commit</span></div><div class="line"><span class="comment">#  f, fixup = like "squash", but discard this commit's log message</span></div><div class="line"><span class="comment">#  x, exec = run command (the rest of the line) using shell</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span></div><div class="line"><span class="comment"># However, if you remove everything, the rebase will be aborted.</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pick 033beb4 b1</span><br><span class="line">pick d426a8a b2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase 49687a0..d426a8a onto 49687a0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Commands:</span></span><br><span class="line"><span class="comment">#  p, pick = use commit</span></span><br><span class="line"><span class="comment">#  r, reword = use commit, but edit the commit message</span></span><br><span class="line"><span class="comment">#  e, edit = use commit, but stop for amending</span></span><br><span class="line"><span class="comment">#  s, squash = use commit, but meld into previous commit</span></span><br><span class="line"><span class="comment">#  f, fixup = like "squash", but discard this commit's log message</span></span><br><span class="line"><span class="comment">#  x, exec = run command (the rest of the line) using shell</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span></span><br><span class="line"><span class="comment"># However, if you remove everything, the rebase will be aborted.</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Next you need to enter a new commit message</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">b</div><div class="line"><span class="comment"># This is a combination of 2 commits.</span></div><div class="line"><span class="comment"># The first commit's message is:</span></div><div class="line"><span class="comment"># b1</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># This is the 2nd commit message:</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># b2</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Please enter the commit message for your changes. Lines starting</span></div><div class="line"><span class="comment"># with '#' will be ignored, and an empty message aborts the commit.</span></div><div class="line"><span class="comment"># Not currently on any branch.</span></div><div class="line"><span class="comment"># Changes to be committed:</span></div><div class="line"><span class="comment">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#       modified:   a.txt</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b</span><br><span class="line"><span class="comment"># This is a combination of 2 commits.</span></span><br><span class="line"><span class="comment"># The first commit's message is:</span></span><br><span class="line"><span class="comment"># b1</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This is the 2nd commit message:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># b2</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Please enter the commit message for your changes. Lines starting</span></span><br><span class="line"><span class="comment"># with '#' will be ignored, and an empty message aborts the commit.</span></span><br><span class="line"><span class="comment"># Not currently on any branch.</span></span><br><span class="line"><span class="comment"># Changes to be committed:</span></span><br><span class="line"><span class="comment">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#       modified:   a.txt</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>You can check git log for update</p>
 </li>
@@ -365,14 +363,14 @@ Let’s say we have multiple commits and we want to squash them. We use rebase t
 <h2 id="Edit-last-Comment"><a href="#Edit-last-Comment" class="headerlink" title="Edit last Comment"></a>Edit last Comment</h2><ol>
 <li>You use the amend command. Ammend command go back to the previous commit and edit it.</li>
 <li><p>Another way is revert, which creates a new commit (does not interfere previous commit) but reverts status to previous commit.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit --amend -m <span class="string">"New commit message"</span></div><div class="line">git revert &lt;version number&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m <span class="string">"New commit message"</span></span><br><span class="line">git revert &lt;version number&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="Git-Reset"><a href="#Git-Reset" class="headerlink" title="Git Reset"></a>Git Reset</h2><p>Here are some commands when you want to return to previous commit or situation before merge.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># return to previous commit</span></div><div class="line">git reset HEAD^ --hard</div><div class="line"><span class="comment"># return to previous commit or cancel merge when enter conflict</span></div><div class="line">git reset --hard</div><div class="line"><span class="comment"># after merge return to before merge</span></div><div class="line">git reset --hard ORIG_HEAD</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># return to previous commit</span></span><br><span class="line">git reset HEAD^ --hard</span><br><span class="line"><span class="comment"># return to previous commit or cancel merge when enter conflict</span></span><br><span class="line">git reset --hard</span><br><span class="line"><span class="comment"># after merge return to before merge</span></span><br><span class="line">git reset --hard ORIG_HEAD</span><br></pre></td></tr></table></figure>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="http://zerodie.github.io/blog/2012/01/19/git-rebase-i/" target="_blank" rel="external">Zerodie Github</a></li>
-<li><a href="http://blog.gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">gogojimmy</a></li>
+<li><a href="http://zerodie.github.io/blog/2012/01/19/git-rebase-i/" target="_blank" rel="noopener">Zerodie Github</a></li>
+<li><a href="http://blog.gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="noopener">gogojimmy</a></li>
 </ul>
 
       

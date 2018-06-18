@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -90,12 +90,14 @@
 
 
 <meta name="description" content="Today I want to share with you some basic yet powerful javascript programming method called functional programming. Functional programmings(FP) means coding in functions, duh.  There are many advanced">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS functional programming - replace for loops">
 <meta property="og:url" content="http://yoursite.com/JS-functional-programming.html">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="Today I want to share with you some basic yet powerful javascript programming method called functional programming. Functional programmings(FP) means coding in functions, duh.  There are many advanced">
-<meta property="og:updated_time" content="2017-03-08T08:19:37.000Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-03-08T08:19:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS functional programming - replace for loops">
 <meta name="twitter:description" content="Today I want to share with you some basic yet powerful javascript programming method called functional programming. Functional programmings(FP) means coding in functions, duh.  There are many advanced">
@@ -133,6 +135,8 @@
 
 
   <title> JS functional programming - replace for loops | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -344,12 +348,12 @@
       
         <p>Today I want to share with you some basic yet powerful javascript programming method called functional programming. Functional programmings(FP) means coding in functions, duh.  There are many advanced topics on FP, such as currying, pure FP, but today I just want to share some basic techniques of using map &amp; filter to help our everyday code.</p>
 <p>Below is an example, which we have an array of objects and we want to get the name of the people that are older than 18.</p>
-<p>Tradional Way of using for loop:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> people = [</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Danny'</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;,</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Calvin'</span>, <span class="attr">age</span>: <span class="number">10</span>&#125;,</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Mike'</span>, <span class="attr">age</span>: <span class="number">4</span>&#125;,</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">'Jeff'</span>, <span class="attr">age</span>: <span class="number">50</span>&#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">var</span> adults = []</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; people.length; i++)&#123;</div><div class="line">  <span class="keyword">if</span>(people[i].age &gt; <span class="number">18</span>)&#123;</div><div class="line">    adults.push(people[i].name)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(adults) <span class="comment">// ["Danny", "Jeff"]</span></div></pre></td></tr></table></figure></p>
-<p>FP Way:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> isAdult = <span class="function"><span class="params">people</span> =&gt;</span> people.age &gt; <span class="number">18</span></div><div class="line"><span class="keyword">const</span> getName = <span class="function"><span class="params">people</span> =&gt;</span> people.name</div><div class="line"><span class="keyword">const</span> adults = people.filter(isAdult)</div><div class="line">                    .map(getName)</div><div class="line"><span class="built_in">console</span>.log(adults) <span class="comment">// ["Danny", "Jeff"]</span></div></pre></td></tr></table></figure></p>
+<p>Tradional Way of using for loop:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">'Danny'</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">'Calvin'</span>, <span class="attr">age</span>: <span class="number">10</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">'Mike'</span>, <span class="attr">age</span>: <span class="number">4</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">'Jeff'</span>, <span class="attr">age</span>: <span class="number">50</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> adults = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; people.length; i++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(people[i].age &gt; <span class="number">18</span>)&#123;</span><br><span class="line">    adults.push(people[i].name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(adults) <span class="comment">// ["Danny", "Jeff"]</span></span><br></pre></td></tr></table></figure></p>
+<p>FP Way:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isAdult = <span class="function"><span class="params">people</span> =&gt;</span> people.age &gt; <span class="number">18</span></span><br><span class="line"><span class="keyword">const</span> getName = <span class="function"><span class="params">people</span> =&gt;</span> people.name</span><br><span class="line"><span class="keyword">const</span> adults = people.filter(isAdult)</span><br><span class="line">                    .map(getName)</span><br><span class="line"><span class="built_in">console</span>.log(adults) <span class="comment">// ["Danny", "Jeff"]</span></span><br></pre></td></tr></table></figure></p>
 <p>Benefits of using FP is it makes code more sexy and make code more readable and more reusable.</p>
 <h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><ul>
-<li><a href="https://hackernoon.com/rethinking-javascript-death-of-the-for-loop-c431564c84a8#.3hfhz39db" target="_blank" rel="external">https://hackernoon.com/rethinking-javascript-death-of-the-for-loop-c431564c84a8#.3hfhz39db</a></li>
-<li><a href="https://medium.freecodecamp.com/reduce-f47a7da511a9" target="_blank" rel="external">https://medium.freecodecamp.com/reduce-f47a7da511a9</a></li>
+<li><a href="https://hackernoon.com/rethinking-javascript-death-of-the-for-loop-c431564c84a8#.3hfhz39db" target="_blank" rel="noopener">https://hackernoon.com/rethinking-javascript-death-of-the-for-loop-c431564c84a8#.3hfhz39db</a></li>
+<li><a href="https://medium.freecodecamp.com/reduce-f47a7da511a9" target="_blank" rel="noopener">https://medium.freecodecamp.com/reduce-f47a7da511a9</a></li>
 </ul>
 
       

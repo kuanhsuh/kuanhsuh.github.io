@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,22 +89,18 @@
 
 
 
-<meta name="description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain
-ScopeScope is variable access
-Scope is the set of rules that determines w">
+<meta name="description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain ScopeScope is variable access Scope is the set of rules that determines w">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS Scope">
 <meta property="og:url" content="http://yoursite.com/JS-Scope.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain
-ScopeScope is variable access
-Scope is the set of rules that determines w">
-<meta property="og:updated_time" content="2017-08-05T10:49:57.000Z">
+<meta property="og:description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain ScopeScope is variable access Scope is the set of rules that determines w">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-05T10:49:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Scope">
-<meta name="twitter:description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain
-ScopeScope is variable access
-Scope is the set of rules that determines w">
+<meta name="twitter:description" content="There are three things (maybe more) that you need to know about scope, which is global/current scopelexical scope, scope chain ScopeScope is variable access Scope is the set of rules that determines w">
 
 
 
@@ -139,6 +135,8 @@ Scope is the set of rules that determines w">
 
 
   <title> JS Scope | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -352,9 +350,9 @@ Scope is the set of rules that determines w">
 <h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>Scope is variable access</p>
 <p>Scope is the set of rules that determines where and how a variable (identifier) can be looked-up. Basically Scope is variable access. Also every function has it’s inner scope and variables inside the function can only be accessed inside the function.</p>
 <p>Here’s an example</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//parent</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">2</span>;<span class="comment">//child</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">foo(); <span class="comment">//1</span></div><div class="line">b <span class="comment">//error</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//parent</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">2</span>;<span class="comment">//child</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">//1</span></span><br><span class="line">b <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
 <p>The child scope has access to a, but the parent scope does not have access to b.</p>
-<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png" target="_blank" rel="external">https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png</a></p>
+<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png" target="_blank" rel="noopener">https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/fig1.png</a></p>
 <p>lexical(static) scope is scope that is defined at lexing time. In other words, lexical scope is based on where variables and blocks of scope are authored, by you, at write time, and thus is (mostly) set in stone by the time the lexer processes your code.</p>
 
       

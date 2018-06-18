@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -90,11 +90,13 @@
 
 
 <meta name="description" content="What is htaccessHtaccess is a file that config apache server. We can make our website more secure and faster. These facilities include basic redirect functionality, for instance if a 404 file not foun">
+<meta name="keywords" content="wordpress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Wordpress htaccess setup">
 <meta property="og:url" content="http://yoursite.com/Wordpress-htaccess-setup.html">
 <meta property="og:site_name" content="My Coding Journey">
 <meta property="og:description" content="What is htaccessHtaccess is a file that config apache server. We can make our website more secure and faster. These facilities include basic redirect functionality, for instance if a 404 file not foun">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-11-19T13:06:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wordpress htaccess setup">
@@ -133,6 +135,8 @@
 
 
   <title> Wordpress htaccess setup | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -348,21 +352,21 @@
 <h2 id="Setup-code-snippets"><a href="#Setup-code-snippets" class="headerlink" title="Setup code snippets"></a>Setup code snippets</h2><p>Here are some code snippets that I use for my wordpress site.</p>
 <ol>
 <li><p>This prevents anyone to visit wp-config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;files wp-config.php&gt;</div><div class="line">order allow,deny</div><div class="line">deny from all</div><div class="line">&lt;/files&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;files wp-config.php&gt;</span><br><span class="line">order allow,deny</span><br><span class="line">deny from all</span><br><span class="line">&lt;/files&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Prevent Directory Browsing</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># disable directory browsing</div><div class="line">Options All -Indexes</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># disable directory browsing</span><br><span class="line">Options All -Indexes</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Enable Browser Cache. Basically if the image remains unchanged, then it will be stored on client’s browser and will not need to reload. This will improve the user experience.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">## EXPIRES CACHING ##</div><div class="line">&lt;IfModule mod_expires.c&gt;</div><div class="line">ExpiresActive On</div><div class="line">ExpiresByType image/jpg &quot;access 1 year&quot;</div><div class="line">ExpiresByType image/jpeg &quot;access 1 year&quot;</div><div class="line">ExpiresByType image/gif &quot;access 1 year&quot;</div><div class="line">ExpiresByType image/png &quot;access 1 year&quot;</div><div class="line">ExpiresByType text/css &quot;access 1 month&quot;</div><div class="line">ExpiresByType application/pdf &quot;access 1 month&quot;</div><div class="line">ExpiresByType text/x-javascript &quot;access 1 month&quot;</div><div class="line">ExpiresByType application/x-shockwave-flash &quot;access 1 month&quot;</div><div class="line">ExpiresByType image/x-icon &quot;access 1 year&quot;</div><div class="line">ExpiresDefault &quot;access 2 days&quot;</div><div class="line">&lt;/IfModule&gt;</div><div class="line">## EXPIRES CACHING ##</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">## EXPIRES CACHING ##</span><br><span class="line">&lt;IfModule mod_expires.c&gt;</span><br><span class="line">ExpiresActive On</span><br><span class="line">ExpiresByType image/jpg &quot;access 1 year&quot;</span><br><span class="line">ExpiresByType image/jpeg &quot;access 1 year&quot;</span><br><span class="line">ExpiresByType image/gif &quot;access 1 year&quot;</span><br><span class="line">ExpiresByType image/png &quot;access 1 year&quot;</span><br><span class="line">ExpiresByType text/css &quot;access 1 month&quot;</span><br><span class="line">ExpiresByType application/pdf &quot;access 1 month&quot;</span><br><span class="line">ExpiresByType text/x-javascript &quot;access 1 month&quot;</span><br><span class="line">ExpiresByType application/x-shockwave-flash &quot;access 1 month&quot;</span><br><span class="line">ExpiresByType image/x-icon &quot;access 1 year&quot;</span><br><span class="line">ExpiresDefault &quot;access 2 days&quot;</span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line">## EXPIRES CACHING ##</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>No Hot linking to your images. Outside can not link to your images. This will reduce exccess traffic.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^$</div><div class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^http(s)?://(www\.)?yourwebsite.com [NC]</div><div class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^http(s)?://(www\.)?yourotherwebsite.com [NC]</div><div class="line">RewriteRule \.(jpg|jpeg|png|gif)$ http://i.imgur.com/g7ptdBB.png [NC,R,L]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^$</span><br><span class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^http(s)?://(www\.)?yourwebsite.com [NC]</span><br><span class="line">RewriteCond %&#123;HTTP_REFERER&#125; !^http(s)?://(www\.)?yourotherwebsite.com [NC]</span><br><span class="line">RewriteRule \.(jpg|jpeg|png|gif)$ http://i.imgur.com/g7ptdBB.png [NC,R,L]</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://www.elegantthemes.com/blog/tips-tricks/wordpress-htaccess-tips-and-tricks" target="_blank" rel="external">WordPress Htaccess Tips And Tricks</a></li>
-<li><a href="http://www.htaccess-guide.com/" target="_blank" rel="external">htaccess guide</a></li>
+<li><a href="https://www.elegantthemes.com/blog/tips-tricks/wordpress-htaccess-tips-and-tricks" target="_blank" rel="noopener">WordPress Htaccess Tips And Tricks</a></li>
+<li><a href="http://www.htaccess-guide.com/" target="_blank" rel="noopener">htaccess guide</a></li>
 </ul>
 
       

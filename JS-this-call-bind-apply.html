@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,19 +89,18 @@
 
 
 
-<meta name="description" content="Call, bind and apply explicitly attach this into the object or function.
-call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
+<meta name="description" content="Call, bind and apply explicitly attach this into the object or function. call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS this - call, bind, apply">
 <meta property="og:url" content="http://yoursite.com/JS-this-call-bind-apply.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="Call, bind and apply explicitly attach this into the object or function.
-call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
-<meta property="og:updated_time" content="2017-08-05T10:50:11.000Z">
+<meta property="og:description" content="Call, bind and apply explicitly attach this into the object or function. call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-05T10:50:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS this - call, bind, apply">
-<meta name="twitter:description" content="Call, bind and apply explicitly attach this into the object or function.
-call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
+<meta name="twitter:description" content="Call, bind and apply explicitly attach this into the object or function. call attaches this into function and executes the function immediately:1234567var person = &amp;#123;  name: &quot;Danny&quot;  speaking: fun">
 
 
 
@@ -136,6 +135,8 @@ call attaches this into function and executes the function immediately:1234567va
 
 
   <title> JS this - call, bind, apply | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -346,13 +347,13 @@ call attaches this into function and executes the function immediately:1234567va
 
       
         <p>Call, bind and apply explicitly attach this into the object or function.</p>
-<p><strong>call</strong> attaches this into function and executes the function immediately:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"Danny"</span></div><div class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">person.speaking.call(person, <span class="string">"Irene"</span>) <span class="comment">// "Danny says Hi! Irene"</span></div></pre></td></tr></table></figure></p>
-<p><strong>bind</strong> attaches this into function and it needs to be invoked separately<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"Danny"</span></div><div class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hello = person.speaking.bind(person)</div><div class="line">hello(<span class="string">"Irene"</span>); <span class="comment">// "Danny says Hi! Irene"</span></div></pre></td></tr></table></figure></p>
-<p><strong>apply</strong> is similar to call except that it takes an array-like object instead of listing the arguments<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">num</span>:<span class="number">2</span>&#125;;</div><div class="line"><span class="keyword">var</span> addToThis = <span class="function"><span class="keyword">function</span>(<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.num + a + b + c;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(addToThis.call(obj, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 8</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line"><span class="built_in">console</span>.log(addToThis.apply(obj, arr)); <span class="comment">// 8</span></div></pre></td></tr></table></figure></p>
+<p><strong>call</strong> attaches this into function and executes the function immediately:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Danny"</span></span><br><span class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">person.speaking.call(person, <span class="string">"Irene"</span>) <span class="comment">// "Danny says Hi! Irene"</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>bind</strong> attaches this into function and it needs to be invoked separately<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Danny"</span></span><br><span class="line">  speaking: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"says Hi!"</span> + thing)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hello = person.speaking.bind(person)</span><br><span class="line">hello(<span class="string">"Irene"</span>); <span class="comment">// "Danny says Hi! Irene"</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>apply</strong> is similar to call except that it takes an array-like object instead of listing the arguments<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">num</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> addToThis = <span class="function"><span class="keyword">function</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.num + a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(addToThis.call(obj, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(addToThis.apply(obj, arr)); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a href="http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind" target="_blank" rel="external">http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind</a></li>
-<li><a href="https://www.youtube.com/watch?v=c0mLRpw-9rI" target="_blank" rel="external">https://www.youtube.com/watch?v=c0mLRpw-9rI</a></li>
-<li><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/" target="_blank" rel="external">http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/</a></li>
+<li><a href="http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind" target="_blank" rel="noopener">http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind</a></li>
+<li><a href="https://www.youtube.com/watch?v=c0mLRpw-9rI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=c0mLRpw-9rI</a></li>
+<li><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/" target="_blank" rel="noopener">http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/</a></li>
 </ul>
 
       

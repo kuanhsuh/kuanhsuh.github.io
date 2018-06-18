@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="agd-partner-manual-verification" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,31 +89,18 @@
 
 
 
-<meta name="description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
+<meta name="description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.  Install stripe through npm 1npm install stripe  Implement reques">
+<meta name="keywords" content="expressJS,Stripe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stripejs on express part II">
 <meta property="og:url" content="http://yoursite.com/Express-Stripejs-on-express-part-II.html">
 <meta property="og:site_name" content="My Coding Journey">
-<meta property="og:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
+<meta property="og:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.  Install stripe through npm 1npm install stripe  Implement reques">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-06-19T03:29:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stripejs on express part II">
-<meta name="twitter:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.
-
-Install stripe through npm
-1npm install stripe
-
-Implement reques">
+<meta name="twitter:description" content="After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.  Install stripe through npm 1npm install stripe  Implement reques">
 
 
 
@@ -148,6 +135,8 @@ Implement reques">
 
 
   <title> Stripejs on express part II | My Coding Journey </title>
+  <meta name="agd-partner-manual-verification" />
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -360,10 +349,10 @@ Implement reques">
         <p>After we can our token from stripe.js, now we need to send this token to stripe API with our server. Then our charge will be complete.</p>
 <ol>
 <li><p>Install stripe through npm</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install stripe</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install stripe</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Implement request - here’s example request from <a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe API</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> stripe = <span class="built_in">require</span>(<span class="string">"stripe"</span>)(</div><div class="line">  <span class="string">"sk_test_UawoxUENSN7VkeeMIXXXXX"</span></div><div class="line">);</div><div class="line"></div><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: <span class="number">2000</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: <span class="string">"tok_187waCF6w9JvbRHHBeCqMoBg"</span>, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Charge for liam.johnson@example.com"</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">  <span class="comment">// asynchronously called</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<li><p>Implement request - here’s example request from <a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="noopener">Stripe API</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stripe = <span class="built_in">require</span>(<span class="string">"stripe"</span>)(</span><br><span class="line">  <span class="string">"sk_test_UawoxUENSN7VkeeMIXXXXX"</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">stripe.charges.create(&#123;</span><br><span class="line">  amount: <span class="number">2000</span>,</span><br><span class="line">  currency: <span class="string">"usd"</span>,</span><br><span class="line">  source: <span class="string">"tok_187waCF6w9JvbRHHBeCqMoBg"</span>, <span class="comment">// obtained with Stripe.js</span></span><br><span class="line">  description: <span class="string">"Charge for liam.johnson@example.com"</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// asynchronously called</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>We need to modify a couple things</p>
 <ul>
@@ -373,13 +362,13 @@ Implement reques">
 <li>images from stripe</li>
 </ul>
 <p>Here’s what my code look like.</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">stripe.charges.create(&#123;</div><div class="line">  <span class="attr">amount</span>: cart.totalPrice * <span class="number">100</span>,</div><div class="line">  <span class="attr">currency</span>: <span class="string">"usd"</span>,</div><div class="line">  <span class="attr">source</span>: req.body.stripeToken, <span class="comment">// obtained with Stripe.js</span></div><div class="line">  description: <span class="string">"Test Charge"</span></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      req.flash(<span class="string">'error'</span>, err.messages)</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/checkout'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// This is where we save our orders</span></div><div class="line">    <span class="keyword">var</span> order = <span class="keyword">new</span> Order(&#123;</div><div class="line">      <span class="attr">name</span>: req.body.name,</div><div class="line">      <span class="attr">address</span>: req.body.address,</div><div class="line">      <span class="attr">cart</span>: cart,</div><div class="line">      <span class="attr">paymentId</span>: charge.id</div><div class="line">    &#125;)</div><div class="line">    order.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</div><div class="line">      req.flash(<span class="string">'success'</span>, <span class="string">'Successfully bought product'</span>)</div><div class="line">      req.session.cart = <span class="literal">null</span></div><div class="line">      res.redirect(<span class="string">'/'</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">stripe.charges.create(&#123;</span><br><span class="line">  amount: cart.totalPrice * <span class="number">100</span>,</span><br><span class="line">  currency: <span class="string">"usd"</span>,</span><br><span class="line">  source: req.body.stripeToken, <span class="comment">// obtained with Stripe.js</span></span><br><span class="line">  description: <span class="string">"Test Charge"</span></span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, charge</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      req.flash(<span class="string">'error'</span>, err.messages)</span><br><span class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/checkout'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// This is where we save our orders</span></span><br><span class="line">    <span class="keyword">var</span> order = <span class="keyword">new</span> Order(&#123;</span><br><span class="line">      name: req.body.name,</span><br><span class="line">      address: req.body.address,</span><br><span class="line">      cart: cart,</span><br><span class="line">      paymentId: charge.id</span><br><span class="line">    &#125;)</span><br><span class="line">    order.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</span><br><span class="line">      req.flash(<span class="string">'success'</span>, <span class="string">'Successfully bought product'</span>)</span><br><span class="line">      req.session.cart = <span class="literal">null</span></span><br><span class="line">      res.redirect(<span class="string">'/'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>That should be it man. Your stripe should be charged. Now we need to save our orders.</p>
 <h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><ul>
-<li><a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="external">Stripe Charge API</a></li>
-<li><a href="https://github.com/kuanhsuh/express-shoppingCart/blob/master/routes/index.js" target="_blank" rel="external">My github Shopping cart</a></li>
+<li><a href="https://stripe.com/docs/api/node#create_charge" target="_blank" rel="noopener">Stripe Charge API</a></li>
+<li><a href="https://github.com/kuanhsuh/express-shoppingCart/blob/master/routes/index.js" target="_blank" rel="noopener">My github Shopping cart</a></li>
 </ul>
 
       
