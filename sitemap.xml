@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/How-to-implement-multi-language-with-Vue-i18n.html</loc>
+    
+    <lastmod>2018-06-25T14:14:35.759Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Node-Hide-environemnt-variables-in-your-app.html</loc>
     
     <lastmod>2018-01-01T01:53:06.000Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://yoursite.com/Redux-Dev-Tools-Tips-Redux-Series-III.html</loc>
     
     <lastmod>2017-10-08T00:26:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/How-to-implement-multi-language-with-Vue-i18n.html</loc>
-    
-    <lastmod>2017-10-07T07:18:02.000Z</lastmod>
     
   </url>
   
